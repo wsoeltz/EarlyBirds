@@ -1,0 +1,116 @@
+/**********
+
+		Base Styles
+
+**********/
+
+body{
+
+	background-image: url(assets/classroom_bg.jpg);
+	background-repeat:no-repeat;
+	background-position:center top; 
+	font-family: 'Open Sans', sans-serif;
+	color: #feffff;
+}
+
+h2{
+	font-weight: 600;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+p{
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.5em; 
+	text-align: justify;
+}
+
+
+/**********
+
+		Alignment
+
+**********/
+
+
+div#contentWrapper{
+	width:1276px;
+	margin: 0 auto;
+	position: relative;
+}
+
+div#logoHalf{
+	width: 763px;
+	float: left;
+	padding-top: 50px;
+	text-align: center;
+}
+
+div#blueDrop{
+	position: fixed;
+	width: 6000px;
+	height: 6000px;
+	top: -1000px;
+	z-index: -1000;
+	background-color: #009ece;
+}
+
+div#navHalf{
+	padding-top: 50px;
+	width: 513px;
+	float: left;
+	background-color: #009ece;
+}
+
+div#sideContent{
+	padding-left: 54px;
+	padding-right: 54px;
+
+}
+
+/**********
+
+		main body styles
+
+**********/
+
+h2.extraSize{
+	font-size: 50px;
+	margin-bottom: 248px;
+}
+
+div#sideContent h1 a{
+	display: inline-block;
+	width:405px;
+	text-align:center;
+	font-size: 71px;
+	background-color: #f7d708;
+	text-decoration: none;
+	color: #009ece;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div#sideContent h1 a:hover{
+	background-color: #feffff;
+}
+
+div#sideContent a.learn{
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 30px;
+	color: #f7d708;
+	font-weight: 600;
+	background-image: url(assets/right_arrow.png);
+	background-repeat: no-repeat;
+	background-position: 100px 3px;
+	width: 125px;
+	text-decoration: none;
+}
+
+div#sideContent a.learn:hover{
+	text-decoration: underline;
+}
