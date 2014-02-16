@@ -43,7 +43,6 @@
 
     function slideAnimationRelativeHorizontal(offset) {
         return function() {
-        	console.log("2");
             $('#sideContent').animate({
                 'left': (parseInt($('#sideContent').css('left'), 10) + offset) + 'px'
             }, 
