@@ -57,17 +57,31 @@ div#blueDrop{
 }
 
 div#navHalf{
-	padding-top: 50px;
 	width: 513px;
+	height: 700px;
 	float: left;
 	background-color: #009ece;
+	overflow: hidden;
 }
 
 div#sideContent{
+	position: relative;
+	height: 700px;
+	width: 1030px;
+	top:-700px;
+}
+
+div.contentBlock{
+	padding-top: 50px;
+	display: inline-block;
+	height: 650px;
+	width: 404px;
 	padding-left: 54px;
 	padding-right: 54px;
-
+	float: left;
 }
+
+
 
 /**********
 
@@ -92,6 +106,7 @@ div#sideContent h1 a{
 	text-transform: uppercase;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	
 }
 
 div#sideContent h1 a:hover{

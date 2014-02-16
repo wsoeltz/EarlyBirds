@@ -13,6 +13,8 @@
     <link rel = "stylesheet" href = "css/main.css" />
     <!-- Open Sans Google Font API -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/slideDivs.js"></script>
     <title>
       Early Birds
     </title>
@@ -28,15 +30,41 @@
         </div>
         <div id="navHalf">
             <div id="sideContent">
-                <h2>Are you a...</h2>
-                <h1><a href="#">Student</a></h1>
-                <h2>or a...</h2>
-                <h1><a href="#">Teacher</a></h1>
-                <h2 class="extraSize">?</h2>
-                <p>In one single swoop, Early Birds helps familiarize students with a computer all while teaching them the basics of writing a lab report
-                <br/>
-                <a class="learn" href="#">Learn More</a>
-                </p>
+                <div id="assignmentCode" class="contentBlock">
+                    Assignment Code
+                    <a href="javascript:void(0)" id="assignmentToSplash">Back to splash</a>
+                    <a href="javascript:void(0)" id="assignmentToLab">To Lab screen</a>
+                </div>
+                <div id="labCode" class="contentBlock">
+                    Lab Code
+                    <a href="javascript:void(0)" id="labToAssignment">Back to assignment code</a>
+                </div>
+                <div id="splash" class="contentBlock">
+                    <h2>Are you a...</h2>
+                    <h1><a href="javascript:void(0)" id="student">Student</a></h1>
+                    <h2>or a...</h2>
+                    <h1><a href="javascript:void(0)" id="teacher">Teacher</a></h1>
+                    <h2 class="extraSize">?</h2>
+                    <p>In one single swoop, Early Birds helps familiarize students with a computer all while teaching them the basics of writing a lab report.
+                    <br/>
+                    <a class="learn" href="javascript:void(0)" id="learnMore">Learn More</a>
+                    </p>
+                </div>
+                <div id="about" class="contentBlock">
+                    About
+                    <a href="javascript:void(0)" id="aboutToSplash">Back to splash</a>
+                    <a href="javascript:void(0)" id="aboutToRegister">Register</a>
+                </div>
+                <div id="login" class="contentBlock">
+                    Login
+                    <a href="javascript:void(0)" id="loginToSplash">Back to splash</a>
+                    <a href="javascript:void(0)" id="loginToRegister">Register</a>
+                </div>
+                <div id="register" class="contentBlock">
+                    Register
+                    <a href="javascript:void(0)" id="registerToLogin">Back to login</a>
+                    <a href="javascript:void(0)" id="registerToAbout">Learn More</a>
+                </div>
             </div>
             <div id="blueDrop"></div>
         </div>
