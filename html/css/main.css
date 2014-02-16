@@ -26,6 +26,62 @@ p{
 	text-align: justify;
 }
 
+/* Login and registration input boxes */
+input{
+	width: 405px;
+	height: 46px;
+	border: 1px;
+	border-color: #e5e5e5;
+	background-color:fbfbfb;
+	font-size: 15px;
+	margin-top: 28px;
+	padding-left: 15px;
+}
+
+/* Styling placeholder in input box */
+/* Source: http://stackoverflow.com/questions/9538921/placeholder-text-formatting */
+/*For Webkit browsers (Chrome, Safari) */
+input::-webkit-input-placeholder {
+	color: #bdc2c4;
+	font-size: 15px;
+}
+
+/* Styling placeholder in input box */
+/* Source: http://stackoverflow.com/questions/9538921/placeholder-text-formatting */
+/* For Mozilla Firefox */
+input:-moz-placeholder {
+	color: #bdc2c4;
+	font-size: 15px;
+}
+
+/* Login and registration button */
+.button{
+	margin-top: 28px;
+	width: 133px;
+	height:45px;
+	padding: 0px; /* centers text in button - http://stackoverflow.com/questions/2883373/simple-css-issue-text-wont-center-in-a-button */
+	text-transform: uppercase;
+	font-size: 13px;
+	background-color: #f7d708;
+	text-decoration: none;
+	color: #009ece;
+	font-weight: 600;
+}
+
+/* Specific styling for registration button */
+#register.button{
+	margin-top: 58px;
+}
+
+/* Thematic break on login page */
+hr{
+	height:1px;
+	border-width:0;
+	color:#feffff;
+	background-color:#feffff;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
 
 /**********
 
@@ -81,7 +137,10 @@ div.contentBlock{
 	float: left;
 }
 
-
+/* Centers links */
+div.center {
+	text-align:center;
+}
 
 /**********
 
@@ -109,10 +168,6 @@ div#sideContent h1 a{
 	
 }
 
-div#sideContent h1 a:hover{
-	background-color: #feffff;
-}
-
 div#sideContent a.learn{
 	display: block;
 	margin-top: 5px;
@@ -126,6 +181,52 @@ div#sideContent a.learn{
 	text-decoration: none;
 }
 
+/* Registration link on the login page */
+div#sideContent a.register{
+	display: inline-block;
+	width:133px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	text-align:center;
+	font-size: 13px;
+	background-color: #f7d708;
+	text-decoration: none;
+	color: #009ece;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Hover color for links */
+div#sideContent h1 a:hover{
+	background-color: #feffff;
+}
+
+/* Hover color for register link on login page */
+div#sideContent a.register:hover{
+	background-color: #feffff;
+}
+
+/* Hoven color for buttons */
+div#sideContent .button:hover{
+	background-color: #feffff;
+}
+
+/* Up arrow styling */
+div#sideContent img.goBack{
+	margin-bottom: 20px;
+	padding: 30px 30px 30px 0px;
+}
+
+.vertical{
+	margin-left: 395px;
+	padding: 30px 30px 0px 30px;
+}
+
+
 div#sideContent a.learn:hover{
 	text-decoration: underline;
 }
+
+
