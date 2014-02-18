@@ -53,19 +53,18 @@
 
 
     $('#assignmentToSplash').click(slideAnimationRelativeVertical(-700));
-    $('#assignmentToLab').click(slideAnimationRelativeHorizontal(-513));
+    $('#assignmentToLab').click(slideAnimationAbsoluteHorizontal(-513));
 
     $('#labToAssignment').click(slideAnimationRelativeHorizontal(513));
 
-
     $('#student').click(slideAnimationRelativeVertical(700));
     $('#teacher').click(slideAnimationRelativeVertical(-700));
-    $('#learnMore').click(slideAnimationRelativeHorizontal(-513));
+    $('#learnMore').click(slideAnimationAbsoluteHorizontal(-513));
 
     $('#aboutToRegister').click(slideAnimationRelativeVertical(-700));
     $('#aboutToSplash').click(slideAnimationRelativeHorizontal(513));
 
-    $('#loginToRegister').click(slideAnimationRelativeHorizontal(-513));
+    $('#loginToRegister').click(slideAnimationAbsoluteHorizontal(-513));
     $('#loginToSplash').click(slideAnimationRelativeVertical(700));
 
     $('#registerToLogin').click(slideAnimationRelativeHorizontal(513));
