@@ -181,8 +181,8 @@ div#sideContent a.learn{
 	text-decoration: none;
 }
 
-/* Registration link on the login page */
-div#sideContent a.register{
+/* Style for the standard yellow/blue button */
+div#sideContent a.stdButton{
 	display: inline-block;
 	width:133px;
 	padding-top: 16px;
@@ -203,8 +203,8 @@ div#sideContent h1 a:hover{
 	background-color: #feffff;
 }
 
-/* Hover color for register link on login page */
-div#sideContent a.register:hover{
+/* Hover color for standard button */
+div#sideContent a.stdButton:hover{
 	background-color: #feffff;
 }
 

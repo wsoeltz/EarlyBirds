@@ -40,15 +40,58 @@
             <div id="sideContent">
             	<!-- Students: Enter in assignment code -->
                 <div id="assignmentCode" class="contentBlock">
-                    Assignment Code
-                    <a href="javascript:void(0)" id="assignmentToSplash">Back to splash</a>
-                    <a href="javascript:void(0)" id="assignmentToLab">To Lab screen</a>
+                    <h2>Enter Your Assignment Code</h2>
+                    <!-- Assignment Code form -->
+                    <form id="login" method="post" action="login.php">
+                        <input type="text" name="assignment_code" placeholder="Assignment Code">
+                        <br/><br/>
+                        <div class="center">
+                            <a class="stdButton" href="javascript:void(0)" id="assignmentToLab">Continue</a>
+                        </div>
+                    </form>
+                    <!-- Find assignment code if not sure how -->
+                    <div class="center">
+                        <hr>
+                        Not sure how to find your assignment code?<br><br>
+                        <a class="stdButton" href="javascript:void(0)" id="findAssignCode">Find It</a>
+                    </div>
+                    </form>
+                    <!-- Down arrow to go back to splash div -->
+                    <a title="Go Back to Main Menu" href="javascript:void(0)" id="assignmentToSplash"><img class="goBack vertical" src="css/assets/down_arrow.png"></a>           
                 </div>
-                
                 <!-- Students: Enter in lab code -->
+
+
+
+
                 <div id="labCode" class="contentBlock">
-                    Lab Code
-                    <a href="javascript:void(0)" id="labToAssignment">Back to assignment code</a>
+                <a title="Go Back to Assignment Code" href="javascript:void(0)" id="labToAssignment"><img class="goBack" src="css/assets/left_arrow.png"></a>
+                    <h2>Have you already started working?</h2>
+                    <div class="center">Enter Your Lab Code</div>
+                    <!-- Lab Code form -->
+                    <form id="login" method="post" action="login.php">
+                        <input type="text" name="assignment_code" placeholder="Lab Code">
+                        <br/><br/>
+                        <div class="center">
+                            <a class="stdButton" href="javascript:void(0)" id="assignmentToLab">Continue</a>
+                        </div>
+                    </form>
+                    <!-- Begin if they do not have a lab code-->
+                    <h2>Is this your first time on this assignment?</h2>
+                    <div class="center">
+                        Click below to begin.
+                        <a class="stdButton" href="javascript:void(0)" id="labBegin">Begin</a>
+                    </div>
+                    <!-- Find lab code if not sure how -->
+                    <div class="center">
+                        <hr>
+                        Not sure how to find your assignment code?<br><br>
+                        <a class="stdButton" href="javascript:void(0)" id="findLabCode">Find It</a>
+                    </div>
+                    </form>
+
+
+                
                 </div>
                 
                 <!-- Splash Menu -->
@@ -88,7 +131,7 @@
 	                <div class="center">
 		                <hr>
 		                Don't have an account?<br><br>
-		                <a class="register" href="javascript:void(0)" id="loginToRegister">Register</a>
+		                <a class="stdButton" href="javascript:void(0)" id="loginToRegister">Register</a>
 	                </div>
 	                </form>                    
                 </div>
