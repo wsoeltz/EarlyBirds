@@ -1,0 +1,232 @@
+/**********
+
+		Base Styles
+
+**********/
+
+body{
+
+	background-image: url(assets/classroom_bg.jpg);
+	background-repeat:no-repeat;
+	background-position:center top; 
+	font-family: 'Open Sans', sans-serif;
+	color: #feffff;
+}
+
+h2{
+	font-weight: 600;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+p{
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.5em; 
+	text-align: justify;
+}
+
+/* Login and registration input boxes */
+input{
+	width: 405px;
+	height: 46px;
+	border: 1px;
+	border-color: #e5e5e5;
+	background-color:fbfbfb;
+	font-size: 15px;
+	margin-top: 28px;
+	padding-left: 15px;
+}
+
+/* Styling placeholder in input box */
+/* Source: http://stackoverflow.com/questions/9538921/placeholder-text-formatting */
+/*For Webkit browsers (Chrome, Safari) */
+input::-webkit-input-placeholder {
+	color: #bdc2c4;
+	font-size: 15px;
+}
+
+/* Styling placeholder in input box */
+/* Source: http://stackoverflow.com/questions/9538921/placeholder-text-formatting */
+/* For Mozilla Firefox */
+input:-moz-placeholder {
+	color: #bdc2c4;
+	font-size: 15px;
+}
+
+/* Login and registration button */
+.button{
+	margin-top: 28px;
+	width: 133px;
+	height:45px;
+	padding: 0px; /* centers text in button - http://stackoverflow.com/questions/2883373/simple-css-issue-text-wont-center-in-a-button */
+	text-transform: uppercase;
+	font-size: 13px;
+	background-color: #f7d708;
+	text-decoration: none;
+	color: #009ece;
+	font-weight: 600;
+}
+
+/* Specific styling for registration button */
+#register.button{
+	margin-top: 58px;
+}
+
+/* Thematic break on login page */
+hr{
+	height:1px;
+	border-width:0;
+	color:#feffff;
+	background-color:#feffff;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+/**********
+
+		Alignment
+
+**********/
+
+
+div#contentWrapper{
+	width:1276px;
+	margin: 0 auto;
+	position: relative;
+}
+
+div#logoHalf{
+	width: 763px;
+	float: left;
+	padding-top: 50px;
+	text-align: center;
+}
+
+div#blueDrop{
+	position: fixed;
+	width: 6000px;
+	height: 6000px;
+	top: -1000px;
+	z-index: -1000;
+	background-color: #009ece;
+}
+
+div#navHalf{
+	width: 513px;
+	height: 700px;
+	float: left;
+	background-color: #009ece;
+	overflow: hidden;
+}
+
+div#sideContent{
+	position: relative;
+	height: 700px;
+	width: 1030px;
+	top:-700px;
+}
+
+div.contentBlock{
+	padding-top: 50px;
+	display: inline-block;
+	height: 650px;
+	width: 404px;
+	padding-left: 54px;
+	padding-right: 54px;
+	float: left;
+}
+
+/* Centers links */
+div.center {
+	text-align:center;
+}
+
+/**********
+
+		main body styles
+
+**********/
+
+h2.extraSize{
+	font-size: 50px;
+	margin-bottom: 248px;
+}
+
+div#sideContent h1 a{
+	display: inline-block;
+	width:405px;
+	text-align:center;
+	font-size: 71px;
+	background-color: #f7d708;
+	text-decoration: none;
+	color: #009ece;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+}
+
+div#sideContent a.learn{
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 30px;
+	color: #f7d708;
+	font-weight: 600;
+	background-image: url(assets/right_arrow.png);
+	background-repeat: no-repeat;
+	background-position: 100px 3px;
+	width: 125px;
+	text-decoration: none;
+}
+
+/* Style for the standard yellow/blue button */
+div#sideContent a.stdButton{
+	display: inline-block;
+	width:133px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	text-align:center;
+	font-size: 13px;
+	background-color: #f7d708;
+	text-decoration: none;
+	color: #009ece;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Hover color for links */
+div#sideContent h1 a:hover{
+	background-color: #feffff;
+}
+
+/* Hover color for standard button */
+div#sideContent a.stdButton:hover{
+	background-color: #feffff;
+}
+
+/* Hoven color for buttons */
+div#sideContent .button:hover{
+	background-color: #feffff;
+}
+
+/* Up arrow styling */
+div#sideContent img.goBack{
+	margin-bottom: 20px;
+	padding: 30px 30px 30px 0px;
+}
+
+.vertical{
+	margin-left: 395px;
+	padding: 30px 30px 0px 30px;
+}
+
+
+div#sideContent a.learn:hover{
+	text-decoration: underline;
+}
+
+

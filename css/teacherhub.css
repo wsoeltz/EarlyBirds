@@ -1,0 +1,312 @@
+/* 
+    Teacher Hub Styles
+    Created 2/19/2014 by Kaitlyn Carcia
+    
+        Will Soeltz and Kaitlyn Carcia
+        University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+        File: teacherhub.css
+        Main styles for Teacher Hub
+        Last updated February 20, 2014 by KC
+*/
+
+/**********
+
+                Base Styles
+
+**********/
+
+/* Font style for most of the page */
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Header style for Welcome box title w/ white text*/
+h2.white{
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Header style for Assignments and Information Sheet w/ gray text */
+h2.gray{
+    color: #627176; /* gray */
+    font-weight: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* "Assignment Code:" header */
+h2.acode{
+    font-weight: 600;
+    font-size: 12px;
+    color: #627176; /* gray */
+}
+
+/* Header style for name in welcome container */
+h3.name{
+    color: #fff;
+    font-weight: 600; /* semi-bold */
+    font-size: 12px;
+}
+
+/* Header style for informational sheet info */
+h3.info{
+    color: #627176;
+    font-size: 12px;
+    line-height: 200%;
+}
+
+/* Header for the actual assignment code, e.g. Apple10 */
+h3.acode{
+    color: #627176; /* gray */
+    font-family: 'Lucida Console';
+    font-size: 15px;
+}
+
+/* Header style for email welcome container */
+h4{
+    color: #fff;
+    font-weight: 600;
+    font-size: 10px;
+}
+
+
+/**********
+
+                Links
+
+**********/
+
+/* Logout link */
+a.logout{
+    font-size: 10px;
+    color: #919ea2;
+    text-decoration: none;
+}
+
+/* Hover over logout link */
+a.logout:hover{
+    color: #919ea2;
+    text-decoration: underline;
+}
+
+/* General ;ink style on teacher hub */
+a.teacherLink{
+    background-color: #f7d708; /* yellow */
+    width: 133px;
+    display: inline-block;
+    padding: 16px 0px 16px 0px;
+    margin-bottom: 14px;
+    color: #009ece; /* blue */
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;	
+    font-weight: 600;
+}
+
+/* Hover color for links (New, View Labs, Open) */
+a.teacherLink:hover{
+    background-color: #feffff; /* white */
+}
+
+/* Margin/float for View Labs link in assignment sections */
+a.viewLabs{
+    margin-right: 10px;
+    float: right;
+}
+
+a.new{
+	margin-top: 20px;
+}
+
+/* Margin for View Labs link in assignment sections */
+a.open{
+    margin-top: 25px;
+}
+
+/* Links in the footer */
+a.footer{
+    color: #009ece;
+    text-decoration: none;
+}
+
+/* Hover over links in the footer */
+a.footer:hover{
+    color: #009ece;
+    text-decoration: underline;
+}
+
+/**********
+
+                Alignment
+
+**********/
+
+/* Container for entire header */
+div#header{
+    background-color: #fff;
+    height: 84px;
+}
+
+/* Container for logo and logout link in the header */
+div#topContainer{
+    width: 1060px;
+    height: 74px;
+    margin: 0 auto; /* center */
+}
+
+/* Container for area between header and footer */
+/* Source: http://stackoverflow.com/questions/16757964/why-isnt-margin-top-property-working */
+div#mainContainer{
+    background-image: url(assets/egg_shell.png);
+    overflow: auto; /* For top and bottom margins, see source */
+}
+
+/* Contains welcome, assignment, and info sheet divs */
+div#container{
+    background-color: #fff;
+    width: 1060px;
+    margin: 0 auto;  /* center */
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+/* Container for welcome information */
+div#welcomeContainer{
+    background-color: #9ccf31; /* green */
+    width: 290px;
+    float: left;
+}
+
+/* Container for content in welcome container */
+div#welcomeContent{
+    margin: 23px 0px 23px 36px;
+    line-height: 125%;
+}
+
+/* Container for ALL assignment information */
+div#assignmentsContainer{
+    width: 420px;
+    margin-bottom: 38px;
+    float: left;
+}
+
+/* Container for a single assignment in the assignments container */
+div#assignment{
+    border: 1px solid #bdc2c4; /* gray */
+}
+
+/* Container for assignment title in the assignment container */
+div#assignmentTitle{
+    background-color: #009ece; /* blue */
+    width: 354px;
+    padding: 10px 0px 10px 8px;
+    margin-bottom: 10px;
+    color: #fff; /* white - font color */
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Container for all other content in assignment container */
+div#assignmentContent{
+    width: 200px;
+    margin-left: 10px;
+}
+
+/* Container for informational sheet */
+div#infoSheetContainer{
+    background-color: #fff;
+    width: 350px;
+    float: left;	
+}
+
+/* Container for content in assignments and informational sheet container */
+div#contentContainer{
+    margin: 23px 28px 23px 28px;
+}
+
+/* Container for entire footer */
+div#footer{
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Container for content in footer */
+div#bottomContent{
+    width: 1060px;
+    margin: 0 auto;
+    background-color: #fff;	
+}
+
+/* Container for contact info */
+div#contact{
+    width: 290px;
+    float: left;
+    color: #627176; /* gray */
+    font-weight: 600;
+    font-size: 8px;
+    line-height: 200%;
+}
+
+/* Container for learn more */
+div#learnMore{
+    width:350px;
+    float: left;
+    margin-left: 420px;
+    color: #627176; /* gray */
+    font-weight: 600;
+    font-size: 8px;
+    line-height: 200%;
+}
+
+/**********
+
+                Miscellaneous
+
+**********/
+
+/* Blue line at top of page */
+div#blueLine{
+    background-color: #009ece; /* blue */
+    width: 100%;	
+    height: 10px;
+    position: absolute;
+    top: 0px;
+}
+
+/* Contains logo image, also makes logo image appear as a link */
+#logo{
+    background-image: url(assets/logo_small.png);
+    background-repeat: no-repeat;
+    width: 203px;
+    height: 58px;
+    margin: 14px 0px 0px 36px;
+    float: left;
+    display: block;
+    text-indent: -9999px; /* removes link text */
+}
+
+/* Contains logout link */
+div#logout{
+    display: inline-block;
+    overflow: hidden;
+    margin: 19px 0px 9px 769px;
+}
+
+
+/*	Keeps parents of floated elements from colliding 
+        Source: http://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing */
+.clearfix:after { 
+    content: " ";
+    display: block; 
+    height: 0; 
+    clear: both;
+}
+
+/* Center elements */
+div.center {
+    text-align: center;
+}
+
+
