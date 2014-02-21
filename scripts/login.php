@@ -44,7 +44,7 @@
   	} else {
   		# User found
   		echo "<br>User found.<br>";
-  		header("Location: http://weblab.cs.uml.edu/~kcarcia/EB_v1_remote/teacherhub.html");
+  		header("Location: ../teacherhub.html");
   	}
 
 	# -------------------------------------------------------------
