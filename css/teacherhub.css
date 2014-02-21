@@ -176,7 +176,7 @@ div#container{
 div#welcomeContainer{
     background-color: #9ccf31; /* green */
     width: 290px;
-    float: left;
+    float: left;    
 }
 
 /* Container for content in welcome container */
@@ -216,8 +216,10 @@ div#assignmentContent{
 
 /* Container for informational sheet */
 div#infoSheetContainer{
+	margin: 20px 0px 20px 0px;
+	border-left: 1px solid #bdc2c4;
     background-color: #fff;
-    width: 350px;
+    width: 349px;
     float: left;	
 }
 
@@ -308,5 +310,3 @@ div#logout{
 div.center {
     text-align: center;
 }
-
-

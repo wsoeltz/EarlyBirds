@@ -30,7 +30,7 @@
  		echo "<br>Hooray! It worked.<br>";
  		
  		# Upon successful registration, users will be redirected to the following URL
-		header("Location: http://weblab.cs.uml.edu/~kcarcia/EB_v1_remote/teacherhub.html");
+		header("Location: ../teacherhub.html");
 	}
 	
 	# -------------------------------------------------------------
