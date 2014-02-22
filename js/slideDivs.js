@@ -53,7 +53,7 @@
 
 
     $('#assignmentToSplash').click(slideAnimationRelativeVertical(-700));
-    $('#assignmentToLab').click(slideAnimationAbsoluteHorizontal(-513));
+    //$('#assignmentToLab').click(slideAnimationAbsoluteHorizontal(-513));
 
     $('#labToAssignment').click(slideAnimationRelativeHorizontal(513));
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+    Early Birds Opening Splashcreen
+    Created 2/15/2014 by Will Soeltz
+    
+	Will Soeltz and Kaitlyn Carcia
+	University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+	File: index.html
+	Contains splash screen, login, registration, assignment code, lab code, about
+	Last updated February 16, 2014 by KC
+-->
+
+<html>
+  <head>
+    <meta charset = "utf-8" />
+    
+    <link rel = "stylesheet" href = "css/reset.css" />
+    <link rel = "stylesheet" href = "css/studentlogin.css" />
+    
+    <!-- Open Sans Google Font API -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    
+    <title>Early Birds</title>
+  </head>
+  <body>
+    <div id="contentWrapper">
+      <!-- Header containing logo and the Early Bird -->
+      <div id="header">
+        <div id="logoText">
+          <a href="index.html"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="93"/></a>
+        </div>
+        <div id="theEarlyBird">
+          <img src="css/assets/earlybird1.png" title="The Early Bird writes the words!" alt="The Early Bird writes the words!" width="266" height="147"/>
+        </div>
+      </div>
+      <!-- Div containing all of the main body content -->
+      <div id="mainBodyContent">
+        <!-- Left div for "Is this your first time?" -->
+        <div class="labEntry left">
+          <h2>Is this your first time working on this lab?</h2>
+          <form id="login" method="post" action="scripts/labcode.php">
+              <input type="text" name="assignment_code" placeholder="What Is Your Name?">
+              <br/><br/>
+              <div class="center">
+                  <a class="stdButton" href="javascript:void(0)" id="assignmentToLab">Begin New Lab</a>
+              </div>
+          </form>
+        </div>
+        <!-- Right div for "Have you started this lab?" -->
+        <div class="labEntry right">
+          <h2>Have you already started this lab?</h2>
+          <!-- Lab Code form -->
+          <form id="login" method="post" action="scripts/labcode.php">
+              <input type="text" name="assignment_code" placeholder="Enter Your Lab Code Here">
+              <br/><br/>
+              <div class="center">
+                  <a class="stdButton" href="javascript:void(0)" id="assignmentToLab">Continue Working</a>
+              </div>
+          </form>
+        </div>
+        <!-- Bottom div for Help -->
+        <div id="findCode">
+          <p>Not sure how to find your lab code?</p>
+          <a class="stdButton" href="javascript:void(0)">Find It</a>
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+</html>

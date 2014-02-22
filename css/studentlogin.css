@@ -1,0 +1,163 @@
+/**********
+
+		Base Styles
+
+**********/
+
+body{
+
+	background-image: none;
+	background-color: #29a8cf; 
+	font-family: 'Open Sans', sans-serif;
+	color: #feffff;
+}
+
+h2{
+	font-weight: 600;
+	font-size: 18px;
+}
+
+
+p{
+	font-size: 16px;
+	margin-top: 28px;
+	margin-bottom: 28px;
+}
+
+/* Login and registration input boxes */
+input{
+	width: 250px;
+	height: 46px;
+	border: 1px;
+	border-color: #e5e5e5;
+	background-color:#fbfbfb;
+	font-size: 15px;
+	margin-top: 28px;
+	padding-left: 15px;
+}
+
+/* Styling placeholder in input box */
+/* Source: http://stackoverflow.com/questions/9538921/placeholder-text-formatting */
+/*For Webkit browsers (Chrome, Safari) */
+input::-webkit-input-placeholder {
+	color: #bdc2c4;
+	font-size: 15px;
+}
+
+/* Styling placeholder in input box */
+/* Source: http://stackoverflow.com/questions/9538921/placeholder-text-formatting */
+/* For Mozilla Firefox */
+input:-moz-placeholder {
+	color: #bdc2c4;
+	font-size: 15px;
+}
+
+/* Login and registration button */
+.button{
+	margin-top: 28px;
+	width: 133px;
+	height:45px;
+	padding: 0px; /* centers text in button - http://stackoverflow.com/questions/2883373/simple-css-issue-text-wont-center-in-a-button */
+	text-transform: uppercase;
+	font-size: 13px;
+	background-color: #f7d708;
+	text-decoration: none;
+	color: #009ece;
+	font-weight: 600;
+}
+
+/**********
+
+		Alignment
+
+**********/
+
+/* Create wrapper that holds all content */
+div#contentWrapper{
+	width:1066px;
+	margin: 0 auto;
+}
+
+/* Create wrapper that holds all header content */
+div#header{
+	width: 1066px;
+	height: 140px;
+	display: block;
+	position: relative;
+}
+
+/* Position the logo text "EarlyBirds" */
+div#logoText{
+	width:409px;
+	margin-left: 16px;
+	position: absolute;
+	top:37px;
+}
+
+/* Position the Early Bird character */
+div#theEarlyBird{
+	position: absolute;
+	top: 0;
+	left: 800px;
+	z-index: 50;
+}
+
+/* Create wrapper that holds all main body content */
+div#mainBodyContent{
+	width: 1066px;
+	background-color: #009ece;
+	position: relative;
+	height: 560px;
+	margin-bottom: 50px;
+}
+
+div.labEntry{
+	display: inline-block;
+	margin-right: -4px; /* counteracts wierd spacing issue */
+	width: 531px;
+	height: 310px;
+	text-align: center;
+	position: absolute;
+	padding-top: 50px; 
+}
+
+.right{
+	left:533px;
+	border-left:2px solid #4fb2d1;
+}
+
+div#findCode{
+	position: absolute;
+	text-align: center;
+	top: 360px;
+	width: 1066px;
+	height: 200px;
+	border-top:2px solid #4fb2d1;
+}
+
+/**********
+
+		Main Body Styles
+
+**********/
+
+a.stdButton{
+	display: inline-block;
+	width:143px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	text-align:center;
+	font-size: 13px;
+	background-color: #f7d708;
+	text-decoration: none;
+	color: #009ece;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Hover color for standard button */
+a.stdButton:hover{
+	background-color: #feffff;
+}
