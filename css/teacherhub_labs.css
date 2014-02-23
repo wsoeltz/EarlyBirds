@@ -83,7 +83,7 @@ a.return{
     position:absolute;
 }
 
-/* Hover color for view labs week */
+/* Hover color for view labs link */
 a.viewLab:hover{
     background-color: #009ece; /* blue */
     color: #f7d708; /* yellow */
