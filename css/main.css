@@ -26,6 +26,13 @@ p{
 	text-align: justify;
 }
 
+p.learnMore {
+	font-size: 15px;
+	line-height:150%;
+	text-align: left;
+	margin-bottom:5px;
+}
+
 /* Login and registration input boxes */
 input{
 	width: 405px;
