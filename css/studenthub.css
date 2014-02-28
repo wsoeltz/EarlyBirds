@@ -1,0 +1,169 @@
+/* 
+    Teacher Hub Styles
+    Created 2/27/2014 by Kaitlyn Carcia
+    
+        Will Soeltz and Kaitlyn Carcia
+        University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+        File: studenthub.css
+        Main styles for Student Hub
+        Last updated February 27, 2014 by KC
+*/
+
+/**********
+
+		Base Styles
+
+**********/
+
+/* General background color, font-family, and font color */
+body{
+	background-color: #29a8cf; /* blue */
+	font-family: 'Open Sans', sans-serif;
+	color: #feffff; /* white */
+}
+
+/**********
+
+		Links
+
+**********/
+
+/* General link styles */
+a.stdButton{
+	width: 166px;
+	height: 54px;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: middle;
+	line-height: 54px;
+	font-size: 13px;
+	font-weight: 600;
+	text-transform: none;
+}
+
+/* Styling for the previous link */
+a.previous{
+	background-image: url(assets/left_arrow_blue.png);
+	background-repeat: no-repeat;
+	background-position: 9px 16px;
+	margin: 15px 243px 0px 35px;
+}
+
+/* Styling for the next link */
+a.next{
+	background-image: url(assets/right_arrow_blue.png);
+	background-repeat: no-repeat;
+	background-position: 126px 16px;
+	margin: 15px 35px 0px 239px;
+}
+
+/* Styling for the save link */
+a.save{
+	background-image: url(assets/save_mark.png);
+	background-repeat: no-repeat;
+	background-position: 126px 16px;
+	background-color: #9ccf31; /*  green */
+	color: #feffff; /* white */
+}
+
+/* Styling for lab name */
+h2{
+	font-weight: 800;
+	font-size: 17px;
+	margin-bottom: 5px;
+}
+
+/* Styling for multiple headers on studenthub */
+h3{
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 150%;
+	display: inline-block;
+}
+
+/* Bold for many headers */
+.bold{
+	font-weight: 700;
+}
+
+/* Smaller font */
+h4{
+	font-size: 11px;
+	line-height: 150%;
+}
+
+/**********
+
+		Alignment
+
+**********/
+
+/* Contains assignment info, tabs, buttons - Everything in the darker blue -
+	Height is no longer pre-defined */
+div#mainBodyContent{
+	height: 100%;
+}
+
+/* Logo text div - increase width */
+div#logoText{
+	width: 431px;
+}
+
+/* Add space between logo and main container */
+div#header{
+	padding-bottom: 14px;
+}
+
+/* Container for all lab info */
+div#labInfo{
+	margin: 25px 35px 42px 35px;
+}
+
+/* Placeholder for tabs */
+div#tabs{
+	background-color: #f7d708; /* yellow */
+	height: 346px;
+	width: 996px;
+	margin: 0px 35px 0px 35px;
+}
+
+/* Div for labs hints */
+div#labHelp{
+	width: 996px;
+	background-color: #4fb2d1; /* light blue */
+	margin: 0px 35px 0px 35px;
+	position: relative;
+}
+
+/* Container for hints */
+div#hintContainer{
+	width: 650px;
+	padding: 15px 0px 25px 20px;
+	float: left;
+}
+
+/* Bird sitting on Next button */
+div#bird{
+	margin-left:725px;
+	position: absolute;
+}
+
+/**********
+
+		Main Body Styles
+
+**********/
+
+/*  Keeps parents of floated elements from colliding 
+        Source: http://stackoverflow.com/questions/218760/how-do-you-keep-parents-of-floated-elements-from-collapsing */
+.clearfix:after { 
+    content: " ";
+    display: block; 
+    height: 0; 
+    clear: both;
+}
+
+/* Centers links */
+div.center {
+	text-align:center;
+}
