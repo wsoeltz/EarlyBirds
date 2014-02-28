@@ -66,6 +66,12 @@ a.save{
 	color: #feffff; /* white */
 }
 
+/* Styling for the save link on hover*/
+a.save:hover{
+	background-color: #feffff; /*  green */
+	color: #9ccf31; /* white */
+}
+
 /* Styling for lab name */
 h2{
 	font-weight: 800;
@@ -75,8 +81,8 @@ h2{
 
 /* Styling for multiple headers on studenthub */
 h3{
-	font-weight: 400;
-	font-size: 14px;
+	font-weight: 600;
+	font-size: 15px;
 	line-height: 150%;
 	display: inline-block;
 }
@@ -90,6 +96,12 @@ h3{
 h4{
 	font-size: 11px;
 	line-height: 150%;
+}
+
+p{
+	margin-top: 10px;
+	font-size: 13px;
+	line-height: 1.7em;
 }
 
 /**********
