@@ -51,7 +51,7 @@ h3.name{
 
 /* Header style for informational sheet info */
 h3.info{
-    color: #627176;
+    color: #627176; /* gray */
     font-size: 12px;
     line-height: 200%;
 }
