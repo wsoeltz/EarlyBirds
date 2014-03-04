@@ -44,9 +44,9 @@
 	padding: .5em 1em;
 	text-decoration: none;
 	background-color: #C0C0C0; /* gray - this */
-	width: 134px; /* this */
-	height: 35px; /* this */
-	border: 3px solid #C0C0C0; /* gray - this */
+	width: 140px; /* this */
+	height: 41px; /* this */
+	/*border: 3px solid #C0C0C0;  gray - this */
 	background-image: url(../../css/assets/checkbox_empty.png); /* this */
 	background-repeat: no-repeat; /* this */
 	background-position: 133px 23px; /* this */
@@ -71,6 +71,8 @@
 	background-repeat: no-repeat; /* this */
 	background-position: 133px 23px; /* this */
 	outline: none; /* this */
+	width: 134px; /* this */
+	height: 35px; /* this */
 }
 .ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
 	cursor: pointer;

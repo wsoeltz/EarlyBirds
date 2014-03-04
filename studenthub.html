@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <!--
-    Early Birds Student Hub
-    Created 2/27/2014 by Kaitlyn Carcia
-    
-        Will Soeltz and Kaitlyn Carcia
-        University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-        File: studenthub.html
-        Screen contains all tools necessary to create lab report
-        Last updated March 2, 2014 by KC
+Early Birds Student Hub
+Created 2/27/2014 by Kaitlyn Carcia
+Will Soeltz and Kaitlyn Carcia
+University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+File: studenthub.html
+Screen contains all tools necessary to create lab report
+Last updated March 2, 2014 by KC
 -->
 
 <html>
@@ -20,11 +19,11 @@
         <link rel = "stylesheet" href = "css/studenthub.css" />
 
         <!-- Open Sans Google Font API -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,800' rel='stylesheet' type='text/css'>
 
         <title>Early Birds</title>
 
-		<!-- jQuery -->
+<!-- jQuery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <!-- jQuery UI -->
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
@@ -45,22 +44,22 @@
             <!-- Header containing logo and the Early Bird -->
             <div id="header">
                 <div id="logoText">
-                    <a href="index.html"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="431" height="97"/></a>
+                    <a href="index.html"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="93"/></a>
                 </div>
             </div>
             
             <!-- Container for all main content -->
             <div id="mainBodyContent">
-            	<!-- Keeps parents of floating elements from collasping -->
+             <!-- Keeps parents of floating elements from collasping -->
                 <div class="clearfix">
-                	<!-- Lab/teacher name and teacher email information - Will eventually be replaced w/ PHP -->
+                 <!-- Lab/teacher name and teacher email information - Will eventually be replaced w/ PHP -->
                     <div id="labInfo" style="float:left;">
                         <h2>Gravity Apples</h2>
                         <h3 class="bold">Teacher:</h3> <h3>John Smith</h3><br>
                         <h3 class="bold">Contact:</h3> <h3>jsmith@gmail.com</h3><br>
                     </div>
 
-					<!-- Student/lab code information on left - Will eventually be replaced w/ PHP -->
+<!-- Student/lab code information on left - Will eventually be replaced w/ PHP -->
                     <div id="labInfo" style="float:right; text-align:right;">
                         <h3 class="bold">Student:</h3> <h3>Balthazar McAndrews Junior</h3><br>
                         <font color="#f7d708"><h3>Your Lab Code:</h3> <h3 class="bold">17</h3></font><br>
@@ -68,7 +67,7 @@
                     </div>
                 </div>
                 
-				<!-- All tabs for lab report -->
+<!-- All tabs for lab report -->
                 <div id="tabs">
                     <ul>
                         <li><a id="#tabs1" href="#tabs-1">Problem</a></li>
@@ -79,7 +78,9 @@
                         <li><a id="#tabs6" href="#tabs-6">Conclusion</a></li>
                     </ul>
                     <div id="tabs-1">
-						<!-- Input box here -->
+<!-- Input box here 
+<textarea name="problemInput" class="textInput"></textarea>
+-->
                     </div>
                     <div id="tabs-2">
                         <!-- Input box here -->
@@ -88,25 +89,24 @@
                         <!-- Input box here -->
                     </div>
                     <div id="tabs-4">
-						<!-- Input box here -->
+<!-- Input box here -->
                     </div>
                     <div id="tabs-5">
-						<!-- Input box here -->
+<!-- Input box here -->
                     </div>
                     <div id="tabs-6">
-						<!-- Input box here -->
+<!-- Input box here -->
                     </div>
                 </div>
                 
                 <!-- Hint section -->
                 <div id="labHelp">
-                	<!-- Keeps parents of floating elements from collasping -->
+                 <!-- Keeps parents of floating elements from collasping -->
                     <div class="clearfix">
                         <div id="hintContainer">
                             <!-- First problem hint that shows on site -->
-                            <h3>Need Help Writing your </h3> <h3 class="bold"> Problem?</h3><br>
-                            <h3>Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah 
-                            Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah.</h3>
+                            <h3>Need Help Writing your</h3><h3 class="bold">&nbsp;Problem?</h3><br>
+                            <p>What questions are you trying to answer? Include any preliminary observations or background information about the subject.</p>
                         </div>
                         <!-- Container for cartoon bird image -->
                         <div id="bird">
@@ -115,10 +115,11 @@
                     </div>
                 </div>
                 
-                <!-- Save, Next, and Previous buttons -->
-                <a id="previous" class="stdButton previous">Previous Section</a>
-                <a id="save" class="stdButton save">Save</a>
-                <a id="next" class="stdButton next">Next Section</a>
+                <div id="navButtons">
+                    <!-- Save, Next, and Previous buttons -->
+                    <a id="previous" class="stdButton previous">Previous Section</a>
+                    <a id="save" class="stdButton save">Save</a>
+                    <a id="next" class="stdButton next">Next Section</a>
                 
                 <!-- Reminder for lab code - eventually PHP code will exist here -->
                 <div class="center">
@@ -126,9 +127,9 @@
                    <h4>Don't forget to write down your lab code</h4>
                    <h4>so you can continue your work later</h4>
                 </div>
-                
+                </div>
                 <!-- Adding some space -->
-                <div style="height: 25px"></div>
+                <div style="height: 170px"></div>
             </div>
         </div>
     <body>
