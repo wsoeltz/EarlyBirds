@@ -1,3 +1,9 @@
+<?php
+	# Displays page ONLY if a session is currently active
+	# http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
+	session_start();
+	if (isset($_SESSION['email']) && isset($_SESSION['name'])) {
+?>
 <!DOCTYPE html>
 <!--
     Teacher Hub
@@ -5,9 +11,9 @@
     
         Will Soeltz and Kaitlyn Carcia
         University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-        File: teacherhub.html
+        File: teacherhub.php
         Main menu for teachers -contains informational sheet, assignments, and welcome message
-        Last updated February 20, 2014 by KC
+        Last updated March 9, 2014 by KC
 -->
 <html>
     <head>
@@ -33,10 +39,10 @@
                 <div class="clearfix">
                     <!-- Logo image appears as link
                              Source: http://ran.ge/2009/11/11/css-trick-turning-a-background-image-into-a-clickable-link/ -->
-                    <a href="teacherhub.html" id="logo" title="Early Birds">Early Birds</a> 
+                    <a href="teacherhub.php" id="logo" title="Early Birds">Early Birds</a> 
                     <!-- Contains logout link -->
                     <div id="logout">
-                        <a class="logout" href="index.html">Logout</a>
+                        <a class="logout" href="scripts/logout.php">Logout</a>
                     </div>
                 </div>
             </div>
@@ -55,10 +61,14 @@
                     <div id="welcomeContainer">
                         <div id="welcomeContent">
                             <h2 class="white">Welcome to Early Birds</h2>
-                            <!-- Will eventually use PHP for name -->
-                            <h3 class="name">Joe Smith</h3>
-                            <!-- Will eventually use PHP for email -->
-                            <h4>jsmith@yahoo.com</h4>
+                            <!-- Displays user's name -->
+                            <?php
+                            	echo "<h3 class='name'>" . $_SESSION['name'] . "</h3>";
+                            ?>
+                            <!-- Displays user's email -->
+                            <?php
+                            	echo "<h4>" . $_SESSION['email'] . "</h4>";
+                            ?>
                         </div>
                     </div>
 
@@ -84,7 +94,7 @@
                                     </div>
                                     <!-- Keeps parents of floating elements from collasping -->
                                     <div class="clearfix">
-                                        <a class="teacherLink viewLabs" href="teacherhub_labs.html">View Labs</a>
+                                        <a class="teacherLink viewLabs" href="teacherhub_labs.php">View Labs</a>
                                         <div id="assignmentContent">
                                             <h2 class="acode">Assignment Code:</h2><br>
                                             <h3 class="acode">SmallHat12</h3>
@@ -135,3 +145,9 @@
             </div>
     </body>
 </html>
+<?php
+	# Otherwise redirect to splash page
+	 } else {
+	 	header("Location: index.html");
+	}
+?>

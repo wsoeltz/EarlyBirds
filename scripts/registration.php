@@ -1,5 +1,4 @@
 <?php
-	
 	# Kaitlyn Carcia and Will Soeltz
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: registration.php
@@ -23,14 +22,18 @@
  	
  	if ($values != false) {
  		# Email is already in use
- 		echo "<br>Email is already in use.<br>";
+ 		echo "<br>Validation message will eventually be added - Email is already in use.<br>";
  	} else {
 	 	# Otherwise, create new user
  		addUserToDatabase($name, $email, $password);
- 		echo "<br>Hooray! It worked.<br>";
  		
+ 		# Start session - http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
+  		session_start();
+ 		$_SESSION['name'] = $name;
+ 		$_SESSION['email'] = $email;
+ 		 		
  		# Upon successful registration, users will be redirected to the following URL
-		header("Location: ../teacherhub.html");
+		header("Location: ../teacherhub.php");
 	}
 	
 	# -------------------------------------------------------------

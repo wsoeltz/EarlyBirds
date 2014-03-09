@@ -1,10 +1,9 @@
 <?php
-
 	# Kaitlyn Carcia and Will Soeltz
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: registration.php
 	# Attempts to login into account
-	# Last updated February 16, 2014 by KC
+	# Last updated March 9, 2014 by KC
 	
 	# File includes database, username, and password information
 	require "userpass.php";
@@ -13,8 +12,8 @@
  	connect();
  	
  	# Initializes email and password
-	$email =  $_REQUEST['email'];
-	$password =  $_REQUEST['password'];
+	$email = $_REQUEST['email'];
+	$password = $_REQUEST['password'];
 	
 	# Encrypts password
 	$password = sha1($email.$password);
@@ -35,16 +34,28 @@
 
 		if ($values == false) {
 			# No account associated with email
-			echo "<br>No account is associated with this email.<br>";
+			echo "<br>Validation message will eventually be added - No account is associated with this email.<br>";
 		} else {
 			# Incorrect password
-			echo "<br>Incorrect password.<br>";
-  			# header("Location: no-user.php");
+			echo "<br>Validation message will eventually be added - Incorrect password.<br>";
   		}
   	} else {
   		# User found
-  		echo "<br>User found.<br>";
-  		header("Location: ../teacherhub.html");
+
+		# Start session - http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
+  		session_start();
+  			
+  		# Retrieves name associated w/ account in database
+    	$result = mysql_query("SELECT Name FROM Teachers WHERE Email='$email' AND Password='$password'");
+    	$row = mysql_fetch_array($result);
+		$name=$row['Name'];
+
+		# Sets current session email and name variables
+ 		$_SESSION['email'] = $email;
+  		$_SESSION['name'] = $name;
+ 		
+ 		# Redirects user to teacher hub
+  		header("Location: ../teacherhub.php");
   	}
 
 	# -------------------------------------------------------------
