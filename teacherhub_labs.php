@@ -1,3 +1,9 @@
+<?php
+	# Displays page only if current session is active
+	# http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
+	session_start();
+	if (isset($_SESSION['email']) && isset($_SESSION['name'])) {
+?>
 <!DOCTYPE html>
 <!--
     Teacher Hub Labs
@@ -5,9 +11,9 @@
     
         Will Soeltz and Kaitlyn Carcia
         University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-        File: teacherhub_labs.html
+        File: teacherhub_labs.php
         Shows teachers labs available
-        Last updated February 23, 2014 by KC
+        Last updated March 9, 2014 by KC
 -->
 <html>
     <head>
@@ -34,10 +40,10 @@
                 <div class="clearfix">
                     <!-- Logo image appears as link
                              Source: http://ran.ge/2009/11/11/css-trick-turning-a-background-image-into-a-clickable-link/ -->
-                    <a href="teacherhub.html" id="logo" title="Early Birds">Early Birds</a> 
+                    <a href="teacherhub.php" id="logo" title="Early Birds">Early Birds</a> 
                     <!-- Contains logout link -->
                     <div id="logout">
-                        <a class="logout" href="index.html">Logout</a>
+                        <a class="logout" href="scripts/logout.php">Logout</a>
                     </div>
                 </div>
             </div>
@@ -54,11 +60,15 @@
                     <div id="welcomeContainer">
                         <div id="welcomeContent">
                             <h2 class="white">View Labs</h2>
-                            <!-- Will eventually use PHP for name -->
-                            <h3 class="name">Joe Smith</h3>
+                            <!-- Displays user's name -->
+                            <?php
+                            	echo "<h3 class='name'>" . $_SESSION['name'] . "</h3>";
+                            ?>
                             <!-- Will eventually use PHP for email -->
-                            <h4 style="margin-bottom: 30px;">jsmith@yahoo.com</h4>
-                            <a class="return" href="teacherhub.html">Return to Assignments</a>
+                            <?php
+                            	echo "<h4 style='margin-bottom: 30px;'>" . $_SESSION['email'] . "</h4>";
+                            ?>
+                            <a class="return" href="teacherhub.php">Return to Assignments</a>
                         </div>
                     </div>
 
@@ -151,3 +161,9 @@
             </div>
     </body>
 </html>
+<?php
+	# Otherwise redirect to splash screen
+	 } else {
+	 	header("Location: index.html");
+	}
+?>
