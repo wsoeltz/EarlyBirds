@@ -54,6 +54,12 @@
  		$_SESSION['email'] = $email;
   		$_SESSION['name'] = $name;
  		
+ 		# Store teacher ID in $_SESSION['id'] - will make future queries easier
+ 		$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email'");
+ 		$result = mysql_fetch_array($result);
+ 		$teacher_id = $result['Teacher_ID'];
+ 		$_SESSION['id'] = $teacher_id;
+ 		
  		# Redirects user to teacher hub
   		header("Location: ../teacherhub.php");
   	}
