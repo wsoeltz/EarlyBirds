@@ -56,7 +56,7 @@ function hint(active){
     switch(active){
         case -1:
         	// Replaces with problem hint
-            var problem = '<h3>Need Help Writing your<h3 class="bold"=">&nbsp;Problem?</h3><p>What questions are you trying to answer? Include any preliminary observations or background information about the subject.</p>';
+            var problem = '<h3>Need Help Writing your<h3 class="bold"=">&nbsp;Problem?</h3><p>What questions are you trying to answer?</p>';
             $( "div#hintContainer" ).empty();
             $( "div#hintContainer" ).append(problem);
             break;
@@ -68,25 +68,25 @@ function hint(active){
             break;
         case 1:
         	// Replaces with materials hint
-            var materials = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Materials?</h3><p>Make a list of all items used in the lab, and in what quantity.</p>';                    
+            var materials = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Materials?</h3><p>Make a list of all items used in the lab, and in what quantity. For example, you could list 1 plant and 1 yard stick as materials for an experiment to measure a growing plant.</p>';                    
             $( "div#hintContainer" ).empty();
             $( "div#hintContainer" ).append(materials);
             break;
         case 2:
         	// Replaces with procedure hint
-            var procedure = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Procedure?</h3><p>Use starting words such as obtain instead of get. Do not start each one with First, I went and got…etc. Remember another person may have to duplicate your lab, so it must be written in a clear, concise matter that will not cause error in their lab. Reproducibility is important for your experiment findings to be valid.</p>';
+            var procedure = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Procedure?</h3><p>Write down each step that you made during your lab. For example write it as "First we ____. Secondly we ____. Third we ____. And then we ____." Be sure to include as many details as possible.</p>';
             $( "div#hintContainer" ).empty();
             $( "div#hintContainer" ).append(procedure);
             break;
         case 3:
         	// Replaces with result hint
-            var result = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Result?</h3><p>Look over your data, determine if your experiment supports or refutes your hypothesis. Do not be afraid of being proven wrong. The experiment is just as valid as one in which you are proven correct. Include a summary of the data - averages, highest, lowest..etc to help the reader understand your results.</p>';
+            var result = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Result?</h3><p>How did the lab go? Did the tests support your hypothesis? Be sure to include all of the information that you got from your lab.</p>';
             $( "div#hintContainer" ).empty();
             $( "div#hintContainer" ).append(result);
             break;
         case 4:
         	// Replaces with conclusion hint
-            var conclusion = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Conclusion?</h3><p>Explain why you accepted or rejected your hypothesis using data from the lab.Try not to copy your data here, you should summarize and reference key information. List one thing you learned and describe how it applies to a real-life situation. Discuss possible errors that could have occurred in the collection of the data.</p>';
+            var conclusion = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Conclusion?</h3><p>What do your results mean? Now that you have completed the lab, what do you have to say about it? What was important about your results?</p>';
             $( "div#hintContainer" ).empty();
             $( "div#hintContainer" ).append(conclusion);
             break;

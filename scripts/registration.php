@@ -31,6 +31,13 @@
   		session_start();
  		$_SESSION['name'] = $name;
  		$_SESSION['email'] = $email;
+ 		
+ 		# Store teacher ID in $_SESSION['id'] - will make future queries easier
+ 		$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email'");
+ 		$result = mysql_fetch_array($result);
+ 		$teacher_id = $result['Teacher_ID'];
+ 		$_SESSION['id'] = $teacher_id;
+ 		
  		 		
  		# Upon successful registration, users will be redirected to the following URL
 		header("Location: ../teacherhub.php");

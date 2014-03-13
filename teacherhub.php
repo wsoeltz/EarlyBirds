@@ -2,7 +2,7 @@
 	# Displays page ONLY if a session is currently active
 	# http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
 	session_start();
-	if (isset($_SESSION['email']) && isset($_SESSION['name'])) {
+ 	if (isset($_SESSION['email']) && isset($_SESSION['name'])) {
 ?>
 <!DOCTYPE html>
 <!--
@@ -13,7 +13,7 @@
         University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
         File: teacherhub.php
         Main menu for teachers -contains informational sheet, assignments, and welcome message
-        Last updated March 9, 2014 by KC
+        Last updated March 12, 2014 by KC
 -->
 <html>
     <head>
@@ -73,37 +73,64 @@
                     </div>
 
                     <!-- Assignments container -->
-                    <div id="assignmentsContainer">
+		           <div id="assignmentsContainer">
                         <!-- Seperate div needed to draw vertical line without causing any alignment issues -->
                         <div class="verticalLine">
                             <!-- Container for content in assignments container -->
                             <div id="contentContainer">
                                 <h2 class="gray">Assignments</h2>
-                                <!-- The following will be used in PHP if a user doesn't have assignments
-                                <h3 class="info">You don't have any assignments. Click below to create one.</h3> -->
                                 <!-- Generate New assignment button -->
                                 <div class="right">
-                                    <a class="createNewAssignment" href="#">Create New Assignment</a>
+                                    <a class="createNewAssignment" href="create_assignment.php">Create New Assignment</a>
                                 </div>	
                                 <!-- White space for visual purposes -->
                                 <div style="height:20px;"></div>
-                                <!-- Will be replaced with PHP code -->
-                                <div id="assignment">
-                                    <div id="assignmentTitle">
-                                        Gravity Apples
-                                    </div>
-                                    <!-- Keeps parents of floating elements from collasping -->
-                                    <div class="clearfix">
-                                        <a class="teacherLink viewLabs" href="teacherhub_labs.php">View Labs</a>
-                                        <div id="assignmentContent">
-                                            <h2 class="acode">Assignment Code:</h2><br>
-                                            <h3 class="acode">SmallHat12</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                 <?php
+                                 	# connects to database
+                                	include "scripts/connect.php";
+                                	
+                                	$Teacher_id = $_SESSION['id'];
+                                	
+                                	# Selects all assignments given a specific teacher ID
+									$result = mysql_query("SELECT * FROM Assignments WHERE Teacher_id='$Teacher_id' ORDER BY Timestamp ASC;");
+									if (!$result) {
+    									die('Invalid query: ' . mysql_error());
+									}
+									$values = mysql_fetch_array($result);
+									
+									# No results found - no assignments
+                                	if (!$values) {
+                                		echo "<h3 class='info'>You don't have any assignments. Click above to create one.</h3>";
+                                	} else {
+                                		# Populate array with all search results	
+                                		$i = 0;
+                                		do {
+        									$array2[$i] = $values;
+                                			$i++;	
+                                	} while ( $values = mysql_fetch_array($result));
+                                	
+                                	# Print array backwards (newest assignment first) 
+                                	for ($i = count($array2)-1; $i >= 0; $i--) {
+                                		echo "<div id='assignment'>";
+                            					echo "<div id='assignmentTitle'>";
+                                        			echo $array2[$i][1];
+                                        		echo "</div>";
+                                        		echo "<div class='clearfix'>";
+                                        			echo "<a class='teacherLink viewLabs' href='teacherhub_labs.php'>View Labs</a>";
+                                        			echo "<div id='assignmentContent'>";
+			                                            echo "<h2 class='acode'>Assignment Code:</h2><br>";
+                                            			echo "<h3 class='acode'>" . $array2[$i][0] . "</h3>";
+                                            		echo "</div>";
+                                            	echo "</div>";
+                                            echo "</div>";
+                                            echo "<div style='height: 38px'></div>";	
+                                	}
+								}
+							?>
+						</div>
+					 </div>
+ 					</div>
+                                
                     
                     <div id="line"></div>
 
@@ -146,7 +173,7 @@
     </body>
 </html>
 <?php
-	# Otherwise redirect to splash page
+	# Otherwise redirect to splash screen
 	 } else {
 	 	header("Location: index.html");
 	}
