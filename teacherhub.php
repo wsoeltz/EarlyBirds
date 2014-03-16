@@ -21,10 +21,26 @@
 
         <!-- Styling for this page -->
         <link rel = "stylesheet" href = "css/reset.css" />
+        <link rel = "stylesheet" href = "css/colorbox.css" />
         <link rel = "stylesheet" href = "css/teacherhub.css" />
+        
 
         <!-- Open Sans Google Font API -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+        <!-- JavaScript pages for create assignment -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/jquery.colorbox.js"></script>
+        <script>
+            $(document).ready(function(){
+                // code for embeding external page
+                //$(".createNewAssignment").colorbox({iframe:true, width:"80%", height:"80%"});
+                
+                //code for using inline html
+                $(".createNewAssignment").colorbox({inline:true, width:"488px", height: "334px"});
+
+            });
+        </script>
 
         <title>Early Birds</title>
     </head>
@@ -81,7 +97,10 @@
                                 <h2 class="gray">Assignments</h2>
                                 <!-- Generate New assignment button -->
                                 <div class="right">
+                                    <!-- This version opens the php page
                                     <a class="createNewAssignment" href="create_assignment.php">Create New Assignment</a>
+                                    -->
+                                    <a class="createNewAssignment" href="#create_assignment_content">Create New Assignment</a>
                                 </div>	
                                 <!-- White space for visual purposes -->
                                 <div style="height:20px;"></div>
@@ -170,6 +189,29 @@
                     </div>
                 </div>
             </div>
+
+
+        <!-- Contains hidden content for creating assignments -->
+            <div style='display:none'>
+                <div id="create_assignment_content">
+                                        
+                    <div id="new_assignmentTitle">New Assignment</div>
+                    <form method="post" action="scripts/assignments.php">
+                        <input type="text" name="name" id="name" placeholder="Assignment Name"><br>
+                        <div id="labCode_new">
+                            <h2 class="acode">Assignment Code</h2>
+                            <div id="acode" style="display:inline-block">
+                                hairyturtle97
+                            </div>
+                        </div>
+                        <input type="submit" class="button" value="Create" id="createAssignment_button">
+                    </form>
+
+                </div>
+            </div>
+        <!-- end hidden content -->
+
+
     </body>
 </html>
 <?php

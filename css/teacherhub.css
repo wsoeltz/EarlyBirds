@@ -358,3 +358,91 @@ div#greenBg{
     border-right: 1px solid #bdc2c4;
     padding-bottom: 20px;
 }
+
+
+
+/**********
+
+                Formatting for lightbox
+
+**********/
+
+/* Container title in the new assignment container */
+div#new_assignmentTitle{
+    background-color: #009ece; /* blue */
+    width: 468px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #fff; /* white - font color */
+    font-weight: 700; /* bold */
+    font-size: 18px;
+}
+
+/* Login and registration input boxes */
+input{
+    width: 428px;
+    height: 46px;
+    border: 1px;
+    border-color: #e5e5e5;
+    background-color:#fbfbfb;
+    font-size: 15px;
+    margin-top: 28px;
+    padding-left: 15px;
+    border-style: solid;
+    color: #798284;
+    margin-left: 20px;
+}
+
+/* Styling placeholder in input box */
+/* Source: http://stackoverflow.com/questions/9538921/placeholder-text-formatting */
+/*For Webkit browsers (Chrome, Safari) */
+input::-webkit-input-placeholder {
+    color: #798284;
+    font-size: 15px;
+}
+
+/* Styling placeholder in input box */
+/* Source: http://stackoverflow.com/questions/9538921/placeholder-text-formatting */
+/* For Mozilla Firefox */
+input:-moz-placeholder {
+    color: #798284;
+    font-size: 15px;
+}
+
+/* Login and registration button */
+.button{
+    margin-top: 28px;
+    width: 133px;
+    height:45px;
+    padding: 0px; /* centers text in button - http://stackoverflow.com/questions/2883373/simple-css-issue-text-wont-center-in-a-button */
+    text-transform: uppercase;
+    font-size: 13px;
+    background-color: #f7d708;
+    text-decoration: none;
+    color: #009ece;
+    font-weight: 600;
+    border-width: 0px;
+    float: right;
+    margin-right: 20px;
+}
+
+.button:hover{
+    cursor: pointer;
+    color: #f7d708;
+    background-color: #009ece;
+}
+
+#labCode_new{
+    width: 133px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 28px;
+}
+
+#labCode_new h2.acode{
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
