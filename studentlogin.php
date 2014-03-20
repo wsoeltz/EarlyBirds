@@ -5,9 +5,9 @@
     
 	Will Soeltz and Kaitlyn Carcia
 	University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-	File: studentlogin.html
+	File: studentlogin.php
   	Page for students to input their lab code to continue working on their assignments.
-	Last updated February 22, 2014 by KC
+	Last updated March 20, 2014 by KC
 -->
 
 <html>
@@ -42,7 +42,7 @@
               <input type="text" name="assignment_code" placeholder="What Is Your Name?">
               <br/><br/>
               <div class="center">
-                  <a class="stdButton" href="studenthub.html" id="assignmentToLab">Begin New Lab</a>
+                  <a class="stdButton stdButton-hover" href="studenthub.php" id="assignmentToLab">Begin New Lab</a>
               </div>
           </form>
         </div>
@@ -54,37 +54,22 @@
               <input type="text" name="assignment_code" placeholder="Enter Your Lab Code Here">
               <br/><br/>
               <div class="center">
-                  <a class="stdButton" href="studenthub.html" id="assignmentToLab">Continue Working</a>
+                  <a class="stdButton stdButton-hover" href="studenthub.php" id="assignmentToLab">Continue Working</a>
               </div>
           </form>
         </div>
         <!-- Bottom div for Help -->
         <div id="findCode">
           <p>Not sure how to find your lab code?</p>
-          <a class="stdButton" href="javascript:void(0)">Find It</a>
+          <a class="stdButton stdButton-hover" href="javascript:void(0)">Find It</a>
         </div>
       </div>
-
     </div>
-    <!-- Footer container -->
-      <div id="footer">
-                <div id="bottomContent">
-                    <!-- Contains contactinfo -->
-                    <div id="contact">
-                        <div style="margin:20px">
-                            Early Birds created by Kaitlyn Carcia and William Soeltz 2014. For questions, comments, or issues please contact us at:
-                            <a class="footer" href="mailto:help@earlybirdswriting.com">help@earlybirdswriting.com</a>
-                        </div>
-                    </div>
-                    <!-- Contains learn more info/link -->
-                    <div id="learnMore">
-                        <div style="margin:20px">
-                            In one single swoop, Early Birds helps familiarize students with a computer all while teaching them the basics of writing a science lab report. 
-                            <a class="footer" href="#">Learn More ></a>
-                        </div>
-                    </div>
-                </div>
-      </div>
+	
+	<?php
+		include "include/studenthub_footer.html";
+	?>
+	
   </body>
 
 </html>

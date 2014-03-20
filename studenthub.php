@@ -78,24 +78,29 @@ Last updated March 2, 2014 by KC
                         <li><a id="#tabs6" href="#tabs-6">Conclusion</a></li>
                     </ul>
                     <div id="tabs-1">
-				<!-- Input box here 
-				<textarea name="problemInput" class="textInput"></textarea>
-				-->
+						<!-- Input box -->
+						<textarea name="problemInput" class="textInput" id="tabs-1-box"></textarea>
                     </div>
+                    
                     <div id="tabs-2">
-                        <!-- Input box here -->
+						<!-- Input box -->
+						<textarea name="problemInput" class="textInput" id="tabs-2-box"></textarea>
                     </div>
                     <div id="tabs-3">
-                        <!-- Input box here -->
+						<!-- Input box -->
+						<textarea name="problemInput" class="textInput" id="tabs-3-box"></textarea>
                     </div>
                     <div id="tabs-4">
-					<!-- Input box here -->
+						<!-- Input box -->
+						<textarea name="problemInput" class="textInput" id="tabs-4-box"></textarea>
                     </div>
                     <div id="tabs-5">
-					<!-- Input box here -->
+						<!-- Input box -->
+						<textarea name="problemInput" class="textInput" id="tabs-5-box"></textarea>
                     </div>
                     <div id="tabs-6">
-					<!-- Input box here -->
+						<!-- Input box -->
+						<textarea name="problemInput" class="textInput" id="tabs-6-box"></textarea>
                     </div>
                 </div>
                 
@@ -117,9 +122,9 @@ Last updated March 2, 2014 by KC
                 
                 <div id="navButtons">
                     <!-- Save, Next, and Previous buttons -->
-                    <a id="previous" class="stdButton previous">Previous Section</a>
+                    <a id="previous" class="stdButton stdButton-hover previous">Previous Section</a>
                     <a id="save" class="stdButton save">Save</a>
-                    <a id="next" class="stdButton next">Next Section</a>
+                    <a id="next" class="stdButton stdButton-hover next">Next Section</a>
                 
                 <!-- Reminder for lab code - eventually PHP code will exist here -->
                 <div class="center">
@@ -132,24 +137,9 @@ Last updated March 2, 2014 by KC
                 <div style="height: 170px"></div>
             </div>
         </div>
-        <!-- Footer container -->
-        <div id="footer">
-                <div id="bottomContent">
-                    <!-- Contains contactinfo -->
-                    <div id="contact">
-                        <div style="margin:20px">
-                            Early Birds created by Kaitlyn Carcia and William Soeltz 2014. For questions, comments, or issues please contact us at:
-                            <a class="footer" href="mailto:help@earlybirdswriting.com">help@earlybirdswriting.com</a>
-                        </div>
-                    </div>
-                    <!-- Contains learn more info/link -->
-                    <div id="learnMore">
-                        <div style="margin:20px">
-                            In one single swoop, Early Birds helps familiarize students with a computer all while teaching them the basics of writing a science lab report. 
-                            <a class="footer" href="#">Learn More ></a>
-                        </div>
-                    </div>
-                </div>
-        </div>
+        
+    	<?php
+			include "include/studenthub_footer.html";
+		?>
     <body>
 </html>

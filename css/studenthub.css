@@ -49,6 +49,11 @@ a.stdButton{
     user-select: none;
 }
 
+/* Hover color for standard button */
+a.stdButton-hover:hover{
+	background-color: #feffff;
+}
+
 /* Styling for the previous link */
 a.previous{
     background-image: url(assets/left_arrow_blue.png);
@@ -82,6 +87,13 @@ a.save:hover{
     color: #9ccf31; /* white */
 }
 
+/* Disabled class for when a user is at the beginning or end of a lab report */
+a.disabled {
+	background-color: #C0C0C0;
+	color:  #feffff;
+	cursor: default;
+}
+
 /* Styling for lab name */
 h2{
     font-weight: 800;
@@ -108,6 +120,7 @@ h4{
     line-height: 150%;
 }
 
+/* General font style on page */
 p{
     margin-top: 10px;
     font-size: 13px;
@@ -191,12 +204,20 @@ div.center {
     text-align:center;
 }
 
-/* code for later implementation of input boxes
+/* code for later implementation of input boxes */
 .textInput{
-        position: absolute;
-        top: 41px;
-        left: 0px;
-        width:990px;
-        height:299px;
-        resize: none;
-}*/
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	padding:10px;
+	width:976px;
+	height:274px;
+	resize: none;
+	border: none;
+}
+
+/* Removes blue outline on input text box
+http://stackoverflow.com/questions/3397113/how-to-remove-border-outline-around-text-input-boxes-chrome */
+*:focus {
+    outline: 0;
+}
