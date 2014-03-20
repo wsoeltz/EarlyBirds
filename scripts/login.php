@@ -5,11 +5,8 @@
 	# Attempts to login into account
 	# Last updated March 9, 2014 by KC
 	
-	# File includes database, username, and password information
-	require "userpass.php";
-		
-	# Connects to database
- 	connect();
+	# connects to database
+	include "connect.php";
  	
  	# Initializes email and password
 	$email = $_REQUEST['email'];
@@ -63,40 +60,4 @@
  		# Redirects user to teacher hub
   		header("Location: ../teacherhub.php");
   	}
-
-	# -------------------------------------------------------------
-	# Connects to database, selects database, shows table in database
-	function connect() {
-		# Connect to database
-		mysql_connect("localhost", DATABASE_USERNAME, DATABASE_PASSWORD)
-			or die("<p>Error connecting to database: " . 
-				 mysql_error() . "</p>");
-
-		echo "<p>Connected to MySQL!</p>";
-
-		# Selects database
-		$db =  DATABASE_NAME;
-
-		mysql_select_db( $db )
-			or die("<p>Error selecting the database your-database-name: " .
-				 mysql_error() . "</p>");
-
-		echo "<p>Connected to MySQL, using database <b>$db</b>.</p>";
-
-		# Shows table in database
-		 $result = mysql_query("SHOW TABLES;");
-
-		if (!$result) {
-			die("<p>Error in listing tables: " . mysql_error() . "</p>");
-		}
-
-		echo "<p>Tables in database:</p>";
-		echo "<ul>";
-		while ($row = mysql_fetch_row($result)) {
-			echo "<li>Table: {$row[0]}</li>";
-		}
-		echo "</ul>";
- 	}
-	# -------------------------------------------------------------
-
 ?>

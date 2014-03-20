@@ -13,7 +13,7 @@
         University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
         File: teacherhub.php
         Main menu for teachers -contains informational sheet, assignments, and welcome message
-        Last updated March 12, 2014 by KC
+        Last updated March 19, 2014 by KC
 -->
 <html>
     <head>
@@ -23,7 +23,6 @@
         <link rel = "stylesheet" href = "css/reset.css" />
         <link rel = "stylesheet" href = "css/colorbox.css" />
         <link rel = "stylesheet" href = "css/teacherhub.css" />
-        
 
         <!-- Open Sans Google Font API -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
@@ -36,33 +35,18 @@
                 // code for embeding external page
                 //$(".createNewAssignment").colorbox({iframe:true, width:"80%", height:"80%"});
                 
-                //code for using inline html
+                // code for using inline html
                 $(".createNewAssignment").colorbox({inline:true, width:"488px", height: "334px"});
 
             });
         </script>
-
         <title>Early Birds</title>
     </head>
     <body>
         <!-- Header includes logo, blue line, and logout link -->
-        <div id="header">
-            <!-- Blue line -->
-            <div id="blueLine"></div>
-            <!-- Top container inclues logo and logout link -->
-            <div id="topContainer">
-                <!-- Keeps parents of floating elements from collasping -->
-                <div class="clearfix">
-                    <!-- Logo image appears as link
-                             Source: http://ran.ge/2009/11/11/css-trick-turning-a-background-image-into-a-clickable-link/ -->
-                    <a href="teacherhub.php" id="logo" title="Early Birds">Early Birds</a> 
-                    <!-- Contains logout link -->
-                    <div id="logout">
-                        <a class="logout" href="scripts/logout.php">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php
+			include "include/teacherhub_header.html";
+		?>
 
         <!-- Main Container includes containers for content/egg shell background -->
         <div id="mainContainer">
@@ -104,53 +88,14 @@
                                 </div>	
                                 <!-- White space for visual purposes -->
                                 <div style="height:20px;"></div>
-                                 <?php
-                                 	# connects to database
-                                	include "scripts/connect.php";
-                                	
-                                	$Teacher_id = $_SESSION['id'];
-                                	
-                                	# Selects all assignments given a specific teacher ID
-									$result = mysql_query("SELECT * FROM Assignments WHERE Teacher_id='$Teacher_id' ORDER BY Timestamp ASC;");
-									if (!$result) {
-    									die('Invalid query: ' . mysql_error());
-									}
-									$values = mysql_fetch_array($result);
-									
-									# No results found - no assignments
-                                	if (!$values) {
-                                		echo "<h3 class='info'>You don't have any assignments. Click above to create one.</h3>";
-                                	} else {
-                                		# Populate array with all search results	
-                                		$i = 0;
-                                		do {
-        									$array2[$i] = $values;
-                                			$i++;	
-                                	} while ( $values = mysql_fetch_array($result));
-                                	
-                                	# Print array backwards (newest assignment first) 
-                                	for ($i = count($array2)-1; $i >= 0; $i--) {
-                                		echo "<div id='assignment'>";
-                            					echo "<div id='assignmentTitle'>";
-                                        			echo $array2[$i][1];
-                                        		echo "</div>";
-                                        		echo "<div class='clearfix'>";
-                                        			echo "<a class='teacherLink viewLabs' href='teacherhub_labs.php'>View Labs</a>";
-                                        			echo "<div id='assignmentContent'>";
-			                                            echo "<h2 class='acode'>Assignment Code:</h2><br>";
-                                            			echo "<h3 class='acode'>" . $array2[$i][0] . "</h3>";
-                                            		echo "</div>";
-                                            	echo "</div>";
-                                            echo "</div>";
-                                            echo "<div style='height: 38px'></div>";	
-                                	}
-								}
-							?>
+                                <?php
+                                	# Shows all the assignments associated with a user
+                                	include "scripts/show_assignments.php";
+                                ?>
 						</div>
 					 </div>
  					</div>
                                 
-                    
                     <div id="line"></div>
 
                     <!-- Informational sheet container -->                    
@@ -166,30 +111,13 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
-            <!-- Footer container -->
-            <div id="footer">
-                <div id="bottomContent">
-                    <!-- Contains contactinfo -->
-                    <div id="contact">
-                        <div style="margin:20px">
-                            Early Birds created by Kaitlyn Carcia and William Soeltz 2014. For questions, comments, or issues please contact us at:
-                            <a class="footer" href="mailto:help@earlybirdswriting.com">help@earlybirdswriting.com</a>
-                        </div>
-                    </div>
-                    <!-- Contains learn more info/link -->
-                    <div id="learnMore">
-                        <div style="margin:20px">
-                            In one single swoop, Early Birds helps familiarize students with a computer all while teaching them the basics of writing a science lab report. 
-                            <a class="footer" href="#">Learn More ></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+		<!--  Includes page footer -->
+		<?php
+			include "include/teacherhub_footer.html";
+		?>
 
         <!-- Contains hidden content for creating assignments -->
             <div style='display:none'>
@@ -201,7 +129,10 @@
                         <div id="labCode_new">
                             <h2 class="acode">Assignment Code</h2>
                             <div id="acode" style="display:inline-block">
-                                hairyturtle97
+                                <?php
+                                	# Generates assignment code
+                                	include "scripts/assignment_code.php";
+                                ?>
                             </div>
                         </div>
                         <input type="submit" class="button" value="Create" id="createAssignment_button">
@@ -210,7 +141,6 @@
                 </div>
             </div>
         <!-- end hidden content -->
-
 
     </body>
 </html>
