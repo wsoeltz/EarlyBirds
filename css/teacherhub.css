@@ -2,11 +2,11 @@
     Teacher Hub Styles
     Created 2/19/2014 by Kaitlyn Carcia
     
-        Will Soeltz and Kaitlyn Carcia
-        University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-        File: teacherhub.css
-        Main styles for Teacher Hub
-        Last updated February 20, 2014 by KC
+    Will Soeltz and Kaitlyn Carcia
+    University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+	File: teacherhub.css
+	Main styles for Teacher Hub
+    Last updated February 20, 2014 by KC
 */
 
 /**********
@@ -428,6 +428,7 @@ input:-moz-placeholder {
     margin-right: 20px;
 }
 
+/* Login and registration button hover */
 .button:hover{
     cursor: pointer;
     color: #f7d708;
@@ -441,6 +442,7 @@ input:-moz-placeholder {
     margin-top: 28px;
 }
 
+/* Header for lightbox */
 #labCode_new h2.acode{
     font-size: 14px;
     margin-bottom: 10px;

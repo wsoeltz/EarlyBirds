@@ -13,7 +13,7 @@
         University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
         File: teacherhub_labs.php
         Shows teachers labs available
-        Last updated March 9, 2014 by KC
+        Last updated March 19, 2014 by KC
 -->
 <html>
     <head>
@@ -31,23 +31,10 @@
     </head>
     <body>
         <!-- Header includes logo, blue line, and logout link -->
-        <div id="header">
-            <!-- Blue line -->
-            <div id="blueLine"></div>
-            <!-- Top container inclues logo and logout link -->
-            <div id="topContainer">
-                <!-- Keeps parents of floating elements from collasping -->
-                <div class="clearfix">
-                    <!-- Logo image appears as link
-                             Source: http://ran.ge/2009/11/11/css-trick-turning-a-background-image-into-a-clickable-link/ -->
-                    <a href="teacherhub.php" id="logo" title="Early Birds">Early Birds</a> 
-                    <!-- Contains logout link -->
-                    <div id="logout">
-                        <a class="logout" href="scripts/logout.php">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<?php
+			include "include/teacherhub_header.html";
+		?>
+    
         <!-- Main Container includes containers for content/egg shell background -->
         <div id="mainContainer">
             <!-- Contains Welcome and Labs blocks -->
@@ -138,27 +125,12 @@
                     </div>
                 </div>
             </div>
+            
+            <!--  Includes page footer -->
+			<?php
+				include "include/teacherhub_footer.html";
+			?>
 
-
-            <!-- Footer container -->
-            <div id="footer">
-                <div id="bottomContent">
-                    <!-- Contains contactinfo -->
-                    <div id="contact">
-                        <div style="margin:20px">
-                            Early Birds created by Kaitlyn Carcia and William Soeltz 2014. For questions, comments, or issues please contact us at:
-                            <a class="footer" href="mailto:help@earlybirdswriting.com">help@earlybirdswriting.com</a>
-                        </div>
-                    </div>
-                    <!-- Contains learn more info/link -->
-                    <div id="learnMore">
-                        <div style="margin:20px">
-                            In one single swoop, Early Birds helps familiarize students with a computer all while teaching them the basics of writing a science lab report. 
-                            <a class="footer" href="#">Learn More ></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
     </body>
 </html>
 <?php

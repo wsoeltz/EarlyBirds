@@ -3,14 +3,11 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: registration.php
 	# Attempts to create a new user given information in the registration form
-	# Last updated February 16, 2014 by KC
-	
-	# File includes database, username, and password information
-	require "userpass.php";
+	# Last updated March 20, 2014 by KC
 
-	# Connects to database
- 	connect();
- 	
+	# connects to database
+	include "connect.php";
+		
  	# Initializes name, email, and password
  	$name = $_REQUEST['name'];
  	$email = $_REQUEST['email'];
@@ -38,45 +35,10 @@
  		$teacher_id = $result['Teacher_ID'];
  		$_SESSION['id'] = $teacher_id;
  		
- 		 		
  		# Upon successful registration, users will be redirected to the following URL
 		header("Location: ../teacherhub.php");
 	}
 	
-	# -------------------------------------------------------------
-	# Connects to database, selects database, shows table in database
-	function connect() {
-		# Connect to database
-		mysql_connect("localhost", DATABASE_USERNAME, DATABASE_PASSWORD)
-			or die("<p>Error connecting to database: " . 
-				 mysql_error() . "</p>");
-
-		echo "<p>Connected to MySQL!</p>";
-
-		# Selects database
-		$db =  DATABASE_NAME;
-
-		mysql_select_db( $db )
-			or die("<p>Error selecting the database your-database-name: " .
-				 mysql_error() . "</p>");
-
-		echo "<p>Connected to MySQL, using database <b>$db</b>.</p>";
-
-		# Shows table in database
-		 $result = mysql_query("SHOW TABLES;");
-
-		if (!$result) {
-			die("<p>Error in listing tables: " . mysql_error() . "</p>");
-		}
-
-		echo "<p>Tables in database:</p>";
-		echo "<ul>";
-		while ($row = mysql_fetch_row($result)) {
-			echo "<li>Table: {$row[0]}</li>";
-		}
-		echo "</ul>";
- 	}
-
  	# -------------------------------------------------------------
 	# Encrypts password, and inserts user into the database
 	function addUserToDatabase($name, $email, $password) {

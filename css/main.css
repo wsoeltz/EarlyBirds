@@ -1,24 +1,37 @@
+/* 
+    Main Styles
+    
+    Will Soeltz and Kaitlyn Carcia
+    University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+	File: main.css
+	Main styles for website
+    Last updated March 19, 2014 by KC
+*/
+
 /**********
 
 		Base Styles
 
 **********/
 
+/* Background classroom image */
 body{
 
 	background-image: url(assets/classroom_bg.jpg);
 	background-repeat:no-repeat;
 	background-position:center top; 
 	font-family: 'Open Sans', sans-serif;
-	color: #feffff;
+	color: #feffff; /* white */
 }
 
+/* Several headers and prompts */
 h2{
 	font-weight: 600;
 	font-size: 18px;
 	text-transform: uppercase;
 }
 
+/* Early Birds slogan quote */
 h4{
 	font-weight: 600;
 	font-style: italic;
@@ -26,6 +39,7 @@ h4{
 	text-align: center;
 }
 
+/* Learn more info on main splash div */
 p{
 	font-weight: 600;
 	font-size: 16px;
@@ -33,6 +47,7 @@ p{
 	text-align: justify;
 }
 
+/* Styling for learn more text */
 p.learnMore {
 	font-size: 15px;
 	line-height:150%;
@@ -98,19 +113,33 @@ hr{
 	margin-bottom: 80px;
 }
 
+/* Hover style for learn more link */
+div#sideContent a.learn:hover{
+	text-decoration: underline;
+}
+
+/* For vertical sliding div */
+.vertical{
+	margin-left: 395px;
+	padding: 30px 30px 0px 30px;
+}
+
+
+
 /**********
 
 		Alignment
 
 **********/
 
-
+/* Main content wrapper */
 div#contentWrapper{
 	width:1276px;
 	margin: 0 auto;
 	position: relative;
 }
 
+/* Contains logo */
 div#logoHalf{
 	width: 763px;
 	float: left;
@@ -118,15 +147,17 @@ div#logoHalf{
 	text-align: center;
 }
 
+/* Blue part of splash screen */
 div#blueDrop{
 	position: fixed;
 	width: 6000px;
 	height: 6000px;
 	top: -1000px;
 	z-index: -1000;
-	background-color: #009ece;
+	background-color: #009ece; /* blue */
 }
 
+/* Styling for navigation links */
 div#navHalf{
 	width: 513px;
 	height: 700px;
@@ -135,6 +166,7 @@ div#navHalf{
 	overflow: hidden;
 }
 
+/* Other content (not links) */
 div#sideContent{
 	position: relative;
 	height: 700px;
@@ -142,6 +174,7 @@ div#sideContent{
 	top:-700px;
 }
 
+/* Content block for student "login" page */
 div.contentBlock{
 	padding-top: 50px;
 	display: inline-block;
@@ -163,6 +196,7 @@ div.center {
 
 **********/
 
+/* Bigger headding */
 h2.extraSize{
 	font-size: 50px;
 	margin-bottom: 248px;
@@ -233,15 +267,4 @@ div#sideContent img.goBack{
 	margin-bottom: 20px;
 	padding: 30px 30px 30px 0px;
 }
-
-.vertical{
-	margin-left: 395px;
-	padding: 30px 30px 0px 30px;
-}
-
-
-div#sideContent a.learn:hover{
-	text-decoration: underline;
-}
-
 

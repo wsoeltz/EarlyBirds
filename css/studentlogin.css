@@ -1,23 +1,35 @@
+/* 
+    Styles for the student login page
+    
+    Will Soeltz and Kaitlyn Carcia
+    University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+	File: studentlogin.css
+	Main styles for website
+    Last updated March 19, 2014 by KC
+*/
+
+
 /**********
 
 		Base Styles
 
 **********/
 
+/* background style */
 body{
-
 	background-image: none;
-	background-color: #29a8cf; 
+	background-color: #29a8cf; /* blue */
 	font-family: 'Open Sans', sans-serif;
 	color: #feffff;
 }
 
+/* style for headers */
 h2{
 	font-weight: 600;
 	font-size: 18px;
 }
 
-
+/* "not sure how to find lab code?" */
 p{
 	font-size: 16px;
 	margin-top: 28px;
@@ -111,6 +123,7 @@ div#mainBodyContent{
 	margin-bottom: 50px;
 }
 
+/* Div containing prompt for lab code entry */
 div.labEntry{
 	display: inline-block;
 	margin-right: -4px; /* counteracts wierd spacing issue */
@@ -121,11 +134,13 @@ div.labEntry{
 	padding-top: 50px; 
 }
 
+/* Text for students who've already started lab */
 .right{
 	left:533px;
 	border-left:2px solid #4fb2d1;
 }
 
+/* Div containing finding your lab code */
 div#findCode{
 	position: absolute;
 	text-align: center;
@@ -183,10 +198,11 @@ div#learnMore{
 
 /**********
 
-		Main Body Styles
+		Links
 
 **********/
 
+/* Link styling */
 a.stdButton{
 	display: inline-block;
 	width:143px;

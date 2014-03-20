@@ -5,7 +5,7 @@
 	# Connect to database
 	# Last updated March 9, 2014 by KC
 	
-	require "scripts/userpass.php";
+	require "userpass.php";
  	
  	# Connects to database
  	connect();
