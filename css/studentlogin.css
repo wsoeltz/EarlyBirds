@@ -220,6 +220,6 @@ a.stdButton{
 }
 
 /* Hover color for standard button */
-a.stdButton:hover{
+a.stdButton-hover:hover{
 	background-color: #feffff;
 }

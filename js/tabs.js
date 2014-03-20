@@ -14,7 +14,12 @@ $(function() {
 	// http://stackoverflow.com/questions/4565128/set-default-tab-in-jquery-ui-tabs
     $( "#tabs" ).tabs();
     $( "#tabs" ).tabs( "option", "active", 0 );
-                
+        
+	// Disable/enable next and previous buttons depending on where user is in lab report
+	begin_or_end();
+           
+    focus_on_textbox()       
+           
 	// Goes to the next tab if user clicks the next button
 	// http://stackoverflow.com/questions/3044654/jquery-tabs-next-button
     $("#next").click(function() {
@@ -24,6 +29,12 @@ $(function() {
         hint(active);
         // Move to next tab
         $( "#tabs" ).tabs( "option", "active", active + 1 );
+        
+		// Disable/enable next and previous buttons depending on where user is in lab report
+        begin_or_end();    
+        
+        // Focus on textbox of current tab
+        focus_on_textbox()
     }); // end next
                   
 	// Goes to the previous tab if user clicks the previous button
@@ -37,6 +48,12 @@ $(function() {
         if (active-1>=0){
             $( "#tabs" ).tabs( "option", "active", active - 1 );
         }
+        
+        // Disable/enable next and previous buttons depending on where user is in lab report
+        begin_or_end();
+        
+        // Focus on textbox of current tab
+        focus_on_textbox()
     }); // end previous
     
     // Upon save, change the current tab's style
@@ -55,6 +72,12 @@ $(function() {
     $(".ui-tabs-anchor").click(function() {
         var active = ($( "#tabs" ).tabs( "option", "active" ));
         hint(active-1);
+        
+        // Disable/enable next and previous buttons depending on where user is in lab report
+        begin_or_end();
+        
+        // Focus on textbox of current tab// Focus on textbox of current tab
+        focus_on_textbox()
     }); // end individual click
          
 }); // end document ready function
@@ -100,4 +123,54 @@ function hint(active){
             hint_content(conclusion);
             break;
     }
-} 
+}
+
+// Function begin or end disabled or enables the next and previous buttons
+// If a user is at the beginning of the lab report, the previous button is disabled 
+// If a user is at the end of the lab report, the next button is disabled
+function begin_or_end(){
+	// Gets active tab
+	var index= ($( "#tabs" ).tabs( "option", "active"))+1;
+	
+	// ID of current tab
+	var tabID="#tabs-"+index;
+	
+	var title = $('a[href="' + tabID + '"]').text();
+    
+    // At end of lab report
+    if (title == "Conclusion"){
+    	// Disable next button
+    	$('#next').removeClass("stdButton-hover");
+    	$('#next').addClass("disabled");
+    	// Enable previous button
+    	$('#previous').removeClass("disabled");
+    	$('#previous').addClass("stdButton-hover");
+    // At beginning of lab report
+    } else if (title == "Problem") {
+    	// Disable previous button
+    	$('#previous').removeClass("stdButton-hover");
+    	$('#previous').addClass("disabled");
+    	// Enable next button
+    	$('#next').removeClass("disabled");
+		$('#next').addClass("stdButton-hover");
+    } else {
+    	// Enable both previous and next buttons
+    	$('#previous').removeClass("disabled");
+    	$('#next').removeClass("disabled");
+    	$('#previous').addClass("stdButton-hover");
+		$('#next').addClass("stdButton-hover");
+    }
+}
+
+// Function focus_on_textbox focuses on the textbox of the tab
+// that's current open
+function focus_on_textbox(){
+	// Gets active tab
+	var index= ($( "#tabs" ).tabs( "option", "active"))+1;
+	
+	// ID of current tab
+	var tabID="#tabs-"+index+"-box";
+	
+	// Focuses on textbox
+	$(tabID).focus();
+}
