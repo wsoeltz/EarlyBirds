@@ -1,0 +1,28 @@
+<!--
+    Teacher Hub Header
+    Created 3/19/2014 by Kaitlyn Carcia
+    
+        Will Soeltz and Kaitlyn Carcia
+        University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+        File: teacherhub_header.html
+        Header - contains logo, logout link, blue line
+        Last updated March 19, 2014 by KC
+-->
+
+<div id="header">
+	<!-- Blue line -->
+	<div id="blueLine"></div>
+	<!-- Top container inclues logo and logout link -->
+	<div id="topContainer">
+		<!-- Keeps parents of floating elements from collasping -->
+		<div class="clearfix">
+			<!-- Logo image appears as link
+					 Source: http://ran.ge/2009/11/11/css-trick-turning-a-background-image-into-a-clickable-link/ -->
+			<a href="teacherhub.php" id="logo" title="Early Birds">Early Birds</a> 
+			<!-- Contains logout link -->
+			<div id="logout">
+				<a class="logout" href="scripts/logout.php">Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
