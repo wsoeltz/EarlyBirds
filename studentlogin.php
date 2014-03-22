@@ -67,7 +67,7 @@
     </div>
 	
 	<?php
-		include "include/studenthub_footer.html";
+		include "include/footer.html";
 	?>
 	
   </body>

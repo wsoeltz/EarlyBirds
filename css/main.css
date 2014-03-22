@@ -37,6 +37,7 @@ h4{
 	font-style: italic;
 	font-size: 22px;
 	text-align: center;
+	color: #000;
 }
 
 /* Learn more info on main splash div */
@@ -44,7 +45,7 @@ p{
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 1.5em; 
-	text-align: justify;
+	text-align: left;
 }
 
 /* Styling for learn more text */
@@ -109,8 +110,8 @@ hr{
 	border-width:0;
 	color:#feffff;
 	background-color:#feffff;
-	margin-top: 80px;
-	margin-bottom: 80px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 /* Hover style for learn more link */
@@ -190,6 +191,83 @@ div.center {
 	text-align:center;
 }
 
+/* Learn More tab */
+
+div#learnMoreTab{
+	display: block;
+	width:56px;
+	height: 185px;
+	/*background-color: #0481a8;  darker blue */
+	background-image: url(assets/learnMore.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	position: absolute;
+	left: 707px;
+	top: 450px;
+	text-indent: -10000px;
+
+}
+div#learnMoreTab a{
+	display: block;
+	width:56px;
+	height: 185px;
+}
+
+div#learnMoreTab:hover{
+	background-position: 0 -185px;
+}
+
+.learnMore{
+	color: #000;
+}
+
+div#about{
+	width: 609px;
+	height: 380px;
+	margin: 0 auto;
+	overflow: auto;
+
+}
+
+div#aboutContent{
+	width: 110%;
+	height: 1420px;
+	background-image: url(assets/learnmore_bg.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	
+}
+
+.learn{
+	width: 320px;
+	height: 250px;
+	padding-top: 34px;
+	display: block;
+	text-align: center;
+}
+
+.right{
+	margin-left: 270px;
+}
+
+.left{
+	color: #222a2d;
+	margin-left: 20px;
+}
+
+div.learn h5{
+	font-weight: 800;
+	font-size: 20px;
+	margin-bottom: 15px;
+
+}
+
+
+div.learn p{
+	text-align: center;
+
+}
+
 /**********
 
 		Main Body Styles
@@ -202,18 +280,47 @@ h2.extraSize{
 	margin-bottom: 248px;
 }
 
-div#sideContent h1 a{
+h2.thequestion{
+	width: 397px;
+	padding: 4px;
+	background-color: #0481a8;  /* darker blue */
+}
+
+div#sideContent h1 a#student{
 	display: inline-block;
 	width:405px;
-	text-align:center;
-	font-size: 71px;
-	background-color: #f7d708;
+	height: 67px;
+	text-align:left;
+	font-size: 67px;
+	/*background-color: #f7d708; */
 	text-decoration: none;
-	color: #009ece;
+	color: #feffff;
 	font-weight: 600;
 	text-transform: uppercase;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+	background-image: url(assets/studentArrows.png);
+	background-repeat: no-repeat;
+	background-position: 330px 0px;
+	
+}
+
+div#sideContent h1 a#teacher{
+	display: inline-block;
+	width:405px;
+	height: 47px;
+	text-align:left;
+	font-size: 47px;
+	/*background-color: #f7d708; */
+	text-decoration: none;
+	color: #feffff;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 5px;
+	margin-bottom: 230px;
+	background-image: url(assets/teacherArrows.png);
+	background-repeat: no-repeat;
+	background-position: 260px 0px;
 	
 }
 
@@ -247,10 +354,21 @@ div#sideContent a.stdButton{
 	margin-bottom: 10px;
 }
 
-/* Hover color for links */
-div#sideContent h1 a:hover{
-	background-color: #feffff;
+/* Hover color for links- Student */
+div#sideContent h1 a#student:hover{
+	/*background-color: #feffff;*/
+	text-decoration: underline;
+	background-position: 330px -67px;
 }
+
+/* Hover color for links- Teacher */
+div#sideContent h1 a#teacher:hover{
+	/*background-color: #feffff;*/
+	text-decoration: underline;
+	background-position: 260px -47px;
+}
+
+
 
 /* Hover color for standard button */
 div#sideContent a.stdButton:hover{
@@ -268,3 +386,9 @@ div#sideContent img.goBack{
 	padding: 30px 30px 30px 0px;
 }
 
+div#hiddencontent{
+	display: block;
+	width: 0px;
+	height: 0px;
+	overflow: hidden;
+}

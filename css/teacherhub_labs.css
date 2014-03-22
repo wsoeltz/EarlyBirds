@@ -15,24 +15,25 @@
 
 **********/
 /* Name and complete text styling for labs */
-.name, .complete{
+.studentname, .complete{
     color: #627176; /* gray */
-    font-size: 13px;
+    font-size: 14px;
     line-height: 350%;
 }
 
 /* Date text styling for labs */
 .date{
     color: #627176;
-    font-size: 10px;
-    line-height: 450%;
+    font-size: 12px;
+    line-height: 400%;
 }
 
 /* Headers for labs text */
 .nameH, .dateH, .completeH{
-    font-size: 11px;
+    font-size: 14px;
     line-height: 500%;
     color: #627176; /* light gray */
+    font-weight: 600;
 }
 
 /* Yes in completed section */
@@ -109,7 +110,7 @@ div#labsContainer{
 
 /* Container for one lab */
 div#lab{
-    margin-bottom: 11px;
+    margin-bottom: 21px;
     overflow: hidden;
     height: 45px;
 }
@@ -171,6 +172,10 @@ div#completeHeader{
     box-sizing: border-box; /* http://stackoverflow.com/questions/13255311/padding-increases-width-and-height-of-div */
 }
 
+
+div#welcomeContent{
+    margin: 0px 0px 23px 36px;
+}
 
 /**********
 

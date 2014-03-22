@@ -25,19 +25,15 @@
         <link rel = "stylesheet" href = "css/teacherhub.css" />
 
         <!-- Open Sans Google Font API -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
         <!-- JavaScript pages for create assignment -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="js/jquery.colorbox.js"></script>
         <script>
             $(document).ready(function(){
-                // code for embeding external page
-                //$(".createNewAssignment").colorbox({iframe:true, width:"80%", height:"80%"});
-                
                 // code for using inline html
                 $(".createNewAssignment").colorbox({inline:true, width:"488px", height: "334px"});
-
             });
         </script>
         <title>Early Birds</title>
@@ -103,9 +99,8 @@
                         <div id="contentContainer">
                             <h2 class="gray">Information Sheet</h2>
                             <h3 class="info">Print this informational sheet to hand out to your students.
-                                Includes a 'How-To' on using the Early Birds system as well as a location
-                                to write down your assignment code and their lab codes so they can return
-                                to their saved work.</h3>
+                                Includes a 'How-To' on using Early Birds as well as a location
+                                to write down their assignment code.</h3>
                             <div class="center">
                                 <a class="teacherLink open" href="#">Open</a>
                             </div>
@@ -116,7 +111,7 @@
 
 		<!--  Includes page footer -->
 		<?php
-			include "include/teacherhub_footer.html";
+			include "include/footer.html";
 		?>
 
         <!-- Contains hidden content for creating assignments -->

@@ -23,51 +23,54 @@ body{
 /* Header style for Welcome box title w/ white text*/
 h2.white{
     color: #fff;
-    font-weight: 700;/* bold */
-    font-size: 14px;
+    font-weight: 800;/* bold */
+    font-size: 18px;
 }
 
 /* Header style for Assignments and Information Sheet w/ gray text */
 h2.gray{
     color: #627176; /* gray */
-    font-weight: none;
-    font-size: 14px;
+    font-weight: 800;
+    font-size: 18px;
     margin-bottom: 15px;
 }
 
 /* "Assignment Code:" header */
 h2.acode{
     font-weight: 600;
-    font-size: 12px;
+    font-size: 14px;
     color: #627176; /* gray */
 }
 
 /* Header style for name in welcome container */
 h3.name{
+    margin-top: 10px;
+    margin-bottom: 10px;
     color: #fff;
     font-weight: 600; /* semi-bold */
-    font-size: 12px;
+    font-size: 16px;
 }
 
 /* Header style for informational sheet info */
 h3.info{
     color: #627176; /* gray */
-    font-size: 12px;
-    line-height: 200%;
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 400;
 }
 
 /* Header for the actual assignment code, e.g. Apple10 */
 h3.acode{
     color: #627176; /* gray */
     font-family: 'Open Sans';
-    font-size: 12px;
+    font-size: 14px;
 }
 
 /* Header style for email welcome container */
 h4{
     color: #fff;
-    font-weight: 600;
-    font-size: 10px;
+    font-weight: 300;
+    font-size: 14px;
 }
 
 
@@ -79,7 +82,7 @@ h4{
 
 /* Logout link */
 a.logout{
-    font-size: 13px;
+    font-size: 14px;
     color: #919ea2;
     text-decoration: none;
 }
@@ -235,7 +238,7 @@ div#assignmentTitle{
     margin-bottom: 10px;
     color: #fff; /* white - font color */
     font-weight: 700; /* bold */
-    font-size: 12px;
+    font-size: 14px;
 }
 
 /* Container for all other content in assignment container */
@@ -275,8 +278,8 @@ div#contact{
     float: left;
     color: #627176; /* gray */
     font-weight: 600;
-    font-size: 10px;
-    line-height: 200%;
+    font-size: 12px;
+    line-height: 150%;
 }
 
 /* Container for learn more */
@@ -286,8 +289,8 @@ div#learnMore{
     margin-left: 420px;
     color: #627176; /* gray */
     font-weight: 600;
-    font-size: 10px;
-    line-height: 200%;
+    font-size: 12px;
+    line-height: 150%;
 }
 
 /**********

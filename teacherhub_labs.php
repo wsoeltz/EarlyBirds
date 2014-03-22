@@ -25,7 +25,7 @@
         <link rel = "stylesheet" href = "css/teacherhub_labs.css" />
 
         <!-- Open Sans Google Font API -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
         <title>Early Birds</title>
     </head>
@@ -89,7 +89,7 @@
                             <div class="clearfix">
                                 <div id="lab">
                                     <!-- Single lab report container -->	
-                                    <div id="name" class="name">Eric Andrews</div>
+                                    <div id="name" class="studentname">Eric Andrews</div>
                                     <div id="date" class="date">12/05/2013 01:32:01PM</div>
                                     <div id="complete" class="complete yes">YES</div>
                                     <a class="viewLab" href="#">View</a>
@@ -101,7 +101,7 @@
                             <div class="clearfix">
                                 <div id="lab">
                                     <!-- Single lab report container -->	
-                                    <div id="name" class="name">Jenna Berts</div>
+                                    <div id="name" class="studentname">Jenna Berts</div>
                                     <div id="date" class="date">12/06/2013 12:17:23PM</div>
                                     <div id="complete" class="complete yes">YES</div>
                                     <a class="viewLab" href="#">View</a>
@@ -113,7 +113,7 @@
                             <div class="clearfix">
                                 <div id="lab">
                                     <!--Single lab report container -->	
-                                    <div id="name" class="name">Balthazar McAndrews Junior</div>
+                                    <div id="name" class="studentname">Balthazar McAndrews Junior</div>
                                     <div id="date" class="date">12/05/2013 10:49:29AM</div>
                                     <div id="complete" class="complete no">NO</div>
                                     <a class="viewLab" href="#">View</a>
@@ -128,7 +128,7 @@
             
             <!--  Includes page footer -->
 			<?php
-				include "include/teacherhub_footer.html";
+				include "include/footer.html";
 			?>
 
     </body>

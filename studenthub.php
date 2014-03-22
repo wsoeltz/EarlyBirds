@@ -139,7 +139,7 @@ Last updated March 2, 2014 by KC
         </div>
         
     	<?php
-			include "include/studenthub_footer.html";
+			include "include/footer.html";
 		?>
     <body>
 </html>

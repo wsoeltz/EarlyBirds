@@ -92,6 +92,7 @@ a.disabled {
 	background-color: #C0C0C0;
 	color:  #feffff;
 	cursor: default;
+    visibility:hidden;
 }
 
 /* Styling for lab name */
