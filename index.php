@@ -8,7 +8,7 @@
 	University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	File: index.html
 	Contains splash screen, login, registration, assignment code, lab code, about
-	Last updated February 24, 2014 by KC
+	Last updated March 25, 2014 by KC
 -->
 
 <html>
@@ -44,6 +44,26 @@
             $(function(){
                 $('#about').jScrollPane();
             });
+                        
+			// http://stackoverflow.com/questions/298503/how-can-you-check-for-a-hash-in-a-url-using-javascript
+            if(window.location.hash == "#logout") {
+            	// If there's a hash in the URL, the user logged out
+            	// 400 seconds delays the alert message
+            	// http://www.w3schools.com/js/js_timing.asp
+            	setTimeout(function(){
+            		alert("Successfully logged out.")
+            		},400);
+				
+				// Remove hash from URL after alert goes away
+				// http://stackoverflow.com/questions/4508574/remove-hash-from-url
+				setTimeout(function(){
+					var loc = window.location.href,
+ 			    	index = loc.indexOf('#');
+
+					if (index > 0) {
+  						window.location = loc.substring(0, index);
+				}},550);
+			}	
         });
     </script>
     
@@ -64,11 +84,11 @@
                 <div id="assignmentCode" class="contentBlock">
                     <h2>Enter Your Assignment Code</h2>
                     <!-- Assignment Code form -->
-                    <form id="login" method="post" action="scripts/assignmentcode.php">
+                    <form id="login" method="get" action="scripts/find_assignment_code.php">
                         <input type="text" name="assignment_code" placeholder="Assignment Code">
                         <br/><br/>
                         <div class="center">
-                            <a class="stdButton" href="studentlogin.php" id="assignmentToLab">Continue</a>
+                            <input type="submit" class="stdButton" name="acode" href="studentlogin.php" id="assignmentToLab" value="Continue">
                         </div>
                     </form>
                     <!-- Find assignment code if not sure how -->

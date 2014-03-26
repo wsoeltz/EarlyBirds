@@ -32,7 +32,7 @@
 						echo $array2[$i][1];
 					echo "</div>";
 					echo "<div class='clearfix'>";
-						echo "<a class='teacherLink viewLabs' href='teacherhub_labs.php'>View Labs</a>";
+						echo "<a class='teacherLink viewLabs' href='teacherhub_labs.php#'>View Labs</a>";
 						echo "<div id='assignmentContent'>";
 							echo "<h2 class='acode'>Assignment Code:</h2><br>";
 							echo "<h3 class='acode'>" . $array2[$i][0] . "</h3>";

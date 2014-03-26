@@ -70,59 +70,18 @@
                             <h3 class="info">Click below to view individual labs for this assignment.</h3>
                             <!-- White space -->
                             <div style="height: 20px;"></div>
-							<!-- Headers for list of labs -->
-							<!-- Keeps parents of floating elements from collasping -->
-                            <div class="clearfix">
-                            	<!-- Single lab report container -->
-                                <div id="lab">
-                                    <div id="nameHeader" class="nameH">Student Name</div>
-                                    <div id="dateHeader" class="dateH">Date Last Worked On</div>
-                                    <div id="completeHeader" class="completeH"> Completed</div>
-                                </div>
-                            </div>
-							
-							<!-- Decreases space between headers and 1st lab report -->
-							<div style="margin-top: -15px;"></div>
-							
-							<!-- Will eventually implement PHP code -->
-							<!-- Keeps parents of floating elements from collasping -->
-                            <div class="clearfix">
-                                <div id="lab">
-                                    <!-- Single lab report container -->	
-                                    <div id="name" class="studentname">Eric Andrews</div>
-                                    <div id="date" class="date">12/05/2013 01:32:01PM</div>
-                                    <div id="complete" class="complete yes">YES</div>
-                                    <a class="viewLab" href="#">View</a>
-                                </div>
-                            </div>
+						
+						<?php
+							# include "scripts/show_labs.php";
+						?>
 
-							<!-- Will eventually implement PHP code -->
-							<!-- Keeps parents of floating elements from collasping -->
-                            <div class="clearfix">
-                                <div id="lab">
-                                    <!-- Single lab report container -->	
-                                    <div id="name" class="studentname">Jenna Berts</div>
-                                    <div id="date" class="date">12/06/2013 12:17:23PM</div>
-                                    <div id="complete" class="complete yes">YES</div>
-                                    <a class="viewLab" href="#">View</a>
-                                </div>
-                            </div>
-
-							<!-- Will eventually implement PHP code -->
-							<!-- Keeps parents of floating elements from collasping -->
-                            <div class="clearfix">
-                                <div id="lab">
-                                    <!--Single lab report container -->	
-                                    <div id="name" class="studentname">Balthazar McAndrews Junior</div>
-                                    <div id="date" class="date">12/05/2013 10:49:29AM</div>
-                                    <div id="complete" class="complete no">NO</div>
-                                    <a class="viewLab" href="#">View</a>
-                                </div>
-                            </div>
+					
                         </div>
                         <!-- White space -->
                         <div style="height: 20px"></div>
                     </div>
+                
+                
                 </div>
             </div>
             
