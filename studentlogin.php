@@ -1,3 +1,9 @@
+<?php
+	# Displays page ONLY if a session is currently active
+	# http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
+	session_start();
+ 	if (isset($_SESSION['acode'])) {
+?>
 <!DOCTYPE html>
 <!--
     Early Birds Opening Splashcreen
@@ -7,7 +13,7 @@
 	University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	File: studentlogin.php
   	Page for students to input their lab code to continue working on their assignments.
-	Last updated March 20, 2014 by KC
+	Last updated March 25, 2014 by KC
 -->
 
 <html>
@@ -73,3 +79,9 @@
   </body>
 
 </html>
+<?php
+	# Otherwise redirect to splash screen
+	 } else {
+	 	header("Location: index.html");
+	}
+?>
