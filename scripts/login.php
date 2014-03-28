@@ -5,7 +5,7 @@
 	# Attempts to login into account
 	# Last updated March 9, 2014 by KC
 	
-	# connects to database
+	# Connects to database
 	include "connect.php";
  	
  	# Initializes email and password

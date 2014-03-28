@@ -37,7 +37,7 @@ p{
 }
 
 /* Login and registration input boxes */
-input{
+input[type=text]{
 	width: 250px;
 	height: 46px;
 	border: 1px;
@@ -221,5 +221,28 @@ a.stdButton{
 
 /* Hover color for standard button */
 a.stdButton-hover:hover{
+	background-color: #feffff;
+}
+
+/* For continue button */
+.stdButton{
+	display: inline-block;
+	width:143px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	text-align:center;
+	font-size: 13px;
+	background-color: #f7d708;
+	text-decoration: none;
+	color: #009ece;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: none;
+}
+
+/* Hover for Continue button */
+.stdButton:hover{
 	background-color: #feffff;
 }

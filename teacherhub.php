@@ -142,6 +142,6 @@
 <?php
 	# Otherwise redirect to splash screen
 	 } else {
-	 	header("Location: index.html");
+	 	header("Location: index.php");
 	}
 ?>

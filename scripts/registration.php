@@ -5,7 +5,7 @@
 	# Attempts to create a new user given information in the registration form
 	# Last updated March 20, 2014 by KC
 
-	# connects to database
+	# Connects to database
 	include "connect.php";
 		
  	# Initializes name, email, and password
