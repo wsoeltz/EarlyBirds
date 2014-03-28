@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <!--
-Early Birds Student Hub
-Created 2/27/2014 by Kaitlyn Carcia
-Will Soeltz and Kaitlyn Carcia
-University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-File: studenthub.html
-Screen contains all tools necessary to create lab report
-Last updated March 2, 2014 by KC
+	Early Birds Student Hub
+	Created 2/27/2014 by Kaitlyn Carcia
+	
+	Will Soeltz and Kaitlyn Carcia
+	University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+	File: studenthub.php
+	Screen contains all tools necessary to create lab report
+	Last updated March 26, 2014 by KC
 -->
 
 <html>
@@ -21,10 +22,9 @@ Last updated March 2, 2014 by KC
         <!-- Open Sans Google Font API -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,800' rel='stylesheet' type='text/css'>
 
-        <title>Early Birds</title>
-
-<!-- jQuery -->
+		<!-- jQuery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        
         <!-- jQuery UI -->
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
         
@@ -32,11 +32,13 @@ Last updated March 2, 2014 by KC
         <script src="tabs/js/jquery.ui.widget.js"></script>
         <script src="tabs/js/jquery.ui.tabs.js"></script>
         
-        <!-- styling for jQuery tabs from jQuery UI -->
+        <!-- Styling for jQuery tabs from jQuery UI -->
         <link rel="stylesheet" href="tabs/css/jquery.ui.all.css">
         
         <!-- Scripts to get jQuery tabs working w/ site -->
         <script src="js/tabs.js"></script>
+        
+        <title>Early Birds</title>
     </head>
     <body>
         <div id="contentWrapper">
@@ -44,7 +46,7 @@ Last updated March 2, 2014 by KC
             <!-- Header containing logo and the Early Bird -->
             <div id="header">
                 <div id="logoText">
-                    <a href="index.html"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="93"/></a>
+                    <a href="index.php"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="93"/></a>
                 </div>
             </div>
             
@@ -52,16 +54,21 @@ Last updated March 2, 2014 by KC
             <div id="mainBodyContent">
              <!-- Keeps parents of floating elements from collasping -->
                 <div class="clearfix">
-                 <!-- Lab/teacher name and teacher email information - Will eventually be replaced w/ PHP -->
                     <div id="labInfo" style="float:left;">
-                        <h2>Gravity Apples</h2>
-                        <h3 class="bold">Teacher:</h3> <h3>John Smith</h3><br>
-                        <h3 class="bold">Contact:</h3> <h3>jsmith@gmail.com</h3><br>
+                        <?php
+                        	# Displays assignment name, teacher name, and teacher email 
+                        	session_start();
+                        	echo '<h2>' . $_SESSION['aname'] . '</h2>';
+                        	echo '<h3 class="bold">Teacher:</h3> <h3>' . $_SESSION['tname'] . '</h3><br>';
+                        	echo '<h3 class="bold">Contact:</h3> <h3>' . $_SESSION['temail'] . '</h3><br>';
+                        ?>
                     </div>
 
-					<!-- Student/lab code information on left - Will eventually be replaced w/ PHP -->
                     <div id="labInfo" style="float:right; text-align:right;">
-                        <h3 class="bold">Student:</h3> <h3>Balthazar McAndrews Junior</h3><br>
+                        <?php
+                        	# Displays student name
+	                    	echo '<h3 class="bold">Student:</h3> <h3>' . $_SESSION['sname'] .  '</h3><br>';
+	                    ?>
                         <font color="#f7d708"><h3>Your Lab Code:</h3> <h3 class="bold">17</h3></font><br>
                         <h4>Don't forget to write down your lab code</h4>
                     </div>

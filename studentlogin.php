@@ -13,7 +13,7 @@
 	University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	File: studentlogin.php
   	Page for students to input their lab code to continue working on their assignments.
-	Last updated March 25, 2014 by KC
+	Last updated March 26, 2014 by KC
 -->
 
 <html>
@@ -33,7 +33,7 @@
       <!-- Header containing logo and the Early Bird -->
       <div id="header">
         <div id="logoText">
-          <a href="index.html"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="93"/></a>
+          <a href="index.php"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="93"/></a>
         </div>
         <div id="theEarlyBird">
           <img src="css/assets/earlybird1.png" title="The Early Bird writes the words!" alt="The Early Bird writes the words!" width="266" height="147"/>
@@ -44,25 +44,27 @@
         <!-- Left div for "Is this your first time?" -->
         <div class="labEntry left">
           <h2>Is this your first time working on this lab?</h2>
-          <form id="login" method="post" action="scripts/labcode.php">
+          <form id="login" method="post" action="scripts/new_lab.php">
               <input type="text" name="assignment_code" placeholder="What Is Your Name?">
               <br/><br/>
               <div class="center">
-                  <a class="stdButton stdButton-hover" href="studenthub.php" id="assignmentToLab">Begin New Lab</a>
+                  <input type="submit" class="stdButton" name="acode" id="assignmentToLab" value="Begin New Lab">
               </div>
           </form>
         </div>
         <!-- Right div for "Have you started this lab?" -->
         <div class="labEntry right">
-          <h2>Have you already started this lab?</h2>
-          <!-- Lab Code form -->
+        <?php
+			include "scripts/show_labs_studentlogin.php";
+        ?>
+          <!-- <h2>Have you already started this lab?</h2>
           <form id="login" method="post" action="scripts/labcode.php">
               <input type="text" name="assignment_code" placeholder="Enter Your Lab Code Here">
               <br/><br/>
               <div class="center">
                   <a class="stdButton stdButton-hover" href="studenthub.php" id="assignmentToLab">Continue Working</a>
               </div>
-          </form>
+          </form> -->
         </div>
         <!-- Bottom div for Help -->
         <div id="findCode">

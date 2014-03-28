@@ -1,4 +1,10 @@
 <?php
+	# Kaitlyn Carcia and Will Soeltz
+	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
+	# File: show_assignments.php
+	# Shows assignments on teacherhub
+	# Last updated March 26, 2014 by KC
+
 	# connects to database
 	include "connect.php";
 
@@ -32,7 +38,8 @@
 						echo $array2[$i][1];
 					echo "</div>";
 					echo "<div class='clearfix'>";
-						echo "<a class='teacherLink viewLabs' href='teacherhub_labs.php#'>View Labs</a>";
+						$url = 'teacherhub_labs.php?acode=' . $array2[$i][0];
+						echo "<a class='teacherLink viewLabs' href='$url'>View Labs</a>";
 						echo "<div id='assignmentContent'>";
 							echo "<h2 class='acode'>Assignment Code:</h2><br>";
 							echo "<h3 class='acode'>" . $array2[$i][0] . "</h3>";
@@ -43,3 +50,4 @@
 			}
 	}
 ?>
+

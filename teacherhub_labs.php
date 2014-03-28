@@ -64,7 +64,23 @@
                         <!-- Container for content in labs container -->
                         <div id="contentContainer">
                             <!-- Will evenutally be PHP for lab name -->
-                            <h2 class="gray">Gravity Apples</h2>
+                            <?php
+                            	include "scripts/connect.php";
+								# Assignment code 
+								$acode = $_GET['acode'];
+		
+								# Selects all assignments given a specific Teacher ID
+								$result = mysql_query("SELECT * FROM Assignments WHERE Assignment_Code='$acode'");
+								if (!$result) {
+									die('Invalid query: ' . mysql_error());
+								}
+	
+								# Gets any results from query
+								$values = mysql_fetch_array($result);
+								
+								# Show assignment title
+                            	echo '<h2 class="gray">' . $values['Name'] . '</h2>';
+                            ?>
                         	<!-- Code for when no lab reports exist -->
                         	<!-- <h3 class="info">No lab reports have been created for this assignment yet.</h3> -->
                             <h3 class="info">Click below to view individual labs for this assignment.</h3>
@@ -72,7 +88,7 @@
                             <div style="height: 20px;"></div>
 						
 						<?php
-							# include "scripts/show_labs.php";
+							include "scripts/show_labs_teacherhub.php";
 						?>
 
 					
@@ -95,6 +111,6 @@
 <?php
 	# Otherwise redirect to splash screen
 	 } else {
-	 	header("Location: index.html");
+	 	header("Location: index.php");
 	}
 ?>
