@@ -45,7 +45,10 @@
         <script src="js/tabs.js"></script>
      
 		<!-- Scripts for auto-saving -->
-     	<script src="js/auto-save.js"></script>   
+     	<script src="js/auto_save.js"></script>   
+  
+  		<!-- Scripts for leaving a page -->
+		<!-- <script src="js/leave_page.js"></script> -->
   
         <title>Early Birds</title>
     </head>

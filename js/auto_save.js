@@ -3,7 +3,7 @@
 // 
 // Will Soeltz and Kaitlyn Carcia
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-// File: auto-save.js
+// File: auto_save.js
 // Uses ajax to auto-save information to the database every 15 seconds
 // Last updated March 26, 2014 by KC
 
@@ -61,7 +61,7 @@ function ajaxFunction(){
 	 var results = document.getElementById('tabs-5-box').value;
 	 var conclusion = document.getElementById('tabs-6-box').value;
 	 var queryString = "?problem=" + problem + "&hypothesis=" + hypothesis + "&materials=" + materials + "&procedure=" + procedure + "&results=" + results + "&conclusion=" + conclusion;
-	 ajaxRequest.open("GET", "scripts/auto-save.php" + 
+	 ajaxRequest.open("GET", "scripts/auto_save.php" + 
 								  queryString, true);
 	 ajaxRequest.send(null); 
 }

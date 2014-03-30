@@ -1,7 +1,7 @@
 <?php
 	# Kaitlyn Carcia and Will Soeltz
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-	# File: show_labs_teacherhub.php
+	# File: auto_save.php
 	# Auto saves student work to database
 	# Last updated March 30, 2014 by KC
 	
