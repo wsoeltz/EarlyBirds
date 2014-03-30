@@ -1,3 +1,9 @@
+<?php
+	# Displays page ONLY if a session is currently active
+	# http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
+	session_start();
+ 	if (isset($_SESSION['acode'])) {
+?>
 <!DOCTYPE html>
 <!--
 	Early Birds Student Hub
@@ -37,7 +43,10 @@
         
         <!-- Scripts to get jQuery tabs working w/ site -->
         <script src="js/tabs.js"></script>
-        
+     
+		<!-- Scripts for auto-saving -->
+     	<script src="js/auto-save.js"></script>   
+  
         <title>Early Birds</title>
     </head>
     <body>
@@ -57,7 +66,6 @@
                     <div id="labInfo" style="float:left;">
                         <?php
                         	# Displays assignment name, teacher name, and teacher email 
-                        	session_start();
                         	echo '<h2>' . $_SESSION['aname'] . '</h2>';
                         	echo '<h3 class="bold">Teacher:</h3> <h3>' . $_SESSION['tname'] . '</h3><br>';
                         	echo '<h3 class="bold">Contact:</h3> <h3>' . $_SESSION['temail'] . '</h3><br>';
@@ -73,7 +81,6 @@
                         <h4>Don't forget to write down your lab code</h4>
                     </div>
                 </div>
-                
 				<!-- All tabs for lab report -->
                 <div id="tabs">
                     <ul>
@@ -86,30 +93,34 @@
                     </ul>
                     <div id="tabs-1">
 						<!-- Input box -->
-						<textarea name="problemInput" class="textInput" id="tabs-1-box"></textarea>
+						<textarea class="textInput" id="tabs-1-box"></textarea>
                     </div>
                     
                     <div id="tabs-2">
 						<!-- Input box -->
-						<textarea name="problemInput" class="textInput" id="tabs-2-box"></textarea>
+						<textarea class="textInput" id="tabs-2-box"></textarea>
                     </div>
                     <div id="tabs-3">
 						<!-- Input box -->
-						<textarea name="problemInput" class="textInput" id="tabs-3-box"></textarea>
+						<textarea class="textInput" id="tabs-3-box"></textarea>
                     </div>
                     <div id="tabs-4">
 						<!-- Input box -->
-						<textarea name="problemInput" class="textInput" id="tabs-4-box"></textarea>
+						<textarea class="textInput" id="tabs-4-box"></textarea>
                     </div>
                     <div id="tabs-5">
 						<!-- Input box -->
-						<textarea name="problemInput" class="textInput" id="tabs-5-box"></textarea>
+						<textarea class="textInput" id="tabs-5-box"></textarea>
                     </div>
                     <div id="tabs-6">
 						<!-- Input box -->
-						<textarea name="problemInput" class="textInput" id="tabs-6-box"></textarea>
+						<textarea class="textInput" id="tabs-6-box"></textarea>
                     </div>
                 </div>
+                
+                <script>
+
+                </script>
                 
                 <!-- Hint section -->
                 <div id="labHelp">
@@ -150,3 +161,9 @@
 		?>
     <body>
 </html>
+<?php
+	# Otherwise redirect to splash screen
+	 } else {
+	 	header("Location: index.php");
+	}
+?>
