@@ -17,7 +17,6 @@
 	
 	# Adds new lab to the database
 	function addLabToDatabase($acode, $sname) {
-		# Generates lab ID
  		
 		# Inserts user into database
 		$result = mysql_query("INSERT INTO Labs (Lab_ID, Assignment_Code, Student_Name) VALUES ( 'mysql_insert_id()', '$acode', '$sname')")

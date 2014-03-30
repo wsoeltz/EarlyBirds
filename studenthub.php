@@ -93,28 +93,28 @@
                     </ul>
                     <div id="tabs-1">
 						<!-- Input box -->
-						<textarea class="textInput" id="tabs-1-box"></textarea>
+						<textarea name="problemInput" class="textInput" id="tabs-1-box"></textarea>
                     </div>
                     
                     <div id="tabs-2">
 						<!-- Input box -->
-						<textarea class="textInput" id="tabs-2-box"></textarea>
+						<textarea name="hypothesisInput" class="textInput" id="tabs-2-box"></textarea>
                     </div>
                     <div id="tabs-3">
 						<!-- Input box -->
-						<textarea class="textInput" id="tabs-3-box"></textarea>
+						<textarea name="materialsInput" class="textInput" id="tabs-3-box"></textarea>
                     </div>
                     <div id="tabs-4">
 						<!-- Input box -->
-						<textarea class="textInput" id="tabs-4-box"></textarea>
+						<textarea name="procedureInput" class="textInput" id="tabs-4-box"></textarea>
                     </div>
                     <div id="tabs-5">
 						<!-- Input box -->
-						<textarea class="textInput" id="tabs-5-box"></textarea>
+						<textarea name="resultsInput" class="textInput" id="tabs-5-box"></textarea>
                     </div>
                     <div id="tabs-6">
 						<!-- Input box -->
-						<textarea class="textInput" id="tabs-6-box"></textarea>
+						<textarea name="conclusionInput" class="textInput" id="tabs-6-box"></textarea>
                     </div>
                 </div>
                 
