@@ -78,33 +78,6 @@
                 
                 <!-- Students: Enter in lab code -->
                 <div id="labCode" class="contentBlock">
-				<!-- 
-                <a title="Go Back to Assignment Code" href="javascript:void(0)" id="labToAssignment"><img class="goBack" src="css/assets/left_arrow.png"></a>
-                    <h2>Have you already started working?</h2>
-                    <div class="center">Enter Your Lab Code</div>
-                    <!~~ Lab Code form ~~>
-                    <form id="login" method="post" action="scripts/labcode.php">
-                        <input type="text" name="assignment_code" placeholder="Lab Code">
-                        <br/><br/>
-                        <div class="center">
-                            <a class="stdButton" href="javascript:void(0)" id="assignmentToLab">Continue</a>
-                        </div>
-                    </form>
-                    
-                    <!~~ Begin if they do not have a lab code~~>
-                    <h2>Is this your first time on this assignment?</h2>
-                    <div class="center">
-                        Click below to begin.
-                        <a class="stdButton" href="javascript:void(0)" id="labBegin">Begin</a>
-                    </div>
-                    
-                    <!~~ Find lab code if not sure how ~~>
-                    <div class="center">
-                        <hr>
-                        Not sure how to find your assignment code?<br><br>
-                        <a class="stdButton" href="javascript:void(0)" id="findLabCode">Find It</a>
-                    </div>
- 				-->
                 </div>
                 
                 <!-- Splash Menu -->
@@ -122,14 +95,6 @@
                 
                 <!-- Learn more/About -->
                 <div class="contentBlock">
-                    <!-- 
-					<h4> &ldquo;The Early Birds write the words.&rdquo;</h4><br>
-                    <p class="learnMore">Early Birds is a web application that allows teachers to integrate computers into elementary education. It primarily focuses on guiding younger students in using computers to write formal science lab reports.</p><br>
-					<p class="learnMore">This website has two separate interfaces: one for students and one for teachers. The student portion of the website includes an easy-to-use interface for writing lab reports, engaging graphics, and recognizable buttons with text. The teacher portal provides information on how to use Early Birds in the classroom and allows teachers to create assignments as well as view their students’ current and previous assignments by signing up for an account.</p><br>
-					<p class="learnMore">Early Birds encourages students to become comfortable using computers for classroom assignments at a young age. If you're a teacher looking to get started using Early Birds, register for an account.</p><br>
-					<!~~ Go back to splash page ~~>
-                    <a title="Go Back to the Main Menu" href="javascript:void(0)" id="aboutToSplash"><img class="goBack" src="css/assets/left_arrow.png"></a>
-					 -->
                 </div>
                 
 				<!-- Login div -->
@@ -176,7 +141,7 @@
         </div>
     </div>
 
-    <!-- Contains hidden content for learn more -->
+    <!-- Contains hidden content for learn more and logout box -->
             <div id="hiddencontent">
                 <div id="about">
                     <div id="aboutContent">
@@ -201,8 +166,15 @@
                         </div>
                     </div>
                 </div>
+                <a class="logout" href="#logoutContainer">Logout Succesful</a>
+                <div id="logoutContainer">
+                    <div id="logoutContent">
+                        <h2>Succesfully logged out.</h2>
+                    </div>
+                </div>
             </div>
         <!-- end hidden content -->
+
 
   </body>
 </html>

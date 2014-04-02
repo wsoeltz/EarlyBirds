@@ -302,7 +302,6 @@ div#sideContent h1 a#student{
 	background-image: url(assets/studentArrows.png);
 	background-repeat: no-repeat;
 	background-position: 330px 0px;
-	
 }
 
 div#sideContent h1 a#teacher{
@@ -321,7 +320,6 @@ div#sideContent h1 a#teacher{
 	background-image: url(assets/teacherArrows.png);
 	background-repeat: no-repeat;
 	background-position: 260px 0px;
-	
 }
 
 div#sideContent a.learn{
@@ -390,8 +388,6 @@ div#sideContent h1 a#teacher:hover{
 	background-position: 260px -47px;
 }
 
-
-
 /* Hover color for standard button */
 div#sideContent a.stdButton:hover{
 	background-color: #feffff;
@@ -413,4 +409,27 @@ div#hiddencontent{
 	width: 0px;
 	height: 0px;
 	overflow: hidden;
+}
+
+/**********
+
+		Logout Modal
+
+**********/
+#logoutContainer{
+	overflow: hidden;
+	width: 100%;
+	height: 130px;
+}
+
+#logoutContent{
+	background-color: #009ece;
+	text-align: center;
+	width: 100%;
+	height:150px;
+}
+
+#logoutContent h2{
+	padding-top: 50px;
+	text-transform: none;
 }

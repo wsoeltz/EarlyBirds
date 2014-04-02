@@ -9,8 +9,9 @@
 	
 $(document).ready(function(){
 
-	// code for using inline html
+	// code for using inline html with colorbox
 	$(".learnMoreLight").colorbox({inline:true, width:"609px", height: "450px"});
+	$(".logout").colorbox({inline:true, width:"300px", height: "200px"});
 	
 	// Scrolling for learn more
 	$(function(){
@@ -24,7 +25,7 @@ $(document).ready(function(){
 		// 400 seconds delays the alert message
 		// http://www.w3schools.com/js/js_timing.asp
 		setTimeout(function(){
-			alert("Successfully logged out.")
+			$('.logout').click();
 			},400);
 		
 		// Remove hash from URL after alert goes away
@@ -35,6 +36,6 @@ $(document).ready(function(){
 
 			if (index > 0) {
 				window.location = loc.substring(0, index);
-		}},550);
+		}},2700);
 	}	
 });
