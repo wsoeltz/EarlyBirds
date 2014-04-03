@@ -37,5 +37,89 @@ $(document).ready(function(){
 			if (index > 0) {
 				window.location = loc.substring(0, index);
 		}},2700);
-	}	
+	}
+
+
+	$('#loginForm').validate({
+          rules:  {
+            email:  {
+              required: true,
+              email: true
+            },
+            password:  {
+              required: true
+            }
+          },//end rules
+          messages:  {
+            email:  {
+              required: "<div class='errors'>You need to enter an email.</div>",
+              email: "<div class='errors'>Invalid email.</div>"
+            },
+            password:  {
+              required: "<div class='errors'>You need to enter a password.</div>"
+            }
+          },//end messages 
+        });
+
+	$('#registerForm').validate({
+          rules:  {
+          	name: {
+          		required: true
+          	},
+            email:  {
+              required: true,
+              email: true
+            },
+            confirm_email:  {
+              required: true,
+              equalTo: "#registerEmail"
+            },
+            password:  {
+              required: true,
+              minlength: 8
+            },
+            confirm_password:  {
+              equalTo: "#registerPassword"
+            }
+          },//end rules
+          messages:  {
+          	name: {
+          		required: "<div class='errors'>You need to enter your name.</div>"
+          	},
+            email:  {
+              required: "<div class='errors'>You need to enter an email.</div>",
+              email: "<div class='errors'>Invalid email.</div>"
+            },
+            confirm_email:  {
+              required: "<div class='errors'>You need to confirm your email.</div>",
+              equalTo: "<div class='errors'>Email does not match.</div>"
+            },
+            password:  {
+              required: "<div class='errors'>You need to enter a password.</div>",
+              minlength: "<div class='errors'>Password must be at least 8 characters</div>"
+            },
+            confirm_password: {
+            	equalTo: "<div class='errors'>Passwords do not match.</div>"
+            }
+          },//end messages 
+        });
+
+
+	$('#assignmentForm').validate({
+          rules:  {
+            assignment_code:  {
+              required: true
+            }
+          },//end rules
+          messages:  {
+            assignment_code:  {
+              required: "You need to enter an assignment code."
+            }
+          },//end messages 
+          errorPlacement: function(error, element) {
+            $(error).appendTo( $("#assignmentErrors") );
+            } // end errorPlacement       
+        });
+	
+
 });

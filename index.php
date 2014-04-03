@@ -14,34 +14,27 @@
 <html>
   <head>
     <meta charset = "utf-8" />
-    
     <!-- Styling for this page -->
     <link rel = "stylesheet" href = "css/reset.css" />
     <link rel = "stylesheet" href = "css/colorbox_xonbottom.css" />
     <link rel = "stylesheet" href = "css/main.css" />
     <link rel="stylesheet" href="css/jquery.jscrollpane.css" />
-    
     <!-- Open Sans Google Font API -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,800' rel='stylesheet' type='text/css'>
-    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,800,600italic' rel='stylesheet' type='text/css'>
 	<!-- jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-    
     <!-- JS for sliding divs -->
     <script src="js/slideDivs.js"></script>
-
     <!-- the mousewheel plugin - optional to provide mousewheel support -->
     <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
-    
     <!-- the jScrollPane script -->
     <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
-
     <!-- JavaScript pages for lightbox -->
     <script src="js/jquery.colorbox.js"></script>
-
     <!-- General JavaScript pages for index page - lightbox, scroll, logout -->
     <script src="js/index.js"></script>
-
+    <!-- Inlclude jQuery Validation Plugin -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script> 
     <title>Early Birds</title>
   </head>
   <body>
@@ -59,11 +52,12 @@
                 <div id="assignmentCode" class="contentBlock">
                     <h2>Enter Your Assignment Code</h2>
                     <!-- Assignment Code form -->
-                    <form id="login" action="scripts/find_assignment_code.php" method="get">
+                    <form id="assignmentForm" action="scripts/find_assignment_code.php" method="get">
                         <input type="text" name="assignment_code" placeholder="Assignment Code">
                         <br/><br/>
                         <div class="center">
                             <input type="submit" class="stdButton" name="acode" value="Continue">
+                            <div id="assignmentErrors"></div>
                         </div>
                     </form>
                     <!-- Find assignment code if not sure how -->
@@ -76,7 +70,7 @@
                     <a title="Go Back to Main Menu" href="javascript:void(0)" id="assignmentToSplash"><img class="goBack vertical" src="css/assets/down_arrow.png"></a>           
                 </div>
                 
-                <!-- Students: Enter in lab code -->
+                <!-- Students: Enter in lab code. Needed as placeholder block for sliding divs -->
                 <div id="labCode" class="contentBlock">
                 </div>
                 
@@ -93,7 +87,7 @@
                     </p>
                 </div>
                 
-                <!-- Learn more/About -->
+                <!-- Learn more/About. Needed as placeholder block for sliding divs -->
                 <div class="contentBlock">
                 </div>
                 
@@ -103,10 +97,11 @@
 					<a title="Go Back to Main Menu" href="javascript:void(0)" id="loginToSplash"><img class="goBack vertical" src="css/assets/up_arrow.png"></a>
                     <h2>Login</h2>
                     <!-- Login form -->
-                    <form id="login" method="post" action="scripts/login.php">
+                    <form id="loginForm" name="loginForm" method="post" action="scripts/login.php">
 	                    <input type="text" name="email" placeholder="Email">
 	                    <input type="password" name="password" placeholder="Password">
 	                    <div class="center">
+                            <div id="loginErrors" class="errors"></div>
 	                    	<input type="submit" value="Login" class="button" id="login">
 	                    </div>
 	                </form>
@@ -125,13 +120,14 @@
                 	<a title="Go Back to Login" href="javascript:void(0)" id="registerToLogin"><img class="goBack" src="css/assets/left_arrow.png"></a>
                 	<h2>Register</h2>
                 	<!-- Registration form-->
-                	<form id="register" method="post" action="scripts/registration.php">
+                	<form id="registerForm" name="registerForm" method="post" action="scripts/registration.php">
 	                    <input type="text" name="name" placeholder="Name">
-	                    <input type="text" name="email" placeholder="Email">
-	                    <input type="text" placeholder="Confirm Email">
-	                    <input type="password" name="password" placeholder="Password">
-	                    <input type="password" placeholder="Confirm Password">
+	                    <input type="text" name="email" id="registerEmail" placeholder="Email">
+	                    <input type="text" name="confirm_email" placeholder="Confirm Email">
+	                    <input type="password" name="password" id="registerPassword" placeholder="Password">
+	                    <input type="password" name="confirm_password" placeholder="Confirm Password">
 	                    <div class="center">
+                        <div id="registerErrors" class="errors"></div>
 	                    	<input type="submit" value="Register" class="button" id="register">
 	                    </div>
 	                </form>
