@@ -49,10 +49,14 @@
   
   		<!-- Scripts for leaving a page -->
 		<!-- <script src="js/leave_page.js"></script> -->
-  
+
         <title>Early Birds</title>
     </head>
     <body>
+    	<?php
+    		# Loads all existing lab content into textareas
+			include "scripts/load_lab.php";
+		?>
         <div id="contentWrapper">
         
             <!-- Header containing logo and the Early Bird -->

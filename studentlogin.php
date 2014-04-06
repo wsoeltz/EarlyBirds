@@ -57,14 +57,6 @@
         <?php
 			include "scripts/show_labs_studentlogin.php";
         ?>
-          <!-- <h2>Have you already started this lab?</h2>
-          <form id="login" method="post" action="scripts/labcode.php">
-              <input type="text" name="assignment_code" placeholder="Enter Your Lab Code Here">
-              <br/><br/>
-              <div class="center">
-                  <a class="stdButton stdButton-hover" href="studenthub.php" id="assignmentToLab">Continue Working</a>
-              </div>
-          </form> -->
         </div>
         <!-- Bottom div for Help -->
         <div id="findCode">

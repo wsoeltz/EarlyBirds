@@ -20,6 +20,8 @@
 	# Displays all labs available for an assignment
 	# Styling will be implemented here
 	while ( $values = mysql_fetch_array($result)) {
-		echo '<a href="#">' . $values['Student_Name'] . '</a><br>';
+		# Adds ID of the student lab being selected to the link to load all previous work
+		$url = 'studenthub.php?id=' . $values['Lab_ID'];
+		echo "<a href='$url'>" . $values['Student_Name'] . "</a><br>";
 	}
 ?>

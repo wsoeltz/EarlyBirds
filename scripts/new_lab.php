@@ -27,7 +27,8 @@
  		$id = mysql_insert_id();
  		$_SESSION['Lab_ID']=$id;
 
- 		header("Location: ../studenthub.php");
+		# Redirect to studenthub with lab id in URL
+		$url = " ../studenthub.php?id=" . $id;
+ 		header("Location: $url");
 	}
-	
 ?>
