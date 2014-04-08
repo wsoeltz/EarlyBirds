@@ -23,9 +23,7 @@
 	$values = mysql_fetch_array($result);
 
 	# Sets student name if unset (since it might be unset if this is not a new lab)
-	if (!isset($_SESSION['sname'])) {
-		$_SESSION['sname'] = $values['Student_Name'];
-	}
+	$_SESSION['sname'] = $values['Student_Name'];
 
 	# Fill all the textareas with what's currently saved in the database
 	echo "<script type=\"text/javascript\">";
