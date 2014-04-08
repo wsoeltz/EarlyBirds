@@ -45,7 +45,9 @@
 					} else {
 						echo '<div id="complete" class="complete no">NO</div>';
 					}
-					echo '<a class="viewLab" href="#">View</a>';
+					# URL to redirect to the lab report
+					$url = 'lab_report.php?id=' . $values['Lab_ID'];
+					echo "<a class='viewLab' href='$url'>View</a>";
 				echo '</div>';
 			echo '</div>';
 		} while ($values = mysql_fetch_array($result));
