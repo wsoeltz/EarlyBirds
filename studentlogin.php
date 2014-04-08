@@ -26,7 +26,11 @@
     <!-- Open Sans Google Font API -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
     
+    <!-- jQuery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
     <title>Early Birds</title>
+    
   </head>
   <body>
     <div id="contentWrapper">

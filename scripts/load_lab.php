@@ -15,9 +15,17 @@
 	if (!$result) {
 		die('Invalid query: ' . mysql_error());
 	}
+
+	# Sets Lab ID session variable to the variable of the selected lab
+	$_SESSION['Lab_ID'] = $id;
 	
 	# Gets any results from query
 	$values = mysql_fetch_array($result);
+
+	# Sets student name if unset (since it might be unset if this is not a new lab)
+	if (!isset($_SESSION['sname'])) {
+		$_SESSION['sname'] = $values['Student_Name'];
+	}
 
 	# Fill all the textareas with what's currently saved in the database
 	echo "<script type=\"text/javascript\">";
