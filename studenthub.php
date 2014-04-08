@@ -2,7 +2,7 @@
 	# Displays page ONLY if a session is currently active
 	# http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
 	session_start();
- 	if (isset($_SESSION['acode'])) {
+ 	if (isset($_SESSION['here'])) {
 ?>
 <!DOCTYPE html>
 <!--
@@ -45,15 +45,15 @@
         <script src="js/tabs.js"></script>
      
 		<!-- Scripts for auto-saving -->
-     	<script src="js/auto_save.js"></script>   
-  
-  		<!-- Scripts for leaving a page -->
-		<!-- <script src="js/leave_page.js"></script> -->
+     	<script src="js/auto_save.js"></script> 
 
         <title>Early Birds</title>
     </head>
     <body>
     	<?php
+    		# Detects if user leaves page
+     		include "scripts/leave_page.php";
+    		
     		# Loads all existing lab content into textareas
 			include "scripts/load_lab.php";
 		?>

@@ -21,7 +21,8 @@
 	# Styling will be implemented here
 	while ( $values = mysql_fetch_array($result)) {
 		# Adds ID of the student lab being selected to the link to load all previous work
-		$url = 'studenthub.php?id=' . $values['Lab_ID'];
-		echo "<a href='$url'>" . $values['Student_Name'] . "</a><br>";
+		# Redirects to php file that will appropriately load existing lab
+		$url = 'scripts/redirect.php?id=' . $values['Lab_ID'];
+		echo "<a class='lablink' href='$url'>" . $values['Student_Name'] . "</a><br>";
 	}
 ?>
