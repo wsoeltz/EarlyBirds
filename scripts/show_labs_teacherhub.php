@@ -3,10 +3,13 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: show_labs_teacherhub.php
 	# Shows labs on teacherhub
-	# Last updated March 26, 2014 by KC
+	# Last updated April 10, 2014 by KC
 	
 	# Assignment code 
 	$acode = $_GET['acode'];
+	
+	# Set session assignment code id
+	$_SESSION['acode'] = $acode;
 		
 	# Selects all assignments given a specific Teacher ID
 	$result = mysql_query("SELECT * FROM Labs WHERE Assignment_Code='$acode'");
@@ -46,7 +49,7 @@
 						echo '<div id="complete" class="complete no">NO</div>';
 					}
 					# URL to redirect to the lab report
-					$url = 'lab_report.php?id=' . $values['Lab_ID'];
+					$url = 'scripts/redirect.php?page=teacher&id=' . $values['Lab_ID'];
 					echo "<a class='viewLab' href='$url'>View</a>";
 				echo '</div>';
 			echo '</div>';

@@ -1,3 +1,9 @@
+<?php
+	# Displays page ONLY if a session is currently active
+	# http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
+	session_start();
+ 	if (isset($_SESSION['here'])) {
+?>
 <!DOCTYPE html>
 
 <!--
@@ -25,9 +31,6 @@
     		# Conencts to database, select table
     		include "scripts/connect.php";
     		
-    		# Starts session
-    		session_start();
-    		
     		# Gets lab ID from URL
     		$id = $_GET['id'];
     			
@@ -42,7 +45,12 @@
 	
 			# Gets assignment code
 			$acode = $values['Assignment_Code'];
-			
+	
+			// # Redirect to another page is assignment code does not match
+ 			if ($_SESSION['acode'] != $acode) {
+ 				header("Location: teacherhub.php");
+ 			}
+
 			# Selects all assignments given a specific assignment code
 			$result2 = mysql_query("SELECT * FROM Assignments WHERE Assignment_Code='$acode'");
 			if (!$result) {
@@ -71,7 +79,7 @@
         	echo "<h2>" . date('F j, Y', strtotime($values['Timestamp'])) . "</h2>";
         	
         	# Teacher Name
-         	echo "<h2>" . $values3['Name'] . "<h2>";
+         	echo "<h2>Teacher Name: " . $values3['Name'] . "<h2>";
          	
          	# Lab sections
 			echo "<h1>" . $values2['Name'] ." </h1>";
@@ -91,3 +99,9 @@
     </div>
   </body>
 </html>
+<?php
+	# Otherwise redirect to splash screen
+	 } else {
+	 	header("Location: teacherhub.php");
+	}
+?>
