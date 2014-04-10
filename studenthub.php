@@ -148,7 +148,7 @@
                 <div id="navButtons">
                     <!-- Save, Next, and Previous buttons -->
                     <a id="previous" class="stdButton stdButton-hover previous">Previous Section</a>
-                    <a id="save" class="stdButton save">Save</a>
+                    <a id="save" class="stdButton save" href="scripts/submit.php">Save</a>
                     <a id="next" class="stdButton stdButton-hover next">Next Section</a>
                 
                 <!-- Reminder for lab code - eventually PHP code will exist here -->
