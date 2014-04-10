@@ -20,7 +20,7 @@
 		# Redirect to lab report
 		$url = "../lab_report.php?id=" . $id;
 	header("Location: $url");
-	} else if ($page ==" student") {
+	} else if ($page == "student") {
 		# Redirect to studenthub
 		$url = "../studenthub.php?id=" . $id;
 		header("Location: $url");
