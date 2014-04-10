@@ -31,7 +31,7 @@
 		$_SESSION['here'] = "true";
 
 		# Redirect to studenthub with lab id in URL
-		$url = " ../studenthub.php?id=" . $id;
+		$url = " ../studenthub.php?page=student&id=" . $id;
  		header("Location: $url");
 	}
 ?>

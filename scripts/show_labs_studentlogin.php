@@ -22,7 +22,7 @@
 	while ( $values = mysql_fetch_array($result)) {
 		# Adds ID of the student lab being selected to the link to load all previous work
 		# Redirects to php file that will appropriately load existing lab
-		$url = 'scripts/redirect.php?id=' . $values['Lab_ID'];
+		$url = 'scripts/redirect.php?page=student&id=' . $values['Lab_ID'];
 		echo "<a class='lablink' href='$url'>" . $values['Student_Name'] . "</a><br>";
 	}
 ?>
