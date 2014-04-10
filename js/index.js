@@ -36,7 +36,7 @@ $(document).ready(function(){
 
 			if (index > 0) {
 				window.location = loc.substring(0, index);
-		}},2700);
+		}},1600);
 	}
 
 
