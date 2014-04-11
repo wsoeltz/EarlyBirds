@@ -17,6 +17,9 @@
 -->
 <html>
     <head>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="css/assets/ebfavicon.ico" type="image/x-icon">
+        <link rel="icon" href="css/assets/ebfavicon.ico" type="image/x-icon">
         <meta charset = "utf-8" />
 
         <!-- Styling for this page -->
@@ -35,59 +38,62 @@
 			include "include/teacherhub_header.html";
 		?>
     
-        <!-- Main Container includes containers for content/egg shell background -->
-        <div id="mainContainer">
-            <!-- Contains Welcome and Labs blocks -->
-            <div id="container">
-                <!-- Keeps parents of floating elements from collasping -->
-                <div class="clearfix">
-                    <!-- Orange background for welcome container -->
-                    <div id="orangeBg"></div>
-                    <!-- Welcome container -->
-                    <div id="welcomeContainer">
-                        <div id="welcomeContent">
-                            <h2 class="white">View Labs</h2>
-                            <!-- Displays user's name -->
-                            <?php
-                            	echo "<h3 class='name'>" . $_SESSION['name'] . "</h3>";
-                            ?>
-                            <!-- Will eventually use PHP for email -->
-                            <?php
-                            	echo "<h4 style='margin-bottom: 30px;'>" . $_SESSION['email'] . "</h4>";
-                            ?>
-                            <a class="return" href="teacherhub.php">Return to Assignments</a>
+        <!-- content wrapping div designed to push footer to bottom of page -->
+        <div id="footerPusher">
+            <!-- Main Container includes containers for content/egg shell background -->
+            <div id="mainContainer">
+                <!-- Contains Welcome and Labs blocks -->
+                <div id="container">
+                    <!-- Keeps parents of floating elements from collasping -->
+                    <div class="clearfix">
+                        <!-- Orange background for welcome container -->
+                        <div id="orangeBg"></div>
+                        <!-- Welcome container -->
+                        <div id="welcomeContainer">
+                            <div id="welcomeContent">
+                                <h2 class="welcomeBox darkGray">View Labs</h2>
+                                <!-- Displays user's name -->
+                                <?php
+                                	echo "<h3 class='name'>" . $_SESSION['name'] . "</h3>";
+                                ?>
+                                <!-- Will eventually use PHP for email -->
+                                <?php
+                                	echo "<h4 style='margin-bottom: 30px;'>" . $_SESSION['email'] . "</h4>";
+                                ?>
+                                <a class="return" href="teacherhub.php">Return to Assignments</a>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Labs container -->
-                    <div id="labsContainer">
-                        <!-- Container for content in labs container -->
-                        <div id="contentContainer">
-                            <!-- Displayslab name -->
-                            <?php
-                            	include "scripts/display_aname.php";
-                            ?>
-                            <h3 class="info">Click below to view individual labs for this assignment.</h3>
-                            
+                        <!-- Labs container -->
+                        <div id="labsContainer">
+                            <!-- Container for content in labs container -->
+                            <div id="contentContainer">
+                                <!-- Displayslab name -->
+                                <?php
+                                	include "scripts/display_aname.php";
+                                ?>
+                                <h3 class="info">Click below to view individual labs for this assignment.</h3>
+                                
+                                <!-- White space -->
+                                <div style="height: 20px;"></div>
+    						
+    							<?php
+    								include "scripts/show_labs_teacherhub.php";
+    							?>
+                            </div>
                             <!-- White space -->
-                            <div style="height: 20px;"></div>
-						
-							<?php
-								include "scripts/show_labs_teacherhub.php";
-							?>
+                            <div style="height: 20px"></div>
                         </div>
-                        <!-- White space -->
-                        <div style="height: 20px"></div>
+                    
+                    
                     </div>
-                
-                
                 </div>
+                
+                <!--  Includes page footer -->
+    			<?php
+    				include "include/footer.html";
+    			?>
             </div>
-            
-            <!--  Includes page footer -->
-			<?php
-				include "include/footer.html";
-			?>
 
     </body>
 </html>

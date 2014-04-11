@@ -13,6 +13,9 @@
 
 <html>
   <head>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="css/assets/ebfavicon.ico" type="image/x-icon">
+    <link rel="icon" href="css/assets/ebfavicon.ico" type="image/x-icon">
     <meta charset = "utf-8" />
     <!-- Styling for this page -->
     <link rel = "stylesheet" href = "css/reset.css" />
@@ -42,7 +45,7 @@
         <div id="logoHalf">
         	<!-- EB logo  -->
             <div id="logo">
-                <img src="css/assets/logo.png" height="231" width="611" alt="Early Birds" title="Early Birds"/>
+                <img src="css/assets/logo.png" height="235" width="657" alt="Early Birds" title="Early Birds"/>
             </div>
         </div>
         <div id ="learnMoreTab"><a class="learnMoreLight" href="#about">Learn More</a></div>

@@ -17,8 +17,7 @@
 /* Background classroom image */
 body{
 
-	background-image: url(assets/classroom_bg.jpg);
-	background-repeat:no-repeat;
+	background-image: url(assets/illustrated_bg.jpg);
 	background-position:center top; 
 	font-family: 'Open Sans', sans-serif;
 	color: #feffff; /* white */
@@ -144,7 +143,7 @@ div#contentWrapper{
 div#logoHalf{
 	width: 763px;
 	float: left;
-	padding-top: 50px;
+	padding-top: 15px;
 	text-align: center;
 }
 
@@ -156,6 +155,8 @@ div#blueDrop{
 	top: -1000px;
 	z-index: -1000;
 	background-color: #009ece; /* blue */
+	border-left: solid 10px #f7d708;
+
 }
 
 /* Styling for navigation links */
@@ -165,6 +166,8 @@ div#navHalf{
 	float: left;
 	background-color: #009ece;
 	overflow: hidden;
+	background-image: url(assets/indexBorder.png);
+	background-repeat: no-repeat;
 }
 
 /* Other content (not links) */
@@ -173,6 +176,7 @@ div#sideContent{
 	height: 700px;
 	width: 1030px;
 	top:-700px;
+
 }
 
 /* Content block for student "login" page */
@@ -460,5 +464,5 @@ div#assignmentErrors{
 }
 
 input.error {						  /*  puts red border around fields with errors */
-	border-style: solid 1px #ce0000;
+	border: solid 1px #ce0000;
 	}

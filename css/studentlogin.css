@@ -15,17 +15,23 @@
 
 **********/
 
+html{
+	height: 100%;
+}
+
 /* background style */
 body{
+	height: 100%;
 	background-image: none;
 	background-color: #29a8cf; /* blue */
 	font-family: 'Open Sans', sans-serif;
 	color: #feffff;
+	background-image: url(assets/illustrated_bg_small.jpg);
 }
 
 /* style for headers */
 h2{
-	font-weight: 600;
+	font-weight: 700;
 	font-size: 18px;
 }
 
@@ -88,12 +94,18 @@ input:-moz-placeholder {
 div#contentWrapper{
 	width:1066px;
 	margin: 0 auto;
+    padding-bottom: 120px;
+}
+
+div#footerPusher{
+    min-height: 100%;
+    position: relative;
 }
 
 /* Create wrapper that holds all header content */
 div#header{
 	width: 1066px;
-	height: 140px;
+	height: 180px;
 	display: block;
 	position: relative;
 }
@@ -109,7 +121,7 @@ div#logoText{
 /* Position the Early Bird character */
 div#theEarlyBird{
 	position: absolute;
-	top: 0;
+	top: 40px;
 	left: 800px;
 	z-index: 50;
 }
@@ -155,6 +167,10 @@ div#findCode{
 div#footer{
     overflow: hidden;
     background-color: #009ece;
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    bottom: 0px;
 }
 
 div#footer a{

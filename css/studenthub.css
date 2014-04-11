@@ -59,7 +59,7 @@ a.previous{
     background-image: url(assets/left_arrow_blue.png);
     background-repeat: no-repeat;
     background-position: 9px 16px;
-    margin: 15px 243px 0px 35px;
+    margin: 15px 143px 0px 35px;
 
 }
 
@@ -68,44 +68,52 @@ a.next{
     background-image: url(assets/right_arrow_blue.png);
     background-repeat: no-repeat;
     background-position: 126px 16px;
-    margin: 15px 35px 0px 239px;
-}
-
-/* Styling for the save link */
-a.save{
-    background-image: url(assets/save_mark.png);
-    background-repeat: no-repeat;
-    background-position: 126px 16px;
-    background-color: #9ccf31; /* green */
-    color: #feffff; /* white */
     margin-top: 15px;
+    
 }
 
-/* Styling for the save link on hover*/
-a.save:hover{
-    background-color: #feffff; /* green */
-    color: #9ccf31; /* white */
+/* Styling for the submit link */
+a.submit{
+    background-color: #ff9e00; /* orange */
+    color: #feffff; /* white */
+    margin: 15px 35px 0px 339px;
+    font-weight: 700;
+}
+
+/* Styling for the submit link on hover*/
+a.submit:hover{
+    background-color: #feffff; /* white */
+    color: #ff9e00; /* orange */
 }
 
 /* Disabled class for when a user is at the beginning or end of a lab report */
 a.disabled {
-	background-color: #C0C0C0;
-	color:  #feffff;
-	cursor: default;
-    visibility:hidden;
+    background-color: #C0C0C0;
+    color:  #feffff;
+    cursor: default;
+    background-image: none;
+
+}
+
+a.disabled:hover {
+    background-color: #C0C0C0;
+    color:  #feffff;
+    cursor: default;
+    background-image: none;
+
 }
 
 /* Styling for lab name */
 h2{
-    font-weight: 800;
-    font-size: 17px;
+    font-weight: 700;
+    font-size: 20px;
     margin-bottom: 5px;
 }
 
 /* Styling for multiple headers on studenthub */
 h3{
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 400;
+    font-size: 18px;
     line-height: 150%;
     display: inline-block;
 }
@@ -137,6 +145,8 @@ Alignment
 /* Contains assignment info, tabs, buttons - Everything in the darker blue -
 Height is no longer pre-defined */
 div#mainBodyContent{
+    padding-top: 20px;
+    margin-top: 40px;
     height: 100%;
     position: relative;
 }
@@ -148,12 +158,14 @@ div#logoText{
 
 /* Add space between logo and main container */
 div#header{
-    padding-bottom: 14px;
+    margin-top: 20px;
+    padding-bottom: 7px;
 }
 
 /* Container for all lab info */
-div#labInfo{
-    margin: 25px 35px 42px 35px;
+div.labInfo{
+    margin: 0px 35px 42px 55px;
+    float: right;
 }
 
 /* Div for labs hints */
@@ -181,7 +193,7 @@ div#bird{
 
 div#navButtons{
     position: absolute;
-    top:605px;
+    top:593px;
     width: 1066px;
 }
 

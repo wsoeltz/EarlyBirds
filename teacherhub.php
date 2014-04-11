@@ -17,6 +17,9 @@
 -->
 <html>
     <head>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="css/assets/ebfavicon.ico" type="image/x-icon">
+        <link rel="icon" href="css/assets/ebfavicon.ico" type="image/x-icon">
         <meta charset = "utf-8" />
 
         <!-- Styling for this page -->
@@ -44,75 +47,78 @@
 			include "include/teacherhub_header.html";
 		?>
 
-        <!-- Main Container includes containers for content/egg shell background -->
-        <div id="mainContainer">
-            <!-- Contains Welcome, Assignments, and Info Sheet blocks -->
-            <div id="container">
-                <!-- Keeps parents of floating elements from collasping -->
-                <div class="clearfix">
-                    <!-- Green background for welcome container -->
-                    <div id="greenBg">
-                    </div>
-                    <!-- Welcome container -->
-                    <div id="welcomeContainer">
-                        <div id="welcomeContent">
-                            <h2 class="white">Welcome to Early Birds</h2>
-                            <!-- Displays user's name -->
-                            <?php
-                            	echo "<h3 class='name'>" . $_SESSION['name'] . "</h3>";
-                            ?>
-                            <!-- Displays user's email -->
-                            <?php
-                            	echo "<h4>" . $_SESSION['email'] . "</h4>";
-                            ?>
+        <!-- content wrapping div designed to push footer to bottom of page -->
+        <div id="footerPusher">
+            <!-- Main Container includes containers for content/egg shell background -->
+            <div id="mainContainer">
+                <!-- Contains Welcome, Assignments, and Info Sheet blocks -->
+                <div id="container">
+                    <!-- Keeps parents of floating elements from collasping -->
+                    <div class="clearfix">
+                        <!-- Green background for welcome container -->
+                        <div id="greenBg">
                         </div>
-                    </div>
-
-                    <!-- Assignments container -->
-		           <div id="assignmentsContainer">
-                        <!-- Seperate div needed to draw vertical line without causing any alignment issues -->
-                        <div class="verticalLine">
-                            <!-- Container for content in assignments container -->
-                            <div id="contentContainer">
-                                <h2 class="gray">Assignments</h2>
-                                <!-- Generate New assignment button -->
-                                <div class="right">
-                                    <!-- This version opens the php page
-                                    <a class="createNewAssignment" href="create_assignment.php">Create New Assignment</a>
-                                    -->
-                                    <a class="createNewAssignment" href="#create_assignment_content">Create New Assignment</a>
-                                </div>	
-                                <!-- White space for visual purposes -->
-                                <div style="height:20px;"></div>
+                        <!-- Welcome container -->
+                        <div id="welcomeContainer">
+                            <div id="welcomeContent">
+                                <h2 class="welcomeBox darkGray">Welcome to Early Birds</h2>
+                                <!-- Displays user's name -->
                                 <?php
-                                	# Shows all the assignments associated with a user
-                                	include "scripts/show_assignments.php";
+                                	echo "<h3 class='name'>" . $_SESSION['name'] . "</h3>";
                                 ?>
-						</div>
-					 </div>
- 					</div>
-                                
-                    <div id="line"></div>
+                                <!-- Displays user's email -->
+                                <?php
+                                	echo "<h4>" . $_SESSION['email'] . "</h4>";
+                                ?>
+                            </div>
+                        </div>
 
-                    <!-- Informational sheet container -->                    
-                    <div id="infoSheetContainer">
-                        <div id="contentContainer">
-                            <h2 class="gray">Information Sheet</h2>
-                            <h3 class="info">Print this informational sheet to hand out to your students.
-                                Includes a 'How-To' on using Early Birds as well as a location
-                                to write down their assignment code.</h3>
-                            <div class="center">
-                                <a class="teacherLink open" href="#">Open</a>
+                        <!-- Assignments container -->
+    		           <div id="assignmentsContainer">
+                            <!-- Seperate div needed to draw vertical line without causing any alignment issues -->
+                            <div class="verticalLine">
+                                <!-- Container for content in assignments container -->
+                                <div id="contentContainer">
+                                    <h2 class="gray">Assignments</h2>
+                                    <!-- Generate New assignment button -->
+                                    <div class="right">
+                                        <!-- This version opens the php page
+                                        <a class="createNewAssignment" href="create_assignment.php">Create New Assignment</a>
+                                        -->
+                                        <a class="createNewAssignment" href="#create_assignment_content">Create New Assignment</a>
+                                    </div>	
+                                    <!-- White space for visual purposes -->
+                                    <div style="height:20px;"></div>
+                                    <?php
+                                    	# Shows all the assignments associated with a user
+                                    	include "scripts/show_assignments.php";
+                                    ?>
+    						</div>
+    					 </div>
+     					</div>
+                                    
+                        <div id="line"></div>
+
+                        <!-- Informational sheet container -->                    
+                        <div id="infoSheetContainer">
+                            <div id="contentContainer">
+                                <h2 class="gray">Information Sheet</h2>
+                                <h3 class="info">Print this informational sheet to hand out to your students.
+                                    Includes a 'How-To' on using Early Birds as well as a location
+                                    to write down their assignment code.</h3>
+                                <div class="center">
+                                    <a class="teacherLink open" href="#">Open</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-		<!--  Includes page footer -->
-		<?php
-			include "include/footer.html";
-		?>
+    		<!--  Includes page footer -->
+    		<?php
+    			include "include/footer.html";
+    		?>
+        </div>
 
         <!-- Contains hidden content for creating assignments -->
             <div style='display:none'>
