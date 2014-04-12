@@ -29,7 +29,7 @@
         <link rel = "stylesheet" href = "css/studenthub.css" />
 
         <!-- Open Sans Google Font API -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,800,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,400italic,800,700' rel='stylesheet' type='text/css'>
 
 		<!-- jQuery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -77,7 +77,7 @@
                             <?php
                             	# Displays assignment name and student name
                                 echo '<h2>' . $_SESSION['aname'] . '</h2>';
-    	                    	echo '<h3 class="bold">Student:</h3> <h3>' . $_SESSION['sname'] .  '</h3><br>';
+    	                    	echo '<h3>' . $_SESSION['sname'] .  '</h3><br>';
     	                    ?>
                         </div>
                         <div class="labInfo" style="float:right;">
@@ -136,7 +136,7 @@
                             <div id="hintContainer">
                                 <!-- First problem hint that shows on site -->
                                 <h3>Need Help Writing your</h3><h3 class="bold">&nbsp;Problem?</h3><br>
-                                <p>What questions are you trying to answer? Include any preliminary observations or background information about the subject.</p>
+                                <p>Why are you doing this experiment? What question are you trying to answer? One way to write it is <span class="italics">I am doing this experiment to __________.</span></p>
                             </div>
                             <!-- Container for cartoon bird image -->
                             <div id="bird">

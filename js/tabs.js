@@ -94,32 +94,32 @@ function hint(active){
     switch(active){
         case -1:
         	// Replaces with problem hint
-            var problem = '<h3>Need Help Writing your<h3 class="bold"=">&nbsp;Problem?</h3><p>What questions are you trying to answer?</p>';
+            var problem = '<h3>Need Help Writing your<h3 class="bold"=">&nbsp;Problem?</h3><p>Why are you doing this experiment? What question are you trying to answer? One way to write it is <span class="italics">I am doing this experiment to __________.</span></p>';
 			hint_content(problem);
             break;
         case 0:
         	// Replaces with hypothesis hint
-            var hypothesis = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Hypothesis?</h3><p>A hypothesis is an educated guess about how things work. Most of the time a hypothesis is written like this: "If _____[I do this]_____, then _____[this]_____ will happen." (Fill in the blanks with the appropriate information from your own experiment.)</p>';
+            var hypothesis = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Hypothesis?</h3><p>A hypothesis is a guess about what is going to happen in your experiment. One way to write it is <span class="italics">If ______, then ________.</span></p>';
             hint_content(hypothesis);
             break;
         case 1:
         	// Replaces with materials hint
-            var materials = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Materials?</h3><p>Make a list of all items used in the lab, and in what quantity. For example, you could list 1 plant and 1 yard stick as materials for an experiment to measure a growing plant.</p>';                    
+            var materials = "<h3>Need Help Writing your<h3 class='bold'>&nbsp;Materials?</h3><p>List all the items you used. Don't forget to write down the amount of each item used.</p>";                    
            	hint_content(materials);
             break;
         case 2:
         	// Replaces with procedure hint
-            var procedure = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Procedure?</h3><p>Write down each step that you made during your lab. For example write it as "First we ____. Secondly we ____. Third we ____. And then we ____." Be sure to include as many details as possible.</p>';
+            var procedure = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Procedure?</h3><p>Write down each step you took. One way to write it is <span class="italics">First, we ____. Second, we ____. Then, we ____.</span></p>';
             hint_content(procedure);
             break;
         case 3:
         	// Replaces with result hint
-            var result = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Result?</h3><p>How did the lab go? Did the tests support your hypothesis? Be sure to include all of the information that you got from your lab.</p>';
+            var result = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Result?</h3><p>What information did you collect during your experiment?</p>';
             hint_content(result);
             break;
         case 4:
         	// Replaces with conclusion hint
-            var conclusion = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Conclusion?</h3><p>What do your results mean? Now that you have completed the lab, what do you have to say about it? What was important about your results?</p>';
+            var conclusion = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Conclusion?</h3><p>What do your results mean? Do your results support your hypothesis? How do your results relate to the problem?</p>';
             hint_content(conclusion);
             break;
     }

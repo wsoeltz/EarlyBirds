@@ -27,7 +27,7 @@
     <link rel = "stylesheet" href = "css/studentlogin.css" />
     
     <!-- Open Sans Google Font API -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
     
     <!-- jQuery -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -38,40 +38,28 @@
   <body>
     <!-- content wrapping div designed to push footer to bottom of page -->
     <div id="footerPusher">
-      <div id="contentWrapper">
-        <!-- Header containing logo and the Early Bird -->
-        <div id="header">
-          <div id="logoText">
-            <a href="index.php"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="138"/></a>
-          </div>
-          <div id="theEarlyBird">
-            <img src="css/assets/earlybird1.png" title="The Early Bird writes the words!" alt="The Early Bird writes the words!" width="266" height="147"/>
-          </div>
+      <div id="contentWrapper" class="center">
+        <!-- the Early Bird -->
+        <div id="theEarlyBird">
+          <img src="css/assets/earlyBird_bigBG.png" title="The Early Bird writes the words!" alt="The Early Bird writes the words!" width="809" height="621"/>
         </div>
         <!-- Div containing all of the main body content -->
         <div id="mainBodyContent">
-          <!-- Left div for "Is this your first time?" -->
-          <div class="labEntry left">
-            <h2>Is this your first time working on this lab?</h2>
-            <form id="login" method="post" action="scripts/new_lab.php">
-                <input type="text" name="assignment_code" placeholder="What Is Your Name?">
-                <br/><br/>
-                <div class="center">
-                    <input type="submit" class="stdButton" name="acode" id="assignmentToLab" value="Begin New Lab">
-                </div>
-            </form>
+          <div id="logoText">
+            <a href="index.php"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="138"/></a>
           </div>
-          <!-- Right div for "Have you started this lab?" -->
-          <div class="labEntry right">
+          <h2>Select your name below</h2>
           <?php
-  			include "scripts/show_labs_studentlogin.php";
+            include "scripts/show_labs_studentlogin.php";
           ?>
-          </div>
-          <!-- Bottom div for Help -->
-          <div id="findCode">
-            <p>Not sure how to find your lab code?</p>
-            <a class="stdButton stdButton-hover" href="javascript:void(0)">Find It</a>
-          </div>
+          <h2>Or if your name isn’t on the list, enter it here</h2>
+          <form id="login" method="post" action="scripts/new_lab.php">
+              <input type="text" name="assignment_code" placeholder="What Is Your Name?">
+              <br/><br/>
+              <div class="center">
+                  <input type="submit" class="stdButton" name="acode" id="assignmentToLab" value="Begin New Lab">
+              </div>
+          </form>
         </div>
       </div>
   	
