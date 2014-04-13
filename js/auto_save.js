@@ -5,11 +5,48 @@
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 // File: auto_save.js
 // Uses ajax to auto-save information to the database every 15 seconds
-// Last updated March 26, 2014 by KC
+// Last updated April 13, 2014 by KC
 
-		
-// Sets information to database every 15 seconds
-setInterval(function(){
+
+// Handles auto-saving
+idleTime = 0;
+nonIdleTime = 0;
+
+$(document).ready(function () {
+    //Increment the idle time counter every second
+    var idleInterval = setInterval(timerIncrement, 1000); // 1 second
+    
+    //Increment the non idle time counter every second
+	var nonIdleInterval = setInterval(activeTimerIncrement, 1000); // 1 second
+
+	// Idel time goes to 0 if user is actively typing
+    $(this).keypress(function (e) {
+        idleTime = 0;
+    });
+});
+
+// For idle time
+function timerIncrement() {
+    idleTime = idleTime + 1;
+    // If user idles for 3 seconds, save info
+    if (idleTime > 2) { // 3 seconds
+        auto_save();
+        idleTime = -10000; // Prevents continuous auto save if use is away from the computer 
+        nonIdleTime = 0; // Resets nonIdleTime
+    }
+}        
+
+// For non idle time - saves every 30 seconds user is not idle
+function activeTimerIncrement() {
+    nonIdleTime = nonIdleTime + 1;
+    if (nonIdleTime > 29) { // 30 seconds
+        auto_save();
+        nonIdleTime = 0;  
+    }
+}      
+
+// Handles auto-saving all information
+function auto_save() {
 	// Changes div to Saving...
 	// Source: http://stackoverflow.com/questions/5677799/how-to-append-data-to-div-using-javascript
     var div = document.getElementById('saving');
@@ -31,7 +68,8 @@ setInterval(function(){
         //div.innerHTML = 'Last saved on ' + m ' at ' + t;
         div.innerHTML = 'Last saved on ' + m + ' at ' + t;
     }, 4000);
-},10000);
+}
+
 
 // Function sends information to the the database
 // Source: http://www.tutorialspoint.com/ajax/ajax_database.htm
