@@ -68,7 +68,6 @@
     	?>
   	</div>
   </body>
-
 </html>
 <?php
 	# Otherwise redirect to splash screen

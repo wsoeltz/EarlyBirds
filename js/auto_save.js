@@ -9,7 +9,7 @@
 
 
 // Sets information to database every 15 seconds
-setInterval(function(){ajaxFunction()},15000);
+setInterval(function(){ajaxFunction()},3000);
 
 // Function sends information to the the database
 // Source: http://www.tutorialspoint.com/ajax/ajax_database.htm

@@ -163,7 +163,7 @@
     			include "include/footer.html";
     		?>
         </div>
-    <body>
+    </body>
 </html>
 <?php
 	# Otherwise redirect to splash screen
