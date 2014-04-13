@@ -88,6 +88,12 @@
                                 ?>
                         </div>
                     </div>
+                    
+                    <!-- Needs to be styled-->
+                    <!-- Div for auto-saving messages -->
+					<div style="height: 20px; margin-left: 35px" id="saving"></div>
+
+                    
     				<!-- All tabs for lab report -->
                     <div id="tabs">
                         <ul>
