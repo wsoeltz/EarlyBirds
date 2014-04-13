@@ -34,4 +34,5 @@
 	$result = mysql_query("UPDATE Labs SET Problem='$problem', Hypothesis='$hypothesis', Materials='$materials', Proced='$procedure', Results='$results', Conclusion='$conclusion' WHERE Lab_ID='$id'")
 				or die("<p>Error inserting into the database: " .
 						mysql_error() . "</p>");
+		
 ?>
