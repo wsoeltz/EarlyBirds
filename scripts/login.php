@@ -23,25 +23,16 @@
 	$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email' AND Password='$password'");
 	$values = mysql_fetch_array($result);
 	
+	# Start session - http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
+  	session_start();
+  		
 	# Email and password don't match
  	if( $values == false ) {
- 		# Checks if email inputted is associated with any account
- 	 	$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email'");
-		$values = mysql_fetch_array($result);
-
-		if ($values == false) {
-			# No account associated with email
-			echo "<br>Validation message will eventually be added - No account is associated with this email.<br>";
-		} else {
-			# Incorrect password
-			echo "<br>Validation message will eventually be added - Incorrect password.<br>";
-  		}
+ 		# No account associated with email
+		$_SESSION['login_message'] = "The email or password you entered is incorrect.";
   	} else {
   		# User found
 
-		# Start session - http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
-  		session_start();
-  			
   		# Retrieves name associated w/ account in database
     	$result = mysql_query("SELECT Name FROM Teachers WHERE Email='$email' AND Password='$password'");
     	$row = mysql_fetch_array($result);
