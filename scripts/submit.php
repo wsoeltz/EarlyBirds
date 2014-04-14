@@ -17,9 +17,12 @@
 	$result = mysql_query("UPDATE Labs SET Completed='1' WHERE Lab_ID='$id'")
 				or die("<p>Error inserting into the database: " .
 						mysql_error() . "</p>"); 
+					
+	# Gets Lab_ID session variable
+	$_SESSION['submit_here'] = "true";				
 						
 	# Need to add lightbox here
 	# Redirect to studenthub
-	$url = "../index.php#submit";
+	$url = "../studentsubmit.php?id=" . $id;
 	header("Location: $url");
 ?>

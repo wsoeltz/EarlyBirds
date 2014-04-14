@@ -36,6 +36,19 @@
     		
     		# Gets lab ID from URL
     		$id = $_GET['id'];
+    		$page = $_GET['page'];	
+    		
+    		if ($page == "submit") {
+				echo "<script>";
+				# Detects if user leaves page; if detected call confirm Exist
+				echo "window.onbeforeunload = confirmExit;";
+				echo "function confirmExit()";
+				echo "{";
+				# Unset variable signifying a user on the studenthub
+				unset($_SESSION['here']);
+				echo "}";
+				echo "</script>";
+    		}	
     			
 			# Selects all labs given a specific lab ID
 			$result = mysql_query("SELECT * FROM Labs WHERE Lab_ID='$id'");
@@ -50,7 +63,7 @@
 			$acode = $values['Assignment_Code'];
 	
 			// # Redirect to another page is assignment code does not match
- 			if ($_SESSION['acode'] != $acode) {
+ 			if ($_SESSION['acode'] != $acode ) {
  				header("Location: teacherhub.php");
  			}
 

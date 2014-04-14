@@ -1,7 +1,14 @@
+<?php
+	# Displays page ONLY if a session is currently active
+	# http://stackoverflow.com/questions/10097887/using-sessions-session-variables-in-a-php-login-script
+	session_start();
+ 	if (isset($_SESSION['submit_here'])) {
+?>
+
 <!DOCTYPE html>
 <!--
     Early Birds Opening Splashcreen
-    Created 2/22/2014 by Will Soeltz
+    Created 4/14/2014 by Will Soeltz
     
 	Will Soeltz and Kaitlyn Carcia
 	University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
@@ -30,6 +37,9 @@
     
   </head>
   <body>
+  	<?php
+  		include "scripts/leave_page_submit.php";
+  	?>
     <!-- content wrapping div designed to push footer to bottom of page -->
     <div id="footerPusher">
       <div id="contentWrapper" class="center">
@@ -42,9 +52,13 @@
           <div id="logoText">
             <a href="index.php"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="138"/></a>
           </div>
-          <h2 class="submitMargin">Lab report submitted.</h2>
+          <h2 class="submitMargin">You lab report has been submitted.</h2>
           <a href="index.php" class="stdButton">Exit</a>
-          <a href="#" class="stdButton submitMargin" id="viewLabBtn">View Lab Report</a>
+          <?php
+          	$id = $_GET['id'];
+          	$url = 'scripts/redirect.php?page=submit&id=' . $id;
+          	echo "<a href='$url' class='stdButton submitMargin' id='viewLabBtn'>View Lab Report</a>";
+          	?>
         </div>
       </div>
     	<?php
@@ -53,3 +67,9 @@
   	</div>
   </body>
 </html>
+<?php
+	# Otherwise redirect to splash screen
+	 } else {
+	 	header("Location: index.php");
+	}
+?>

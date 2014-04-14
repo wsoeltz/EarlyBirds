@@ -48,11 +48,11 @@
           <div id="logoText">
             <a href="index.php"><img src="css/assets/logo_textonly.png" title="Early Birds" alt="Early Birds" width="409" height="138"/></a>
           </div>
-          <h2>Select your name below</h2>
+          
           <?php
             include "scripts/show_labs_studentlogin.php";
           ?>
-          <h2>Or if your name isn’t on the list, enter it here</h2>
+         
           <form id="login" method="post" action="scripts/new_lab.php">
               <input type="text" name="assignment_code" placeholder="What Is Your Name?">
               <br/><br/>
