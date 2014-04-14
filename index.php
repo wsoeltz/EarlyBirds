@@ -1,3 +1,8 @@
+<?php
+	# Begin session right away to avoid error
+	session_start();
+?>
+
 <!DOCTYPE html>
 
 <!--
@@ -38,6 +43,10 @@
     <script src="js/index.js"></script>
     <!-- Inlclude jQuery Validation Plugin -->
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script> 
+    <!-- Scripts for validation - login -->
+    <script src="js/acode.js"></script>
+    <!-- Scripts for validation - register -->
+    <script src="js/registration.js"></script>  
     <title>Early Birds</title>
   </head>
   <body>
@@ -51,15 +60,18 @@
         <div id ="learnMoreTab"><a class="learnMoreLight" href="#about">Learn More</a></div>
         <div id="navHalf">
             <div id="sideContent">
+            
             	<!-- Students: Enter in assignment code -->
                 <div id="assignmentCode" class="contentBlock">
                     <h2>Enter Your Assignment Code</h2>
                     <!-- Assignment Code form -->
-                    <form id="assignmentForm" action="scripts/find_assignment_code.php" method="get">
-                        <input type="text" name="assignment_code" placeholder="Assignment Code">
+                    <form id="assignmentForm">
+                    	<!-- Currently add ajax error messages are going here -->
+                    	<div id="ajaxDiv"></div>
+                        <input type="text" name="assignment_code" id="acode" placeholder="Assignment Code">
                         <br/><br/>
                         <div class="center">
-                            <input type="submit" class="stdButton" name="acode" value="Continue">
+                            <input type="button" class="stdButton" name="asubmit" id="asubmit" value="Continue" onclick="ajaxFunction()">
                             <div id="assignmentErrors"></div>
                         </div>
                     </form>
@@ -99,6 +111,14 @@
                		<!-- Up arrow to go back to splash div -->
 					<a title="Go Back to Main Menu" href="javascript:void(0)" id="loginToSplash"><img class="goBack vertical" src="css/assets/up_arrow.png"></a>
                     <h2>Login</h2>
+                    <?php
+                    	# Displays login error message
+                    	if (isset($_SESSION['login_message'])) {
+                    		echo $_SESSION['login_message'];
+                    	}
+                    	# Removes login error message if user leaves the page
+                    	include "scripts/leave_page_login.php";
+                    ?>
                     <!-- Login form -->
                     <form id="loginForm" name="loginForm" method="post" action="scripts/login.php">
 	                    <input type="text" name="email" placeholder="Email">
@@ -122,16 +142,18 @@
                 	<!-- Left arrow to go back to login div -->
                 	<a title="Go Back to Login" href="javascript:void(0)" id="registerToLogin"><img class="goBack" src="css/assets/left_arrow.png"></a>
                 	<h2>Register</h2>
+                	<!-- Currently all error messages are going here -->
+                	<div id="ajaxDivReg"></div>
                 	<!-- Registration form-->
-                	<form id="registerForm" name="registerForm" method="post" action="scripts/registration.php">
-	                    <input type="text" name="name" placeholder="Name">
+                	<form id="registerForm">
+	                    <input type="text" name="name" id="name" placeholder="Name">
 	                    <input type="text" name="email" id="registerEmail" placeholder="Email">
 	                    <input type="text" name="confirm_email" placeholder="Confirm Email">
 	                    <input type="password" name="password" id="registerPassword" placeholder="Password">
 	                    <input type="password" name="confirm_password" placeholder="Confirm Password">
 	                    <div class="center">
                         <div id="registerErrors" class="errors"></div>
-	                    	<input type="submit" value="Register" class="button" id="register">
+	                    	<input type="button" value="Register" class="button" id="register" onclick="ajaxFunction2()">
 	                    </div>
 	                </form>
                 </div>
