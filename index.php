@@ -1,4 +1,5 @@
 <?php
+	# Begin session right away to avoid error
 	session_start();
 ?>
 
@@ -61,10 +62,11 @@
             <div id="sideContent">
             
             	<!-- Students: Enter in assignment code -->
-                <div id="assignmentCodec" class="contentBlock">
+                <div id="assignmentCode" class="contentBlock">
                     <h2>Enter Your Assignment Code</h2>
                     <!-- Assignment Code form -->
                     <form id="assignmentForm">
+                    	<!-- Currently add ajax error messages are going here -->
                     	<div id="ajaxDiv"></div>
                         <input type="text" name="assignment_code" id="acode" placeholder="Assignment Code">
                         <br/><br/>
@@ -110,12 +112,12 @@
 					<a title="Go Back to Main Menu" href="javascript:void(0)" id="loginToSplash"><img class="goBack vertical" src="css/assets/up_arrow.png"></a>
                     <h2>Login</h2>
                     <?php
+                    	# Displays login error message
                     	if (isset($_SESSION['login_message'])) {
                     		echo $_SESSION['login_message'];
                     	}
-                    	
+                    	# Removes login error message if user leaves the page
                     	include "scripts/leave_page_login.php";
-
                     ?>
                     <!-- Login form -->
                     <form id="loginForm" name="loginForm" method="post" action="scripts/login.php">
@@ -140,6 +142,7 @@
                 	<!-- Left arrow to go back to login div -->
                 	<a title="Go Back to Login" href="javascript:void(0)" id="registerToLogin"><img class="goBack" src="css/assets/left_arrow.png"></a>
                 	<h2>Register</h2>
+                	<!-- Currently all error messages are going here -->
                 	<div id="ajaxDivReg"></div>
                 	<!-- Registration form-->
                 	<form id="registerForm">

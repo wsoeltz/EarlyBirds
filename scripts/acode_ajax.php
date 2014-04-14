@@ -3,7 +3,7 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: acode_ajax.php
 	# Checks if acode is in databsae
-	# Last updated March 30, 2014 by KC
+	# Last updated April 13, 2014 by KC
 	
 	# Connects to database, selects table
 	require "connect.php";
@@ -19,14 +19,13 @@
 	
  	$values = mysql_fetch_array($result);
 
+	// Error message if assignment code doesn't exist
 	if ($values == false ) {
- 		$display_string = "Please try again.";
+ 		$display_string = "The assignment code you entered is incorrect. Please try again.";
  		echo $display_string;
 	} else {
-
 		$display_string = "success";
 		echo $display_string;
 	
 	}
-	die();
 ?>

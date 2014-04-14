@@ -1,9 +1,8 @@
 <?php
 	# Kaitlyn Carcia and Will Soeltz
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-	# File: leave_page.php
-	# Determines if a user leaves the studenthub page; if he or she does,
-	# the variable signifying they are on the studenthub page is unset
+	# File: leave_page_login.php
+	# Removes login message if user leaves login div on splash screen
 	# Last updated February 16, 2014 by KC
 
 	echo "<script>";

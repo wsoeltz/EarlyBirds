@@ -3,13 +3,12 @@
 // 
 // Will Soeltz and Kaitlyn Carcia
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
-// File: acode.js
-// Checks if acode exists in database
+// File: registration.js
+// Checks if user is already registered under account with same email
 // Last updated April 13, 2014 by KC
 
 // Function sends information to the the database
 // Source: http://www.tutorialspoint.com/ajax/ajax_database.htm
-
 function ajaxFunction2(){
     var ajaxRequest;  // The variable that makes Ajax possible!
 	
@@ -36,7 +35,7 @@ function ajaxFunction2(){
     ajaxRequest.onreadystatechange = function(){
         if(ajaxRequest.readyState == 4){
         	if(ajaxRequest.responseText === "success") {
-        		//alert("yes");
+        		// Redirect to register user if successful, meaning an account with the same email exists
         		var url = "scripts/registration.php?name=" + name + "&email=" + email + "&password=" + password;
         		location.href = url;
         	} else {
@@ -47,9 +46,9 @@ function ajaxFunction2(){
     }
     // Now get the value from user and pass it to
     // server script.
+    var name = document.getElementById('name').value;
     var email = document.getElementById('registerEmail').value;
     var password = document.getElementById('registerPassword').value;
-    var name = document.getElementById('name').value;
     var queryString = "?email=" + email;
     ajaxRequest.open("GET", "scripts/reg_ajax.php" + 
         queryString, true);

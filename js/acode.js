@@ -11,7 +11,6 @@
 // Source: http://www.tutorialspoint.com/ajax/ajax_database.htm
 
 
-
 function ajaxFunction(){
     var ajaxRequest;  // The variable that makes Ajax possible!
 	
@@ -38,9 +37,9 @@ function ajaxFunction(){
     ajaxRequest.onreadystatechange = function(){
         if(ajaxRequest.readyState == 4){
         	if(ajaxRequest.responseText === "success") {
+        		// Redirects to finding the assignment if successful
         		var url = "scripts/find_assignment_code.php?assignment_code=" + acode;
         		location.href = url;
-        		//alert("yes");
         	} else {
 			var ajaxDisplay = document.getElementById('ajaxDiv');
 			ajaxDisplay.innerHTML = ajaxRequest.responseText;
