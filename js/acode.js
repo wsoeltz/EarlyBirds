@@ -5,11 +5,17 @@
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 // File: acode.js
 // Checks if acode exists in database
-// Last updated April 13, 2014 by KC
+// Last updated April 14, 2014 by KC
+
+// Removes error message if begins typing in box again
+$(document).ready(function(){
+	$('#acode').on('keyup', function() {
+		$('#ajaxDiv').empty();
+	});
+});
 
 // Function sends information to the the database
 // Source: http://www.tutorialspoint.com/ajax/ajax_database.htm
-
 
 function ajaxFunction(){
     var ajaxRequest;  // The variable that makes Ajax possible!

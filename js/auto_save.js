@@ -67,7 +67,7 @@ function auto_save() {
         var div = document.getElementById('saving');
         // div.innerHTML = 'Last saved on ' + m + ' at ' + t;
         div.innerHTML = 'Saved'
-    }, 2000);
+    }, 1500);
 }
 
 

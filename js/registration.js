@@ -5,7 +5,15 @@
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 // File: registration.js
 // Checks if user is already registered under account with same email
-// Last updated April 13, 2014 by KC
+// Last updated April 14, 2014 by KC
+
+// Removes error message if begins typing in box again
+$(document).ready(function(){
+	$('#registerEmail').on('keyup', function() {
+		$('#ajaxDivReg').empty();
+	});
+});
+
 
 // Function sends information to the the database
 // Source: http://www.tutorialspoint.com/ajax/ajax_database.htm
