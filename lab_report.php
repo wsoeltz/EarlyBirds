@@ -36,6 +36,20 @@
     		
     		# Gets lab ID from URL
     		$id = $_GET['id'];
+    		$page = $_GET['page'];	
+    		
+    		# Determines if user was redirection from a submission link
+    		if ($page == "submit") {
+				echo "<script>";
+				# Detects if user leaves page; if detected call confirmExit
+				echo "window.onbeforeunload = confirmExit;";
+				echo "function confirmExit()";
+				echo "{";
+				# Unset variable signifying a user on lab report
+				unset($_SESSION['here']);
+				echo "}";
+				echo "</script>";
+    		}	
     			
 			# Selects all labs given a specific lab ID
 			$result = mysql_query("SELECT * FROM Labs WHERE Lab_ID='$id'");

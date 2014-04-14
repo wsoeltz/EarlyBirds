@@ -18,8 +18,12 @@
 	
 	if ($page == "teacher") {
 		# Redirect to lab report
-		$url = "../lab_report.php?id=" . $id;
-	header("Location: $url");
+		$url = "../lab_report.php?page=teacher&id=" . $id;
+		header("Location: $url");
+	} else if ($page == "submit"){
+		# Redirect to lab report from submission page
+		$url = "../lab_report.php?page=submit&id=" . $id;
+		header("Location: $url");
 	} else if ($page == "student") {
 		# Redirect to studenthub
 		$url = "../studenthub.php?id=" . $id;
