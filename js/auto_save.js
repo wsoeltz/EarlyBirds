@@ -29,7 +29,7 @@ $(document).ready(function () {
 function timerIncrement() {
     idleTime = idleTime + 1;
     // If user idles for 3 seconds, save info
-    if (idleTime > 2) { // 3 seconds
+    if (idleTime > 1) { // 2 seconds
         auto_save();
         idleTime = -10000; // Prevents continuous auto save if use is away from the computer 
         nonIdleTime = 0; // Resets nonIdleTime
@@ -65,9 +65,9 @@ function auto_save() {
         var m = dt.toLocaleDateString();
 
         var div = document.getElementById('saving');
-        //div.innerHTML = 'Last saved on ' + m ' at ' + t;
-        div.innerHTML = 'Last saved on ' + m + ' at ' + t;
-    }, 4000);
+        // div.innerHTML = 'Last saved on ' + m + ' at ' + t;
+        div.innerHTML = 'Saved'
+    }, 2000);
 }
 
 
