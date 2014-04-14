@@ -295,3 +295,19 @@ a.lablink:hover{
 	color: #009ece;
 	background-color: #fff;
 }
+
+a#viewLabBtn{
+	margin-left: 50px;
+	margin-bottom: 50px;
+	background-color: #ff9e00;
+	color: #feffff;
+}
+
+a#viewLabBtn:hover{
+	background-color: #feffff;
+	color: #009ece;
+}
+
+.submitMargin{
+	margin-bottom: 50px;
+}

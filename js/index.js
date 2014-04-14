@@ -39,6 +39,11 @@ $(document).ready(function(){
 		}},1600);
 	}
 
+  // jQuery validation- validate for letters only
+  // http://stackoverflow.com/questions/2794162/jquery-validation-plugin-accept-only-alphabetical-characters
+  jQuery.validator.addMethod("lettersonly", function(value, element) {
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+  }, "<div class='errors'>Letters only please.</div>");
 
 	$('#loginForm').validate({
           rules:  {
@@ -64,7 +69,8 @@ $(document).ready(function(){
 	$('#registerForm').validate({
           rules:  {
           	name: {
-          		required: true
+          		required: true,
+              lettersonly: true
           	},
             email:  {
               required: true,

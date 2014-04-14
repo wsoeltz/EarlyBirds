@@ -43,6 +43,8 @@
     <script src="js/index.js"></script>
     <!-- Inlclude jQuery Validation Plugin -->
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script> 
+    
+    
     <!-- Scripts for validation - login -->
     <script src="js/acode.js"></script>
     <!-- Scripts for validation - register -->
@@ -69,10 +71,9 @@
                     	<!-- Currently add ajax error messages are going here -->
                     	<div id="ajaxDiv"></div>
                         <input type="text" name="assignment_code" id="acode" placeholder="Assignment Code">
-                        <br/><br/>
+                        <div id="assignmentErrors"></div>
                         <div class="center">
                             <input type="button" class="stdButton" name="asubmit" id="asubmit" value="Continue" onclick="ajaxFunction()">
-                            <div id="assignmentErrors"></div>
                         </div>
                     </form>
                     <!-- Find assignment code if not sure how -->

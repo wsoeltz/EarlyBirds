@@ -457,7 +457,16 @@ div.errors{
 div#assignmentErrors{
 	height: 20px;
 	padding-top: 10px;
-	text-align: center;
+	text-align: right;
+	color: #ce0000; /* red */
+	font-weight: 600;
+	font-style: italic;
+}
+
+#ajaxDiv, #ajaxDivReg{
+	height: 20px;
+	padding-top: 10px;
+	text-align: left;
 	color: #ce0000; /* red */
 	font-weight: 600;
 	font-style: italic;

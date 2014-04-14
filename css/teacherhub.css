@@ -471,3 +471,24 @@ input:-moz-placeholder {
     margin-bottom: 10px;
     text-transform: uppercase;
 }
+
+
+/**********
+
+        Validation
+
+**********/
+
+div.errors{
+    text-align: right;
+    line-height: 1.2em;
+    height: 0px;
+    overflow: visible;
+    color: #ce0000; /* red */
+    font-weight: 600;
+    font-style: italic;
+    margin-right: 25px;
+}
+input.error {                         /*  puts red border around fields with errors */
+    border: solid 1px #ce0000;
+    }

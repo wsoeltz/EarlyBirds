@@ -21,7 +21,7 @@
 
 	// Error message if assignment code doesn't exist
 	if ($values == false ) {
- 		$display_string = "The assignment code you entered is incorrect. Please try again.";
+ 		$display_string = "The assignment code you entered is incorrect.";
  		echo $display_string;
 	} else {
 		$display_string = "success";

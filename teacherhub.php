@@ -37,8 +37,24 @@
             $(document).ready(function(){
                 // code for using inline html
                 $(".createNewAssignment").colorbox({inline:true, width:"488px", height: "334px"});
+                $('#newAssignForm').validate({
+                  rules:  {
+                    name:  {
+                      required: true,
+                      maxlength: 28
+                    }
+                  },//end rules
+                  messages:  {
+                    name:  {
+                      required: "<div class='errors'>You need to enter an assignment name.</div>",
+                      maxlength: "<div class='errors'>Assignment name can't be longer then 28 characters.</div>"
+                    }
+                  },//end messages 
+                });
             });
         </script>
+        <!-- Inlclude jQuery Validation Plugin -->
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script> 
         <title>Early Birds</title>
     </head>
     <body>
@@ -125,7 +141,7 @@
                 <div id="create_assignment_content">
                                         
                     <div id="new_assignmentTitle">New Assignment</div>
-                    <form method="post" action="scripts/assignments.php">
+                    <form method="post" action="scripts/assignments.php" id="newAssignForm">
                         <input type="text" name="name" id="name" placeholder="Assignment Name"><br>
                         <div id="labCode_new">
                             <h2 class="acode">Assignment Code</h2>
