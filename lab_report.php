@@ -38,13 +38,14 @@
     		$id = $_GET['id'];
     		$page = $_GET['page'];	
     		
+    		# Determines if user was redirection from a submission link
     		if ($page == "submit") {
 				echo "<script>";
-				# Detects if user leaves page; if detected call confirm Exist
+				# Detects if user leaves page; if detected call confirmExit
 				echo "window.onbeforeunload = confirmExit;";
 				echo "function confirmExit()";
 				echo "{";
-				# Unset variable signifying a user on the studenthub
+				# Unset variable signifying a user on lab report
 				unset($_SESSION['here']);
 				echo "}";
 				echo "</script>";
@@ -63,7 +64,7 @@
 			$acode = $values['Assignment_Code'];
 	
 			// # Redirect to another page is assignment code does not match
- 			if ($_SESSION['acode'] != $acode ) {
+ 			if ($_SESSION['acode'] != $acode) {
  				header("Location: teacherhub.php");
  			}
 

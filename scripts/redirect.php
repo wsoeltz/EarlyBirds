@@ -21,7 +21,7 @@
 		$url = "../lab_report.php?page=teacher&id=" . $id;
 		header("Location: $url");
 	} else if ($page == "submit"){
-		# Redirect to lab report
+		# Redirect to lab report from submission page
 		$url = "../lab_report.php?page=submit&id=" . $id;
 		header("Location: $url");
 	} else if ($page == "student") {
