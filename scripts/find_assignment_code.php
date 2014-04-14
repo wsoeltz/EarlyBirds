@@ -19,12 +19,14 @@
 	
  	$values = mysql_fetch_array($result);
  	
+ 	session_start();
+ 	
  	# If no assignment code exists, there's an error
  	if ($values == false) {
- 		echo "Validation message will be added - You entered in an assignment code that does not exist.";
+ 		$_SESSION['acode_message'] = "The assignment code you entered is incorrect. Please try again.";
+		header("Location: ../index.php");
  	# Otherwise, set the session variables (assignment code, teacher name)	
  	} else {
- 		session_start();
  		# Assignment code
 		$_SESSION['acode'] = $code;
 		

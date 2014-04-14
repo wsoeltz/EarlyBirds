@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 
 <!--
@@ -38,6 +42,8 @@
     <script src="js/index.js"></script>
     <!-- Inlclude jQuery Validation Plugin -->
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script> 
+    <!-- Scripts for validation -->
+    <script src="js/acode.js"></script> 
     <title>Early Birds</title>
   </head>
   <body>
@@ -51,15 +57,17 @@
         <div id ="learnMoreTab"><a class="learnMoreLight" href="#about">Learn More</a></div>
         <div id="navHalf">
             <div id="sideContent">
+            
             	<!-- Students: Enter in assignment code -->
-                <div id="assignmentCode" class="contentBlock">
+                <div id="assignmentCodec" class="contentBlock">
                     <h2>Enter Your Assignment Code</h2>
                     <!-- Assignment Code form -->
                     <form id="assignmentForm" action="scripts/find_assignment_code.php" method="get">
-                        <input type="text" name="assignment_code" placeholder="Assignment Code">
+                    	<div id="ajaxDiv"></div>
+                        <input type="text" name="assignment_code" id="acode" placeholder="Assignment Code">
                         <br/><br/>
                         <div class="center">
-                            <input type="submit" class="stdButton" name="acode" value="Continue">
+                            <input type="button" class="stdButton" name="asubmit" value="Continue" onclick="ajaxFunction()">
                             <div id="assignmentErrors"></div>
                         </div>
                     </form>
@@ -99,6 +107,14 @@
                		<!-- Up arrow to go back to splash div -->
 					<a title="Go Back to Main Menu" href="javascript:void(0)" id="loginToSplash"><img class="goBack vertical" src="css/assets/up_arrow.png"></a>
                     <h2>Login</h2>
+                    <?php
+                    	if (isset($_SESSION['login_message'])) {
+                    		echo $_SESSION['login_message'];
+                    	}
+                    	
+                    	include "scripts/leave_page_login.php";
+
+                    ?>
                     <!-- Login form -->
                     <form id="loginForm" name="loginForm" method="post" action="scripts/login.php">
 	                    <input type="text" name="email" placeholder="Email">

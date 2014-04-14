@@ -30,6 +30,7 @@
  	if( $values == false ) {
  		# No account associated with email
 		$_SESSION['login_message'] = "The email or password you entered is incorrect.";
+		header("Location: ../index.php#login");
   	} else {
   		# User found
 
@@ -47,6 +48,8 @@
  		$result = mysql_fetch_array($result);
  		$teacher_id = $result['Teacher_ID'];
  		$_SESSION['id'] = $teacher_id;
+ 		
+ 		unset($_SESSION['login_message']);
  		
  		# Redirects user to teacher hub
   		header("Location: ../teacherhub.php");
