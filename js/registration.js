@@ -10,9 +10,7 @@
 // Function sends information to the the database
 // Source: http://www.tutorialspoint.com/ajax/ajax_database.htm
 
-
-
-function ajaxFunction(){
+function ajaxFunction2(){
     var ajaxRequest;  // The variable that makes Ajax possible!
 	
     try{
@@ -38,20 +36,22 @@ function ajaxFunction(){
     ajaxRequest.onreadystatechange = function(){
         if(ajaxRequest.readyState == 4){
         	if(ajaxRequest.responseText === "success") {
-        		var url = "scripts/find_assignment_code.php?assignment_code=" + acode;
-        		location.href = url;
         		//alert("yes");
+        		var url = "scripts/registration.php?name=" + name + "&email=" + email + "&password=" + password;
+        		location.href = url;
         	} else {
-			var ajaxDisplay = document.getElementById('ajaxDiv');
-			ajaxDisplay.innerHTML = ajaxRequest.responseText;
+				var ajaxDisplay = document.getElementById('ajaxDivReg');
+				ajaxDisplay.innerHTML = ajaxRequest.responseText;
 			}
         }
     }
     // Now get the value from user and pass it to
     // server script.
-    var acode = document.getElementById('acode').value;
-    var queryString = "?acode=" + acode;
-    ajaxRequest.open("GET", "scripts/acode_ajax.php" + 
+    var email = document.getElementById('registerEmail').value;
+    var password = document.getElementById('registerPassword').value;
+    var name = document.getElementById('name').value;
+    var queryString = "?email=" + email;
+    ajaxRequest.open("GET", "scripts/reg_ajax.php" + 
         queryString, true);
     ajaxRequest.send(null); 
 }     

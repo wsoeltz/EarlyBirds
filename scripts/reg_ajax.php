@@ -9,24 +9,22 @@
 	require "connect.php";
 
 	# Retrieve data from Query String
-	$acode = $_GET['acode'];
+	$email = $_GET['email'];
 	
 	# Verifies this code is unique
- 	$result = mysql_query("SELECT * FROM Assignments WHERE Assignment_Code='$acode'");
+ 	$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email'");
  	if (!$result) {
 		die('Invalid query: ' . mysql_error());
 	}
 	
  	$values = mysql_fetch_array($result);
 
-	if ($values == false ) {
- 		$display_string = "Please try again.";
+	if ($values == false ){ 
+  		$display_string = "success";
+  		echo $display_string;
+  	} else {
+ 		$display_string = "Email is already in use.";
  		echo $display_string;
-	} else {
-
-		$display_string = "success";
-		echo $display_string;
+ 	}
 	
-	}
-	die();
 ?>

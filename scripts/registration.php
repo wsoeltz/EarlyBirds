@@ -9,18 +9,14 @@
 	include "connect.php";
 		
  	# Initializes name, email, and password
- 	$name = $_REQUEST['name'];
- 	$email = $_REQUEST['email'];
- 	$password = $_REQUEST['password'];
+ 	$name = $_GET['name'];
+ 	$email = $_GET['email'];
+ 	$password = $_GET['password'];
  	
  	# Checks if email is already in use
  	$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email'");
  	$values = mysql_fetch_array($result);
  	
- 	if ($values != false) {
- 		# Email is already in use
- 		echo "<br>Validation message will eventually be added - Email is already in use.<br>";
- 	} else {
 	 	# Otherwise, create new user
  		addUserToDatabase($name, $email, $password);
  		
@@ -37,7 +33,6 @@
  		
  		# Upon successful registration, users will be redirected to the following URL
 		header("Location: ../teacherhub.php");
-	}
 	
  	# -------------------------------------------------------------
 	# Encrypts password, and inserts user into the database

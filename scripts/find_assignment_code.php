@@ -19,39 +19,35 @@
 	
  	$values = mysql_fetch_array($result);
  	
+ 	if ($values != false ) {
  	session_start();
- 	
- 	# If no assignment code exists, there's an error
- 	if ($values == false) {
- 		$_SESSION['acode_message'] = "The assignment code you entered is incorrect. Please try again.";
-		header("Location: ../index.php");
- 	# Otherwise, set the session variables (assignment code, teacher name)	
- 	} else {
- 		# Assignment code
-		$_SESSION['acode'] = $code;
-		
-		# Assignment name
-		$_SESSION['aname'] = $values['Name'];
-		
-		# Teacher ID
-		$_SESSION['teacher_id'] = $values['Teacher_ID'];
-		$teacher_id = $_SESSION['teacher_id'];
-	
-		# Verifies this code is unique
-		$result = mysql_query("SELECT * FROM Teachers WHERE Teacher_ID='$teacher_id'");
-		if (!$result) {
-			die('Invalid query: ' . mysql_error());
-		}
-	
-		$values = mysql_fetch_array($result);
-		
-		# Teacher Name
-		$_SESSION['tname'] = $values['Name'];
 
-		# Teacher Email
-		$_SESSION['temail'] = $values['Email'];
+	# Assignment code
+	$_SESSION['acode'] = $code;
+	
+	# Assignment name
+	$_SESSION['aname'] = $values['Name'];
+	
+	# Teacher ID
+	$_SESSION['teacher_id'] = $values['Teacher_ID'];
+	$teacher_id = $_SESSION['teacher_id'];
 
-		# Redirect to studentlogin page
- 		header("Location: ../studentlogin.php");
- 	}
+	# Verifies this code is unique
+	$result = mysql_query("SELECT * FROM Teachers WHERE Teacher_ID='$teacher_id'");
+	if (!$result) {
+		die('Invalid query: ' . mysql_error());
+	}
+
+	$values = mysql_fetch_array($result);
+	
+	# Teacher Name
+	$_SESSION['tname'] = $values['Name'];
+
+	# Teacher Email
+	$_SESSION['temail'] = $values['Email'];
+
+	echo "hi";
+	# Redirect to studentlogin page
+	header("Location: ../studentlogin.php");
+	}
 ?>
