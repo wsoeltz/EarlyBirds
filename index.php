@@ -68,9 +68,8 @@
                     <h2>Enter Your Assignment Code</h2>
                     <!-- Assignment Code form -->
                     <form id="assignmentForm">
-                    	<!-- Currently add ajax error messages are going here -->
-                    	<div id="ajaxDiv"></div>
                         <input type="text" name="assignment_code" id="acode" placeholder="Assignment Code">
+                        <div id="ajaxDiv"></div>
                         <div id="assignmentErrors"></div>
                         <div class="center">
                             <input type="button" class="stdButton" name="asubmit" id="asubmit" value="Continue" onclick="ajaxFunction()">
@@ -144,11 +143,11 @@
                 	<a title="Go Back to Login" href="javascript:void(0)" id="registerToLogin"><img class="goBack" src="css/assets/left_arrow.png"></a>
                 	<h2>Register</h2>
                 	<!-- Currently all error messages are going here -->
-                	<div id="ajaxDivReg"></div>
                 	<!-- Registration form-->
                 	<form id="registerForm">
 	                    <input type="text" name="name" id="name" placeholder="Name">
 	                    <input type="text" name="email" id="registerEmail" placeholder="Email">
+                        <div id="ajaxDivReg"></div>
 	                    <input type="text" name="confirm_email" placeholder="Confirm Email">
 	                    <input type="password" name="password" id="registerPassword" placeholder="Password">
 	                    <input type="password" name="confirm_password" placeholder="Confirm Password">

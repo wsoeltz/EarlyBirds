@@ -455,7 +455,7 @@ div.errors{
 }
 
 div#assignmentErrors{
-	height: 20px;
+	height: 10px;
 	padding-top: 10px;
 	text-align: right;
 	color: #ce0000; /* red */
@@ -464,12 +464,17 @@ div#assignmentErrors{
 }
 
 #ajaxDiv, #ajaxDivReg{
-	height: 20px;
+	height: 10px;
 	padding-top: 10px;
-	text-align: left;
+	text-align: right;
 	color: #ce0000; /* red */
 	font-weight: 600;
 	font-style: italic;
+}
+
+#ajaxDivReg{
+	height: 0px;
+	padding-top: 0px;\
 }
 
 input.error {						  /*  puts red border around fields with errors */
