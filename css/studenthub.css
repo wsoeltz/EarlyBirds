@@ -223,16 +223,28 @@ div.center {
     text-align:center;
 }
 
-/* code for later implementation of input boxes */
+/* code for implementation of input boxes */
 .textInput{
 	position: absolute;
 	top: 50px;
 	left: 0px;
 	padding:10px;
 	width:976px;
-	height:274px;
+	height:250px;
 	resize: none;
 	border: none;
+}
+
+#saving{
+    position: absolute;
+    top: 446px;
+    left: 13px;
+    z-index: 100;
+    color: #5a5a5a;
+}
+
+#tabs{
+    background-color: #c0c0c0;
 }
 
 /* Removes blue outline on input text box

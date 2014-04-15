@@ -87,13 +87,9 @@
                                     echo '<h3 class="bold">Contact:</h3> <h3>' . $_SESSION['temail'] . '</h3><br>';
                                 ?>
                         </div>
-                    </div>
-                    
-                    <!-- Needs to be styled-->
+                    </div>               
                     <!-- Div for auto-saving messages -->
-					<div style="height: 20px; margin-left: 35px" id="saving"></div>
-
-                    
+                    <div style="height: 20px; margin-left: 35px" id="saving"></div>
     				<!-- All tabs for lab report -->
                     <div id="tabs">
                         <ul>
