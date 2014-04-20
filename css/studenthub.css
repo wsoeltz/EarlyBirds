@@ -266,3 +266,44 @@ http://stackoverflow.com/questions/3397113/how-to-remove-border-outline-around-t
 *:focus {
     outline: 0;
 }
+
+
+/**********
+
+Submit Warning Box
+
+**********/
+
+div#submitWarning h2{
+    color: #333;
+    border-top: solid 80px #009ece; /* orange */
+    text-align: center;
+    font-size: 18px;
+    padding-top: 20px;
+    line-height: 1.5em;
+}
+
+#submit{
+    position: absolute;
+    margin: 0;
+    top: 200px;
+    right: 15px;
+}
+
+#submit:hover{
+    color: #feffff;
+    background-color: #cb7e00;
+}
+
+#cboxClose{
+    position:absolute; 
+    top: 200px; 
+    left: 15px; 
+    background:url(assets/returnToLab.png) no-repeat 0 0; 
+    width:166px; 
+    height:54px; 
+    text-indent:-9999px;
+}
+#cboxClose:hover{
+    background-position: 0 -54px;
+}

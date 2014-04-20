@@ -25,6 +25,7 @@
 
         <!-- Styling for this page - also includes general styling used in the student login -->
         <link rel = "stylesheet" href = "css/reset.css" />
+        <link rel = "stylesheet" href = "css/colorbox.css" />
         <link rel = "stylesheet" href = "css/studentlogin.css" />
         <link rel = "stylesheet" href = "css/studenthub.css" />
 
@@ -33,22 +34,24 @@
 
 		<!-- jQuery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        
         <!-- jQuery UI -->
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-        
         <!-- js for jQuery Tabs from jQuery UI -->
         <script src="tabs/js/jquery.ui.widget.js"></script>
         <script src="tabs/js/jquery.ui.tabs.js"></script>
-        
         <!-- Styling for jQuery tabs from jQuery UI -->
         <link rel="stylesheet" href="tabs/css/jquery.ui.all.css">
-        
         <!-- Scripts to get jQuery tabs working w/ site -->
         <script src="js/tabs.js"></script>
-     
 		<!-- Scripts for auto-saving -->
      	<script src="js/auto_save.js"></script> 
+        <script src="js/jquery.colorbox.js"></script>
+        <script>
+            $(document).ready(function(){
+                // code for using inline html
+                $("#submitWarn").colorbox({inline:true, width:"488px", height: "334px"});
+            });
+        </script>
 
         <title>Early Birds</title>
     </head>
@@ -154,7 +157,7 @@
                         <!-- Save, Next, and Previous buttons -->
                         <a id="previous" class="stdButton stdButton-hover previous">Previous Section</a>
                         <a id="next" class="stdButton stdButton-hover next">Next Section</a>
-                        <a id="submit" class="stdButton submit" href="scripts/submit.php">Submit</a>
+                        <a id="submitWarn" class="stdButton submit" href="#submitWarning">Submit</a>
                         
                     
                     <!-- Reminder for lab code - eventually PHP code will exist here -->
@@ -168,6 +171,16 @@
     			include "include/footer.html";
     		?>
         </div>
+
+        <!-- Contains hidden content for submit warning -->
+            <div style='display:none'>
+                <div id="submitWarning">
+                    <h2>Are you sure you want to submit? Once you submit you wont be able to make changes.</h2>
+                    <a class="stdButton submit" id="submit" href="scripts/submit.php">Submit</a>
+                </div>
+            </div>
+        <!-- end hidden content -->
+
     </body>
 </html>
 <?php

@@ -22,7 +22,7 @@
 
 	# No results found - no labs
 	if (!$values) {
-		echo "<h3 class='info'>No labs are currently associated with this assignment.</h3>";
+		echo "<h3 class='info nolabs'>No labs are currently associated with this assignment.</h3>";
 		echo "<div style='height:100px'></div>";
 	} else {					
 		echo '<div class="clearfix">';

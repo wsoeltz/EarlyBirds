@@ -26,7 +26,7 @@
     function slideAnimationRelativeVertical(div,offset) {
         return function() {
             $(div).animate({
-                'top': (parseInt($('#sideContent').css('top'), 10) + offset) + 'px'
+                'top': (parseInt($(div).css('top'), 10) + offset) + 'px'
             }, 
             1000);
         };
@@ -47,7 +47,7 @@
     function slideAnimationRelativeHorizontal(div,offset) {
         return function() {
             $(div).animate({
-                'left': (parseInt($('#sideContent').css('left'), 10) + offset) + 'px'
+                'left': (parseInt($(div).css('left'), 10) + offset) + 'px'
             }, 
             1000);
         };
@@ -79,9 +79,9 @@
     $('#learnMoreTab').click(slideAnimationAbsoluteHorizontal('#learnMoreTab-reverse',154-56));
 
 
-    $('#learnMoreTab-reverse').click(slideAnimationRelativeHorizontal('#about',763));
-    $('#learnMoreTab-reverse').click(slideAnimationRelativeHorizontal('#learnMoreTab',763-56));
-    $('#learnMoreTab-reverse').click(slideAnimationRelativeHorizontal('#learnMoreTab-reverse',763-56));
+    $('#learnMoreTab-reverse').click(slideAnimationRelativeHorizontal('#about',610));
+    $('#learnMoreTab-reverse').click(slideAnimationRelativeHorizontal('#learnMoreTab',610));
+    $('#learnMoreTab-reverse').click(slideAnimationRelativeHorizontal('#learnMoreTab-reverse',610));
 
     $('#learnMoreTab').click(function(){
         $('#learnMoreTab').css("display","none");

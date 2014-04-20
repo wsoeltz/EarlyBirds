@@ -198,3 +198,16 @@ div#welcomeContainer{
     background-color: #ff9e00; /* orange */
 }
 
+.nolabs{
+    display: block;
+    width: 450px;
+    height: 40px;
+    padding-top: 20px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ceecf5; /* light blue */
+}
+
+h3.nolabs{
+    font-weight: 600;
+}
