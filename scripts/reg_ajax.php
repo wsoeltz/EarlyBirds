@@ -24,7 +24,7 @@
   		$display_string = "success";
   		echo $display_string;
   	} else {
- 		$display_string = "Email is already in use.";
+ 		$display_string = "<i class='fa fa-asterisk'></i>Email is already in use.";
  		echo $display_string;
  	}
 	

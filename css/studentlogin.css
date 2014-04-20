@@ -250,12 +250,13 @@ a.stdButton-hover:hover{
 
 /* For continue button */
 .stdButton{
+	font-family: "Open Sans";
 	display: inline-block;
 	width:143px;
 	padding-top: 16px;
 	padding-bottom: 16px;
 	text-align:center;
-	font-size: 13px;
+	font-size: 14px;
 	background-color: #f7d708;
 	text-decoration: none;
 	color: #009ece;
@@ -310,4 +311,26 @@ a#viewLabBtn:hover{
 
 .submitMargin{
 	margin-bottom: 50px;
+}
+
+
+/**********
+
+		Validation
+
+**********/
+
+div.errors{
+	padding-right: 60px;
+	text-align: right;
+	line-height: 1.2em;
+	height: 0px;
+	overflow: visible;
+	color: #333;
+	font-weight: 600;
+	font-style: italic;
+}
+
+input.error {						  /*  puts red border around fields with errors */
+	border: solid 1px #333;
 }

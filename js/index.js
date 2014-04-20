@@ -10,7 +10,7 @@
 $(document).ready(function(){
 
 	// code for using inline html with colorbox
-	$(".learnMoreLight").colorbox({inline:true, width:"609px", height: "450px"});
+	//$(".learnMoreLight").colorbox({inline:true, width:"609px", height: "450px"});
 	$(".logout").colorbox({inline:true, width:"300px", height: "200px"});
 	
 	// Scrolling for learn more
@@ -42,8 +42,8 @@ $(document).ready(function(){
   // jQuery validation- validate for letters only
   // http://stackoverflow.com/questions/2794162/jquery-validation-plugin-accept-only-alphabetical-characters
   jQuery.validator.addMethod("lettersonly", function(value, element) {
-  return this.optional(element) || /^[a-z]+$/i.test(value);
-  }, "<div class='errors'>Letters only please.</div>");
+  return this.optional(element) || /^[a-z\s]*$/i.test(value);
+  }, "<div class='errors'><i class='fa fa-asterisk'></i>Letters only please.</div>");
 
 	$('#loginForm').validate({
           rules:  {
@@ -57,11 +57,11 @@ $(document).ready(function(){
           },//end rules
           messages:  {
             email:  {
-              required: "<div class='errors'>You need to enter an email.</div>",
-              email: "<div class='errors'>Invalid email.</div>"
+              required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter an email.</div>",
+              email: "<div class='errors'><i class='fa fa-asterisk'></i>Invalid email.</div>"
             },
             password:  {
-              required: "<div class='errors'>You need to enter a password.</div>"
+              required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter a password.</div>"
             }
           },//end messages 
         });
@@ -85,47 +85,35 @@ $(document).ready(function(){
               minlength: 8
             },
             confirm_password:  {
+              required: true,
               equalTo: "#registerPassword"
             }
           },//end rules
           messages:  {
           	name: {
-          		required: "<div class='errors'>You need to enter your name.</div>"
+          		required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter your name.</div>"
           	},
             email:  {
-              required: "<div class='errors'>You need to enter an email.</div>",
-              email: "<div class='errors'>Invalid email.</div>"
+              required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter an email.</div>",
+              email: "<div class='errors'><i class='fa fa-asterisk'></i>Invalid email.</div>"
             },
             confirm_email:  {
-              required: "<div class='errors'>You need to confirm your email.</div>",
-              equalTo: "<div class='errors'>Email does not match.</div>"
+              required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to confirm your email.</div>",
+              equalTo: "<div class='errors'><i class='fa fa-asterisk'></i>Email does not match.</div>"
             },
             password:  {
-              required: "<div class='errors'>You need to enter a password.</div>",
-              minlength: "<div class='errors'>Password must be at least 8 characters</div>"
+              required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter a password.</div>",
+              minlength: "<div class='errors'><i class='fa fa-asterisk'></i>Password must be at least 8 characters</div>"
             },
             confirm_password: {
-            	equalTo: "<div class='errors'>Passwords do not match.</div>"
+              required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to confirm your password.</div>",
+            	equalTo: "<div class='errors'><i class='fa fa-asterisk'></i>Passwords do not match.</div>"
             }
           },//end messages 
         });
 
 
-	$('#assignmentForm').validate({
-          rules:  {
-            assignment_code:  {
-              required: true
-            }
-          },//end rules
-          messages:  {
-            assignment_code:  {
-              required: "You need to enter an assignment code."
-            }
-          },//end messages 
-          errorPlacement: function(error, element) {
-            $(error).appendTo( $("#assignmentErrors") );
-            } // end errorPlacement       
-        });
+	
 	
 
 });

@@ -21,7 +21,7 @@
 	
 	# Determines if there are any labs associated with an assignment
 	if ($values != false) {
-		echo "<h2>Select your name below</h2>";
+		echo "<h2>Click on your name</h2>";
 		# Displays all labs available for an assignment
 		do {
 			# Displays all completed labs with links to submission page

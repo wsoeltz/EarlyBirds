@@ -70,22 +70,25 @@
                  <!-- Keeps parents of floating elements from collasping -->
                     <div class="clearfix">
 
-                        <div class="labInfo" style="float:left;">
+                        <div class="labInfo">
                             <a href="index.php"><img src="css/assets/logo_small.png" title="Early Birds" alt="Early Birds" width="203" height="58"/></a>
                         </div>
-                        <div class="labInfo" style="float:left;">
+                        <div class="labInfo">
                             <?php
                             	# Displays assignment name and student name
                                 echo '<h2>' . $_SESSION['aname'] . '</h2>';
     	                    	echo '<h3>' . $_SESSION['sname'] .  '</h3><br>';
     	                    ?>
                         </div>
-                        <div class="labInfo" style="float:right;">
+                        <div class="labInfo">
                                 <?php
                                     # Displays teacher name and teacher email 
                                     echo '<h3 class="bold">Teacher:</h3> <h3>' . $_SESSION['tname'] . '</h3><br>';
                                     echo '<h3 class="bold">Contact:</h3> <h3>' . $_SESSION['temail'] . '</h3><br>';
                                 ?>
+                        </div>
+                        <div class="labInfo">
+                            <a class="stdButton saveQuit" href="index.php">Save &amp; Quit</a>
                         </div>
                     </div>               
                     <!-- Div for auto-saving messages -->

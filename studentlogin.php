@@ -25,12 +25,31 @@
     
     <link rel = "stylesheet" href = "css/reset.css" />
     <link rel = "stylesheet" href = "css/studentlogin.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     
     <!-- Open Sans Google Font API -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
     
-    <!-- jQuery -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <!-- Inlclude jQuery Validation Plugin -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script> 
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#login').validate({
+        rules:  {
+          assignment_code:  {
+            required: true
+          }
+        },//end rules
+        messages:  {
+          assignment_code:  {
+            required: "<div class='errors'><i class='fa fa-asterisk'></i>Please type your name.</div>"
+          }//end messages 
+        }
+      });
+    });
+  </script>
 	
     <title>Early Birds</title>
     
@@ -53,8 +72,8 @@
             include "scripts/show_labs_studentlogin.php";
           ?>
          
-          <form id="login" method="post" action="scripts/new_lab.php">
-              <input type="text" name="assignment_code" placeholder="What Is Your Name?">
+          <form id="login" name="login" method="post" action="scripts/new_lab.php">
+              <input type="text" id="assignment_code" name="assignment_code" placeholder="What Is Your Name?">
               <br/><br/>
               <div class="center">
                   <input type="submit" class="stdButton" name="acode" id="assignmentToLab" value="Begin New Lab">

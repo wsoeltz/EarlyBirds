@@ -27,6 +27,7 @@
     <link rel = "stylesheet" href = "css/colorbox_xonbottom.css" />
     <link rel = "stylesheet" href = "css/main.css" />
     <link rel="stylesheet" href="css/jquery.jscrollpane.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <!-- Open Sans Google Font API -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,800,600italic' rel='stylesheet' type='text/css'>
 	<!-- jQuery -->
@@ -59,7 +60,8 @@
                 <img src="css/assets/logo.png" height="235" width="657" alt="Early Birds" title="Early Birds"/>
             </div>
         </div>
-        <div id ="learnMoreTab"><a class="learnMoreLight" href="#about">Learn More</a></div>
+        <div id ="learnMoreTab"><a class="learnMoreLight" href="javascript:void(0)">Learn More</a></div>
+        <div id ="learnMoreTab-reverse"><a class="learnMoreLight" href="javascript:void(0)">Learn More</a></div>
         <div id="navHalf">
             <div id="sideContent">
             
@@ -75,12 +77,6 @@
                             <input type="button" class="stdButton" name="asubmit" id="asubmit" value="Continue" onclick="ajaxFunction()">
                         </div>
                     </form>
-                    <!-- Find assignment code if not sure how -->
-                    <div class="center">
-                        <hr>
-                        Not sure how to find your assignment code?<br><br>
-                        <a class="stdButton" href="javascript:void(0)" id="findAssignCode">Find It</a>
-                    </div>
                     <!-- Down arrow to go back to splash div -->
                     <a title="Go Back to Main Menu" href="javascript:void(0)" id="assignmentToSplash"><img class="goBack vertical" src="css/assets/down_arrow.png"></a>           
                 </div>
@@ -160,33 +156,34 @@
             </div>
             <div id="blueDrop"></div>
         </div>
+        <div id="about">
+            <div id="aboutContent">
+                <div class="learn right">
+                    <h5>Step-by-Step Learning Process.</h5>
+                    <p>The Early Birds web app walks students through the process of writing formal lab reports, teaching them each step as they get there.</p>
+                </div>
+                <div class="learn left">
+                    <h5>No Complex Word Processors.</h5>
+                    <p>Early Birds encourages students to become comfortable using computers for classroom assignments at a young age.</p>
+                </div>
+                <div class="learn right">
+                    <h5>Intuitive Student Interface.</h5>
+                    <p>Our interface has been designed with young students in mind to engage and assist them in the learning process.</p>
+                </div>
+                <div class="learn left">
+                    <h5>Simplify the Grading Process.</h5>
+                    <p>With the online interface, teachers can check up on student progress, and immedietly see when assignments have been submitted.</p>
+                </div>
+                <div class="learn center">
+                    <h5>You know what they say,</h5>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Contains hidden content for learn more and logout box -->
+
             <div id="hiddencontent">
-                <div id="about">
-                    <div id="aboutContent">
-                        <div class="learn right">
-                            <h5>Step-by-Step Learning Process.</h5>
-                            <p>The Early Birds web app walks students through the process of writing formal lab reports, teaching them each step as they get there.</p>
-                        </div>
-                        <div class="learn left">
-                            <h5>No Complex Word Processors.</h5>
-                            <p>Early Birds encourages students to become comfortable using computers for classroom assignments at a young age.</p>
-                        </div>
-                        <div class="learn right">
-                            <h5>Intuitive Student Interface.</h5>
-                            <p>Our interface has been designed with young students in mind to engage and assist them in the learning process.</p>
-                        </div>
-                        <div class="learn left">
-                            <h5>Simplify the Gradeing Process.</h5>
-                            <p>With the online interface, teachers can check up on student progress, and immedietly see when assignments have been submitted.</p>
-                        </div>
-                        <div class="learn center">
-                            <h5>You know what they say,</h5>
-                        </div>
-                    </div>
-                </div>
                 <a class="logout" href="#logoutContainer">Logout Succesful</a>
                 <div id="logoutContainer">
                     <div id="logoutContent">

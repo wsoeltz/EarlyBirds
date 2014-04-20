@@ -86,16 +86,21 @@ input:-moz-placeholder {
 
 /* Login and registration button */
 .button{
+	font-family: "Open Sans";
 	margin-top: 28px;
 	width: 133px;
 	height:45px;
 	padding: 0px; /* centers text in button - http://stackoverflow.com/questions/2883373/simple-css-issue-text-wont-center-in-a-button */
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 14px;
 	background-color: #f7d708;
 	text-decoration: none;
 	color: #009ece;
 	font-weight: 600;
+}
+
+.button{
+	cursor: pointer;
 }
 
 /* Specific styling for registration button */
@@ -137,6 +142,7 @@ div#contentWrapper{
 	width:1276px;
 	margin: 0 auto;
 	position: relative;
+	overflow: hidden;
 }
 
 /* Contains logo */
@@ -221,20 +227,52 @@ div#learnMoreTab:hover{
 	background-position: 0 -185px;
 }
 
+
+div#learnMoreTab-reverse{
+	display: none;
+	width:56px;
+	height: 185px;
+	/*background-color: #0481a8;  darker blue */
+	background-image: url(assets/learnMore.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	position: absolute;
+	left: 707px;
+	top: 450px;
+	text-indent: -10000px;
+
+}
+div#learnMoreTab-reverse a{
+	display: block;
+	width:56px;
+	height: 185px;
+}
+
+div#learnMoreTab-reverse:hover{
+	background-position: 0 -185px;
+}
+
 .learnMore{
 	color: #000;
 }
 
 div#about{
+	position: absolute;
+	left: 763px;
+	top: 300px;
 	width: 609px;
 	height: 380px;
 	margin: 0 auto;
 	overflow: auto;
+	border: solid 4px #0481a8;
+	border-radius: 12px;
+	background-color: #0481a8;
+	z-index: -10000;
 
 }
 
 div#aboutContent{
-	width: 110%;
+	width: 100%;
 	height: 1420px;
 	background-image: url(assets/learnmore_bg.png);
 	background-repeat: no-repeat;
@@ -346,7 +384,7 @@ div#sideContent a.stdButton{
 	padding-top: 16px;
 	padding-bottom: 16px;
 	text-align:center;
-	font-size: 13px;
+	font-size: 14px;
 	background-color: #f7d708;
 	text-decoration: none;
 	color: #009ece;
@@ -358,12 +396,14 @@ div#sideContent a.stdButton{
 
 /* For continue button */
 .stdButton{
+	font-family: "Open Sans";
 	display: inline-block;
 	width:133px;
-	padding-top: 16px;
+	padding-top: 14px;
 	padding-bottom: 16px;
+	padding-left: 0;
 	text-align:center;
-	font-size: 13px;
+	font-size: 14px;
 	background-color: #f7d708;
 	text-decoration: none;
 	color: #009ece;
@@ -376,6 +416,7 @@ div#sideContent a.stdButton{
 /* Hover for Continue button */
 .stdButton:hover{
 	background-color: #feffff;
+	cursor: pointer;
 }
 
 /* Hover color for links- Student */
@@ -449,7 +490,7 @@ div.errors{
 	line-height: 1.2em;
 	height: 0px;
 	overflow: visible;
-	color: #ce0000; /* red */
+	color: #333;
 	font-weight: 600;
 	font-style: italic;
 }
@@ -458,7 +499,7 @@ div#assignmentErrors{
 	height: 10px;
 	padding-top: 10px;
 	text-align: right;
-	color: #ce0000; /* red */
+	color: #333;
 	font-weight: 600;
 	font-style: italic;
 }
@@ -467,7 +508,7 @@ div#assignmentErrors{
 	height: 10px;
 	padding-top: 10px;
 	text-align: right;
-	color: #ce0000; /* red */
+	color: #333;
 	font-weight: 600;
 	font-style: italic;
 }
@@ -478,5 +519,5 @@ div#assignmentErrors{
 }
 
 input.error {						  /*  puts red border around fields with errors */
-	border: solid 1px #ce0000;
-	}
+	border: solid 1px #333;
+}

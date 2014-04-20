@@ -29,7 +29,7 @@
 	# Email and password don't match
  	if( $values == false ) {
  		# No account associated with email
-		$_SESSION['login_message'] = "<div id='ajaxDivReg'>The email or password you entered is incorrect.</div>";
+		$_SESSION['login_message'] = "<div id='ajaxDivReg'><i class='fa fa-asterisk'></i>The email or password you entered is incorrect.</div>";
 		# Redirect back to login div with error message
 		header("Location: ../index.php#login");
   	} else {
