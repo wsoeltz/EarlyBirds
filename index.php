@@ -68,7 +68,7 @@
                     <h2>Enter Your Assignment Code</h2>
                     <!-- Assignment Code form -->
                     <form id="assignmentForm">
-                        <input type="text" name="assignment_code" id="acode" placeholder="Assignment Code">
+                        <input type="text" name="assignment_code" id="acode_box" placeholder="Assignment Code">
                         <div id="ajaxDiv"></div>
                         <div id="assignmentErrors"></div>
                         <div class="center">
