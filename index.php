@@ -48,8 +48,6 @@
     
     <!-- Scripts for validation - login -->
     <script src="js/acode.js"></script>
-    <!-- Scripts for validation - register -->
-    <script src="js/registration.js"></script>  
     <title>Early Birds</title>
   </head>
   <body>
@@ -140,7 +138,7 @@
                 	<h2>Register</h2>
                 	<!-- Currently all error messages are going here -->
                 	<!-- Registration form-->
-                	<form id="registerForm">
+                	<form id="registerForm" name="registerForm">
 	                    <input type="text" name="name" id="name" placeholder="Name">
 	                    <input type="text" name="email" id="registerEmail" placeholder="Email">
                         <div id="ajaxDivReg"></div>
@@ -149,7 +147,7 @@
 	                    <input type="password" name="confirm_password" placeholder="Confirm Password">
 	                    <div class="center">
                         <div id="registerErrors" class="errors"></div>
-	                    	<input type="button" value="Register" class="button" id="register" onclick="ajaxFunction2()">
+							<input type="submit" value="Register" class="button" id="register"> 
 	                    </div>
 	                </form>
                 </div>

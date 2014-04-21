@@ -9,6 +9,11 @@
 	
 $(document).ready(function(){
 
+	// Removes "email already taken error message is user begins typing again
+	$('#registerEmail').on('keyup', function() {
+		$('#ajaxDivReg').empty();
+	});
+
 	// code for using inline html with colorbox
 	//$(".learnMoreLight").colorbox({inline:true, width:"609px", height: "450px"});
 	$(".logout").colorbox({inline:true, width:"300px", height: "200px"});
@@ -109,11 +114,59 @@ $(document).ready(function(){
               required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to confirm your password.</div>",
             	equalTo: "<div class='errors'><i class='fa fa-asterisk'></i>Passwords do not match.</div>"
             }
-          },//end messages 
+          }, //end messages
+          // Submit handler: if valid, then calls ajax function to make sure email isn't already taken
+          submitHandler: function(form) {
+          	ajaxFunction2();
+          }
         });
-
-
-	
-	
-
 });
+
+// Function sends information to the the database
+// Source: http://www.tutorialspoint.com/ajax/ajax_database.htm
+function ajaxFunction2(){
+		var ajaxRequest;  // The variable that makes Ajax possible!
+	
+		try{
+			// Opera 8.0+, Firefox, Safari
+			ajaxRequest = new XMLHttpRequest();
+		}catch (e){
+			// Internet Explorer Browsers
+			try{
+				ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			}catch (e) {
+				try{
+					ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				}catch (e){
+					// Something went wrong
+					alert("Your browser broke!");
+					return false;
+				}
+			}
+		}
+		// Create a function that will receive data 
+		// sent from the server and will update
+		// div section in the same page.
+		ajaxRequest.onreadystatechange = function(){
+			if(ajaxRequest.readyState == 4){
+				if(ajaxRequest.responseText === "success") {
+					// Redirect to register user if successful, meaning an account with the same email exists
+					var url = "scripts/registration.php?name=" + name + "&email=" + email + "&password=" + password;
+					location.href = url;
+				} else {
+					var ajaxDisplay = document.getElementById('ajaxDivReg');
+					ajaxDisplay.innerHTML = ajaxRequest.responseText;
+					return false;
+				}
+			}
+		}
+		// Now get the value from user and pass it to
+		// server script.
+		var name = document.getElementById('name').value;
+		var email = document.getElementById('registerEmail').value;
+		var password = document.getElementById('registerPassword').value;
+		var queryString = "?email=" + email;
+		ajaxRequest.open("GET", "scripts/reg_ajax.php" + 
+			queryString, true);
+		ajaxRequest.send(null); 
+}     
