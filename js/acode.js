@@ -5,23 +5,26 @@
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 // File: acode.js
 // Checks if acode exists in database
-// Last updated April 14, 2014 by KC
+// Last updated April 21, 2014 by KC
 
-// Removes error message if begins typing in box again
 $(document).ready(function(){
-	$('#acode').on('keyup', function() {
-		$('#ajaxDiv').empty();
-	});
-	
-	// Clicks "Continue" if user presses enter
-	// Source: http://stackoverflow.com/questions/895171/prevent-users-from-submitting-form-by-hitting-enter
-	$(window).keydown(function(event){
-		if(event.keyCode == 13) {
-		  event.preventDefault();
-		  $('#asubmit').click();
-		  return false;
-		}
-	  });
+	// Overrides default enter key controls
+    // Source: http://stackoverflow.com/questions/895171/prevent-users-from-submitting-form-by-hitting-enter
+    $(window).keydown(function(event){
+        if(event.keyCode == 13) {
+            event.preventDefault();
+            // Clicks "Continue" if user presses enter on acode input box
+            if ($('#acode_box').is(':focus')) {
+                $('#asubmit').click();
+                return false;
+            }
+        	// Clicks "Register" if user presses enter on any register box inputs  
+            if (($('#name').is(':focus')) || ($('#registerEmail').is(':focus')) || ($('#confirmEmail').is(':focus')) || ($('#registerPassword').is(':focus')) || ($('#confirmPassword').is(':focus')) ) {
+                $('#register_submit').click();
+                return false;
+            }
+        }
+    });
 });
 
 // Function sends information to the the database
@@ -53,14 +56,14 @@ function ajaxFunction(){
     // div section in the same page.
     ajaxRequest.onreadystatechange = function(){
         if(ajaxRequest.readyState == 4){
-        	if(ajaxRequest.responseText === "success") {
-        		// Redirects to finding the assignment if successful
-        		var url = "scripts/find_assignment_code.php?assignment_code=" + acode;
-        		location.href = url;
-        	} else {
-				var ajaxDisplay = document.getElementById('ajaxDiv');
-				ajaxDisplay.innerHTML = ajaxRequest.responseText;
-			}
+            if(ajaxRequest.responseText === "success") {
+                // Redirects to finding the assignment if successful
+                var url = "scripts/find_assignment_code.php?assignment_code=" + acode;
+                location.href = url;
+            } else {
+                var ajaxDisplay = document.getElementById('ajaxDiv');
+                ajaxDisplay.innerHTML = ajaxRequest.responseText;
+            }
         }
     }
     // Now get the value from user and pass it to
