@@ -12,12 +12,23 @@ $(document).ready(function(){
 	$('#acode').on('keyup', function() {
 		$('#ajaxDiv').empty();
 	});
+	
+	// Clicks "Continue" if user presses enter
+	// Source: http://stackoverflow.com/questions/895171/prevent-users-from-submitting-form-by-hitting-enter
+	$(window).keydown(function(event){
+		if(event.keyCode == 13) {
+		  event.preventDefault();
+		  $('#asubmit').click();
+		  return false;
+		}
+	  });
 });
 
 // Function sends information to the the database
 // Source: http://www.tutorialspoint.com/ajax/ajax_database.htm
 
 function ajaxFunction(){
+	
     var ajaxRequest;  // The variable that makes Ajax possible!
 	
     try{
@@ -47,14 +58,14 @@ function ajaxFunction(){
         		var url = "scripts/find_assignment_code.php?assignment_code=" + acode;
         		location.href = url;
         	} else {
-			var ajaxDisplay = document.getElementById('ajaxDiv');
-			ajaxDisplay.innerHTML = ajaxRequest.responseText;
+				var ajaxDisplay = document.getElementById('ajaxDiv');
+				ajaxDisplay.innerHTML = ajaxRequest.responseText;
 			}
         }
     }
     // Now get the value from user and pass it to
     // server script.
-    var acode = document.getElementById('acode').value;
+    var acode = document.getElementById('acode_box').value;
     var queryString = "?acode=" + acode;
     ajaxRequest.open("GET", "scripts/acode_ajax.php" + 
         queryString, true);

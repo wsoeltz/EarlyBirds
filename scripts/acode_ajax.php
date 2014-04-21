@@ -26,6 +26,5 @@
 	} else {
 		$display_string = "success";
 		echo $display_string;
-	
 	}
 ?>
