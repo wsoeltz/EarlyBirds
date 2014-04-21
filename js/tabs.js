@@ -18,7 +18,7 @@ $(function() {
 	// Disable/enable next and previous buttons depending on where user is in lab report
 	begin_or_end();
            
-    focus_on_textbox()       
+    focus_on_textbox();       
            
 	// Goes to the next tab if user clicks the next button
 	// http://stackoverflow.com/questions/3044654/jquery-tabs-next-button
@@ -34,7 +34,7 @@ $(function() {
         begin_or_end();    
         
         // Focus on textbox of current tab
-        focus_on_textbox()
+        focus_on_textbox();
     }); // end next
                   
 	// Goes to the previous tab if user clicks the previous button
@@ -53,7 +53,7 @@ $(function() {
         begin_or_end();
         
         // Focus on textbox of current tab
-        focus_on_textbox()
+        focus_on_textbox();
     }); // end previous
     
     // Upon save, change the current tab's style
@@ -77,7 +77,7 @@ $(function() {
         begin_or_end();
         
         // Focus on textbox of current tab// Focus on textbox of current tab
-        focus_on_textbox()
+        focus_on_textbox();
     }); // end individual click
          
 }); // end document ready function
