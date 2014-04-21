@@ -115,11 +115,11 @@
                     ?>
                     <!-- Login form -->
                     <form id="loginForm" name="loginForm" method="post" action="scripts/login.php">
-	                    <input type="text" name="email" placeholder="Email">
-	                    <input type="password" name="password" placeholder="Password">
+	                    <input type="text" name="email" id="loginEmail" placeholder="Email">
+	                    <input type="password" name="password" id="loginPassword" placeholder="Password">
 	                    <div class="center">
                             <div id="loginErrors" class="errors"></div>
-	                    	<input type="submit" value="Login" class="button" id="login">
+	                    	<input type="submit" value="Login" class="button" id="login_submit">
 	                    </div>
 	                </form>
 	                <!-- Register button if no account -->
@@ -142,12 +142,12 @@
 	                    <input type="text" name="name" id="name" placeholder="Name">
 	                    <input type="text" name="email" id="registerEmail" placeholder="Email">
                         <div id="ajaxDivReg"></div>
-	                    <input type="text" name="confirm_email" placeholder="Confirm Email">
+	                    <input type="text" name="confirm_email" id="confirmEmail" placeholder="Confirm Email">
 	                    <input type="password" name="password" id="registerPassword" placeholder="Password">
-	                    <input type="password" name="confirm_password" placeholder="Confirm Password">
+	                    <input type="password" name="confirm_password" id="confirmPassword" placeholder="Confirm Password">
 	                    <div class="center">
                         <div id="registerErrors" class="errors"></div>
-							<input type="submit" value="Register" class="button" id="register"> 
+							<input type="submit" value="Register" class="button" id="register_submit"> 
 	                    </div>
 	                </form>
                 </div>
