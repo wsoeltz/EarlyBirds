@@ -123,7 +123,7 @@
                                     Includes a 'How-To' on using Early Birds as well as a location
                                     to write down their assignment code.</h3>
                                 <div class="center">
-                                    <a class="teacherLink open" href="css/assets/infosheat.pdf">Open</a>
+                                    <a class="teacherLink open" href="scripts/info_sheet.php">Open</a>
                                 </div>
                             </div>
                         </div>
