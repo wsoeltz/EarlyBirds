@@ -19,6 +19,8 @@
 	# Sets Lab ID session variable to the variable of the selected lab
 	$_SESSION['Lab_ID'] = $id;
 	
+	mysql_query("UPDATE Labs SET Timestamp=NOW() WHERE Lab_ID='$id'");
+	
 	# Gets any results from query
 	$values = mysql_fetch_array($result);
 

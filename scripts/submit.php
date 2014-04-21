@@ -14,7 +14,7 @@
 	$id = $_SESSION['Lab_ID'];
 	
 	# Sets lab to completed
-	$result = mysql_query("UPDATE Labs SET Completed='1' WHERE Lab_ID='$id'")
+	$result = mysql_query("UPDATE Labs SET Completed='1', Timestamp=NOW() WHERE Lab_ID='$id'")
 				or die("<p>Error inserting into the database: " .
 						mysql_error() . "</p>"); 
 					
