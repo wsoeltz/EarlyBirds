@@ -18,9 +18,14 @@ $(document).ready(function(){
                 $('#asubmit').click();
                 return false;
             }
-        	// Clicks "Register" if user presses enter on any register box inputs  
+        	// Clicks "Register" if user presses enter on any register input boxes  
             if (($('#name').is(':focus')) || ($('#registerEmail').is(':focus')) || ($('#confirmEmail').is(':focus')) || ($('#registerPassword').is(':focus')) || ($('#confirmPassword').is(':focus')) ) {
                 $('#register_submit').click();
+                return false;
+            }
+            // Clicks "Login" if user presses enter on any login input boxes
+            if (($('#loginEmail').is(':focus')) || ($('#loginPassword').is(':focus'))) {
+                $('#login_submit').click();
                 return false;
             }
         }
