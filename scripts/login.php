@@ -19,6 +19,10 @@
 	# echo "Password appears in database like: ";
 	# echo $password;
 	
+	# Escape User Input to help prevent SQL Injection
+	$email = mysql_real_escape_string($email);
+	$password = mysql_real_escape_string($password);
+	
 	# Attempts to find user with given email and password
 	$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email' AND Password='$password'");
 	$values = mysql_fetch_array($result);
@@ -43,6 +47,9 @@
 		# Sets current session email and name variables
  		$_SESSION['email'] = $email;
   		$_SESSION['name'] = $name;
+ 		
+ 		# Escape User Input to help prevent SQL Injection
+		$email = mysql_real_escape_string($email);
  		
  		# Store teacher ID in $_SESSION['id'] - will make future queries easier
  		$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email'");

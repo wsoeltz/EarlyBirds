@@ -25,6 +25,9 @@
 	$_SESSION['name'] = $name;
 	$_SESSION['email'] = $email;
 	
+	# Escape User Input to help prevent SQL Injection
+	$email = mysql_real_escape_string($email);
+	
 	# Store teacher ID in $_SESSION['id'] - will make future queries easier
 	$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email'");
 	$result = mysql_fetch_array($result);
@@ -41,6 +44,11 @@
 		# Sources: http://highedwebtech.com/2008/04/25/season-your-passwords-with-some-salt/,
 		# http://dev.mysql.com/doc/refman/5.5/en/encryption-functions.html#function_sha1
 		$password = sha1($email.$password);
+	
+		# Escape User Input to help prevent SQL Injection
+		$name = mysql_real_escape_string($name);
+		$email = mysql_real_escape_string($email);
+		$password = mysql_real_escape_string($password);
 	
 		# Inserts user into database
 		$result = mysql_query("INSERT INTO Teachers (Teacher_ID, Name, Email, Password) VALUES ( 'mysql_insert_id()', '$name', '$email', '$password' )")

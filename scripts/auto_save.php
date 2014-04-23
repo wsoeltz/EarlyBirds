@@ -4,7 +4,6 @@
 	# File: auto_save.php
 	# Auto saves student work to database
 	# Last updated March 30, 2014 by KC
-	
 
 	# Connects to database, selects table
 	require "connect.php";
@@ -16,7 +15,6 @@
 	$procedure = $_GET['procedure'];
 	$results = $_GET['results'];
 	$conclusion = $_GET['conclusion'];
-
 
 	# Escape User Input to help prevent SQL Injection
 	$problem = mysql_real_escape_string($problem);
@@ -33,6 +31,5 @@
 	# Updates information in database
 	$result = mysql_query("UPDATE Labs SET Problem='$problem', Hypothesis='$hypothesis', Materials='$materials', Proced='$procedure', Results='$results', Conclusion='$conclusion' WHERE Lab_ID='$id'")
 				or die("<p>Error inserting into the database: " .
-						mysql_error() . "</p>");
-		
+						mysql_error() . "</p>");	
 ?>

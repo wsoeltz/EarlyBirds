@@ -3,7 +3,7 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: assignments.php
 	# Creates a new assignment
-	# Last updated March 19, 2014 by KC
+	# Last updated April 22, 2014 by KC
 	
 	# Connects to database
 	include "connect.php";
@@ -15,6 +15,11 @@
  	$code = $_SESSION['code'];
  	$teacher_id = $_SESSION['id'];
  	 	
+ 	# Escape User Input to help prevent SQL Injection
+	$name = mysql_real_escape_string($name);
+	$code = mysql_real_escape_string($code);
+	$teacher_id = mysql_real_escape_string($teacher_id);
+	
  	# Add assignment to database
  	addAssignmentToDatabase($name, $code, $teacher_id);
  	

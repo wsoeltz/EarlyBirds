@@ -11,6 +11,9 @@
 	# Retrieve data from Query String
 	$acode = $_GET['acode'];
 	
+	# Escape User Input to help prevent SQL Injection
+	$acode = mysql_real_escape_string($acode);
+
 	# Verifies this code is unique
  	$result = mysql_query("SELECT * FROM Assignments WHERE Assignment_Code='$acode'");
  	if (!$result) {

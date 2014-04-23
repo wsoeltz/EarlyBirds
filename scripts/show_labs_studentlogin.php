@@ -11,6 +11,9 @@
 	# Sets the assignment code
 	$acode = $_SESSION['acode'];
 	
+	# Escape User Input to help prevent SQL Injection
+	$acode = mysql_real_escape_string($acode);
+	
 	# Selects all labs with given assignment code
 	$result = mysql_query("SELECT * FROM Labs WHERE Assignment_Code='$acode'");
 	if (!$result) {

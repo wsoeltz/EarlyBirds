@@ -3,11 +3,12 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: load_lab.php
 	# Loads student previous work
-	# Last updated April 4, 2014 by KC
+	# Last updated April 22, 2014 by KC
 
-	# connects to database
+	# Connects to database, selects table
 	include "connect.php";
 
+	# Gets lab ID
 	$id = $_GET['id'];
 	
 	# Selects all assignments given a specific Teacher ID
@@ -19,6 +20,10 @@
 	# Sets Lab ID session variable to the variable of the selected lab
 	$_SESSION['Lab_ID'] = $id;
 	
+	# Escape User Input to help prevent SQL Injection
+	$id = mysql_real_escape_string($id);
+	
+	# Update timestamp of lab
 	mysql_query("UPDATE Labs SET Timestamp=NOW() WHERE Lab_ID='$id'");
 	
 	# Gets any results from query
