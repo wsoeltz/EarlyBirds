@@ -10,10 +10,23 @@
 	
 	session_start();
 	$acode = $_SESSION['acode'];
+	# Gets student name from assignment_code input box
 	$sname = $_REQUEST['assignment_code'];
 	$_SESSION['sname'] = $sname;
+		
+	$result = mysql_query("SELECT * FROM Labs WHERE  Assignment_Code='$acode' AND Student_Name='$sname'")
+			or die("<p>Error inserting into the database: " .
+					mysql_error() . "</p>");	
 
-	addLabToDatabase($acode, $sname);
+	$values = mysql_fetch_array($result);
+
+	if ( count($values) == 1 ) {
+		addLabToDatabase($acode, $sname);
+	} else {
+		$_SESSION['lab_message'] = "<div id='ajaxDivReg'><i class='fa fa-asterisk'></i>Please enter a name that is not already on the list.</div>";
+		# Redirect back to login div with error message
+		header("Location: ../studentlogin.php");
+	}
 	
 	# Adds new lab to the database
 	function addLabToDatabase($acode, $sname) {

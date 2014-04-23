@@ -75,6 +75,13 @@
           <form id="login" name="login" method="post" action="scripts/new_lab.php">
               <input type="text" id="assignment_code" name="assignment_code" placeholder="What Is Your Name?">
               <br><br>
+              <?php
+              	if (isset($_SESSION['lab_message'])) {
+              		echo $_SESSION['lab_message'];
+              	}
+              	include "scripts/leave_page_studentlogin.php";
+              ?>
+              
               <div class="center">
                   <input type="submit" class="stdButton" name="acode" id="assignmentToLab" value="Begin New Lab">
               </div>
