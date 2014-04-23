@@ -11,6 +11,9 @@
 	# Teacher ID
 	$Teacher_id = $_SESSION['id'];
 
+	# Escape User Input to help prevent SQL Injection
+	$Teacher_id = mysql_real_escape_string($Teacher_id);
+
 	# Selects all assignments given a specific Teacher ID
 	$result = mysql_query("SELECT * FROM Assignments WHERE Teacher_id='$Teacher_id' ORDER BY Timestamp ASC;");
 	if (!$result) {

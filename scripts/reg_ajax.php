@@ -11,6 +11,9 @@
 	# Retrieve data from Query String
 	$email = $_GET['email'];
 	
+	# Escape User Input to help prevent SQL Injection
+	$email = mysql_real_escape_string($email);
+	
 	# Verifies this code is unique
  	$result = mysql_query("SELECT * FROM Teachers WHERE Email='$email'");
  	if (!$result) {

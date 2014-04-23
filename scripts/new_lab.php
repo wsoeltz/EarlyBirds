@@ -18,6 +18,10 @@
 	# Adds new lab to the database
 	function addLabToDatabase($acode, $sname) {
  		
+ 		# Escape User Input to help prevent SQL Injection
+		$acode = mysql_real_escape_string($acode);
+		$sname = mysql_real_escape_string($sname);
+ 		
 		# Inserts user into database
 		$result = mysql_query("INSERT INTO Labs (Lab_ID, Assignment_Code, Student_Name) VALUES ( 'mysql_insert_id()', '$acode', '$sname')")
 			or die("<p>Error inserting into the database: " .

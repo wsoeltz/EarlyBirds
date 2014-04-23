@@ -11,6 +11,9 @@
 	# Set session assignment code id
 	$_SESSION['acode'] = $acode;
 		
+	# Escape User Input to help prevent SQL Injection
+	$acode = mysql_real_escape_string($acode);
+		
 	# Selects all assignments given a specific Teacher ID
 	$result = mysql_query("SELECT * FROM Labs WHERE Assignment_Code='$acode'");
 	if (!$result) {
@@ -50,7 +53,8 @@
 					}
 					# URL to redirect to the lab report
 					$url = 'scripts/redirect.php?page=teacher&id=' . $values['Lab_ID'];
-					echo "<a class='viewLab' target='_blank' href='$url'>View</a>";
+					//echo "<a class='viewLab' target='_blank' href='$url'>View</a>";
+
 				echo '</div>';
 			echo '</div>';
 		} while ($values = mysql_fetch_array($result));

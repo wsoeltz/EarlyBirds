@@ -3,13 +3,16 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: display_aname.php
 	# Displays assignment name on teacherhub
-	# Last updated April 8, 2014 by KC
+	# Last updated April 22, 2014 by KC
 
-	# Connects to databse
+	# Connects to databse, selects table
 	include "scripts/connect.php";
 	
 	# Assignment code 
 	$acode = $_GET['acode'];
+
+	# Escape User Input to help prevent SQL Injection
+	$acode = mysql_real_escape_string($acode);
 
 	# Selects all assignments given a specific Teacher ID
 	$result = mysql_query("SELECT * FROM Assignments WHERE Assignment_Code='$acode'");
