@@ -21,7 +21,7 @@
 	
 	# Determines if there are any labs associated with an assignment
 	if ($values != false) {
-		echo "<h2>Click on your name</h2>";
+		echo "<h2>If you see your name, click it.</h2><h2>Otherwise enter it at the bottom of the page.</h2><br><div id='arrow_top'></div><div id='arrow_body'>";
 		# Displays all labs available for an assignment
 		do {
 			# Displays all completed labs with links to submission page
@@ -36,7 +36,7 @@
 				echo "<a class='lablink' href='$url'>" . $values['Student_Name'] . "</a><br>";
 			}
 		} while ( $values = mysql_fetch_array($result));
-		echo "<h2>Or if your name isn’t on the list, enter it here</h2>";
+		echo "</div><h2>If your name isn’t on the list,<br>enter it here:</h2><div id='arrow_bot'></div>";
 	} else {
 		# Displays only a prompt to begin a lab IF there are no labs associated with an assignment
 		echo "<h2>To begin a new lab, enter your name here</h2>";

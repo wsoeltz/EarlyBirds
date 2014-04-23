@@ -175,7 +175,7 @@
         <!-- Contains hidden content for submit warning -->
             <div style='display:none'>
                 <div id="submitWarning">
-                    <h2>Are you sure you want to submit? Once you submit you wont be able to make changes.</h2>
+                    <h2>Once you submit your lab report you wont be able to make changes.</h2>
                     <a class="stdButton submit" id="submit" href="scripts/submit.php">Submit</a>
                 </div>
             </div>

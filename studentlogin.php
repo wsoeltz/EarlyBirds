@@ -44,7 +44,7 @@
         },//end rules
         messages:  {
           assignment_code:  {
-            required: "<div class='errors'><i class='fa fa-asterisk'></i>Please type your name.</div>"
+            required: "<div class='errors'><i class='fa fa-asterisk'></i>Please enter your name.</div>"
           }//end messages 
         }
       });
@@ -74,7 +74,7 @@
          
           <form id="login" name="login" method="post" action="scripts/new_lab.php">
               <input type="text" id="assignment_code" name="assignment_code" placeholder="What Is Your Name?">
-              <br/><br/>
+              <br><br>
               <div class="center">
                   <input type="submit" class="stdButton" name="acode" id="assignmentToLab" value="Begin New Lab">
               </div>

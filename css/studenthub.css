@@ -186,6 +186,7 @@ div#header{
 div.labInfo{
     margin: 0px 5px 42px 50px;
     float: left;
+    width: 200px;
 }
 
 /* Div for labs hints */
@@ -213,7 +214,7 @@ div#bird{
 
 div#navButtons{
     position: absolute;
-    top:593px;
+    top:618px;
     width: 1066px;
 }
 
@@ -251,7 +252,7 @@ div.center {
 
 #saving{
     position: absolute;
-    top: 446px;
+    top: 474px;
     left: 13px;
     z-index: 100;
     color: #5a5a5a;

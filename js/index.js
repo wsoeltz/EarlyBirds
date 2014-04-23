@@ -63,7 +63,7 @@ $(document).ready(function(){
           messages:  {
             email:  {
               required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter an email.</div>",
-              email: "<div class='errors'><i class='fa fa-asterisk'></i>Invalid email.</div>"
+              email: "<div class='errors'><i class='fa fa-asterisk'></i>Please enter a valid email.</div>"
             },
             password:  {
               required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter a password.</div>"
@@ -100,7 +100,7 @@ $(document).ready(function(){
           	},
             email:  {
               required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter an email.</div>",
-              email: "<div class='errors'><i class='fa fa-asterisk'></i>Invalid email.</div>"
+              email: "<div class='errors'><i class='fa fa-asterisk'></i>Please enter a valid email.</div>"
             },
             confirm_email:  {
               required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to confirm your email.</div>",
