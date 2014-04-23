@@ -74,6 +74,11 @@
                         <div class="center">
                             <input type="button" class="stdButton" name="asubmit" id="asubmit" value="Continue" onclick="ajaxFunction()">
                         </div>
+                        <script>
+                        	$('#asubmit').click(function() {
+								$('#acode_box').focus();
+							});
+                        </script>
                     </form>
                     <!-- Down arrow to go back to splash div -->
                     <a title="Go Back to Main Menu" href="javascript:void(0)" id="assignmentToSplash"><img class="goBack vertical" src="css/assets/down_arrow.png"></a>           
@@ -149,6 +154,11 @@
                         <div id="registerErrors" class="errors"></div>
 							<input type="submit" value="Register" class="button" id="register_submit"> 
 	                    </div>
+	                    <script>
+                        	$('#register_submit').click(function() {
+								$('#registerEmail').focus();
+							});
+                        </script>
 	                </form>
                 </div>
             </div>
