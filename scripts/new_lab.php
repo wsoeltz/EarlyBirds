@@ -23,7 +23,7 @@
 	if ( count($values) == 1 ) {
 		addLabToDatabase($acode, $sname);
 	} else {
-		$_SESSION['lab_message'] = "<div id='ajaxDivReg'><i class='fa fa-asterisk'></i>Please enter a name that is not already on the list.</div>";
+		$_SESSION['lab_message'] = "<div class='errors'><i class='fa fa-asterisk'></i>Please enter a name that is not already on the list.</div>";
 		# Redirect back to login div with error message
 		header("Location: ../studentlogin.php");
 	}

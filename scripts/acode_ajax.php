@@ -24,7 +24,7 @@
 
 	// Error message if assignment code doesn't exist
 	if ($values == false ) {
- 		$display_string = "<i class='fa fa-asterisk'></i>The assignment code you entered is not correct.";
+ 		$display_string = "<i class='fa fa-asterisk'></i>That is a wrong assignment code. Please try again.";
  		echo $display_string;
 	} else {
 		$display_string = "success";

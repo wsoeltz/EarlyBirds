@@ -184,9 +184,20 @@ div#header{
 
 /* Container for all lab info */
 div.labInfo{
-    margin: 0px 5px 42px 50px;
+    margin: 0px 5px 42px 0px;
     float: left;
-    width: 200px;
+    width: 260px;
+    height: 85px;
+}
+
+div.lablogo{
+    padding-left: 30px;
+    width: 230px;
+}
+
+div.labbutton{
+    padding-right: 30px;
+    width: 230px;
 }
 
 /* Div for labs hints */

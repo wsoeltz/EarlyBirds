@@ -73,7 +73,7 @@
                  <!-- Keeps parents of floating elements from collasping -->
                     <div class="clearfix">
 
-                        <div class="labInfo">
+                        <div class="labInfo lablogo">
                             <a href="index.php"><img src="css/assets/logo_small.png" title="Early Birds" alt="Early Birds" width="203" height="58"/></a>
                         </div>
                         <div class="labInfo">
@@ -90,7 +90,7 @@
                                     echo '<h3 class="bold">Contact:</h3> <h3>' . $_SESSION['temail'] . '</h3><br>';
                                 ?>
                         </div>
-                        <div class="labInfo">
+                        <div class="labInfo labbutton">
                             <a class="stdButton saveQuit" href="index.php">Save &amp; Quit</a>
                         </div>
                     </div>               
