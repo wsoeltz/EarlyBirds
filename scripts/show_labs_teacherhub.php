@@ -53,7 +53,7 @@
 					}
 					# URL to redirect to the lab report
 					$url = 'scripts/redirect.php?page=teacher&id=' . $values['Lab_ID'];
-					//echo "<a class='viewLab' target='_blank' href='$url'>View</a>";
+					echo "<a class='viewLab' target='_blank' href='$url'>View</a>";
 
 				echo '</div>';
 			echo '</div>';
