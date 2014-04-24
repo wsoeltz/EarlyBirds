@@ -78,6 +78,9 @@
               <?php
               	if (isset($_SESSION['lab_message'])) {
               		echo $_SESSION['lab_message'];
+              		echo "<script>";
+					echo "$('#assignment_code').focus();";
+					echo "</script>";
               	}
               	include "scripts/leave_page_studentlogin.php";
               ?>
