@@ -81,7 +81,7 @@
                         </script>
                     </form>
                     <!-- Down arrow to go back to splash div -->
-                    <a title="Go Back to Main Menu" href="javascript:void(0)" id="assignmentToSplash"><img class="goBack vertical" src="css/assets/down_arrow.png"></a>           
+                    <a title="Go Back to Main Menu" href="javascript:void(0)" id="assignmentToSplash"><img alt="Go Back" class="goBack vertical" src="css/assets/down_arrow.png"></a>           
                 </div>
                 
                 <!-- Students: Enter in lab code. Needed as placeholder block for sliding divs -->
@@ -108,7 +108,7 @@
 				<!-- Login div -->
                 <div id="login" class="contentBlock">
                		<!-- Up arrow to go back to splash div -->
-					<a title="Go Back to Main Menu" href="javascript:void(0)" id="loginToSplash"><img class="goBack vertical" src="css/assets/up_arrow.png"></a>
+					<a title="Go Back to Main Menu" href="javascript:void(0)" id="loginToSplash"><img alt="Go Back" class="goBack vertical" src="css/assets/up_arrow.png"></a>
                     <h2>Login</h2>
                     <?php
                     	# Displays login error message
@@ -133,7 +133,6 @@
 		                Don't have an account?<br><br>
 		                <a class="stdButton" href="javascript:void(0)" id="loginToRegister">Register</a>
 	                </div>
-	                </form>                    
                 </div>
                 
 				<!-- Registration div -->
