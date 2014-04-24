@@ -83,12 +83,6 @@ $( document ).ready(function() {
     
     // Changes hint if you individual click a tab
     $(".ui-tabs-anchor").click(function() {
-    	var index = active;
-        var tabID = "#tabs-"+index+"-box";
-        
-        // Makes previous tab green if the input box has content
-        save(index, tabID);
-        
         var active = ($( "#tabs" ).tabs( "option", "active" ));
         hint(active-1);
         
