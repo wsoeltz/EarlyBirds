@@ -5,16 +5,21 @@
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 // File: tabs.js
 // Contains all JS for coloring tabs, moving through tabs, hints
-// Last updated February 24, 2014 by KC
+// Last updated April 23, 2014 by KC
+
+// Calls function as soon as the page loads
+//Source: http://stackoverflow.com/questions/3842614/how-do-i-call-a-javascript-function-on-page-load
+window.onload = function() {
+  save();
+};
 	
 // document ready function
-$(function() {
-
+$( document ).ready(function() {
 	// Sets default tab to the first tab
 	// http://stackoverflow.com/questions/4565128/set-default-tab-in-jquery-ui-tabs
     $( "#tabs" ).tabs();
     $( "#tabs" ).tabs( "option", "active", 0 );
-        
+    
 	// Disable/enable next and previous buttons depending on where user is in lab report
 	begin_or_end();
            
@@ -25,11 +30,15 @@ $(function() {
     $("#next").click(function() {
     	// Gets active tab
         var active = ($( "#tabs" ).tabs( "option", "active" ));
+        
         // Changes hint to be hint of next section
         hint(active);
+        
+        save();
+
         // Move to next tab
         $( "#tabs" ).tabs( "option", "active", active + 1 );
-        
+           
 		// Disable/enable next and previous buttons depending on where user is in lab report
         begin_or_end();    
         
@@ -42,12 +51,16 @@ $(function() {
     $("#previous").click(function() {
     	// Gets active tab
         var active = $( "#tabs" ).tabs( "option", "active" );
+        
         // Changes hint to be hint of next section
         hint(active-2);
+        
         // Moves to previous tab, but will not loop through all tabs
         if (active-1>=0){
             $( "#tabs" ).tabs( "option", "active", active - 1 );
         }
+        
+        save();
         
         // Disable/enable next and previous buttons depending on where user is in lab report
         begin_or_end();
@@ -70,16 +83,23 @@ $(function() {
     
     // Changes hint if you individual click a tab
     $(".ui-tabs-anchor").click(function() {
+    	var index = active;
+        var tabID = "#tabs-"+index+"-box";
+        
+        // Makes previous tab green if the input box has content
+        save(index, tabID);
+        
         var active = ($( "#tabs" ).tabs( "option", "active" ));
         hint(active-1);
+        
+        save();
         
         // Disable/enable next and previous buttons depending on where user is in lab report
         begin_or_end();
         
         // Focus on textbox of current tab// Focus on textbox of current tab
         focus_on_textbox();
-    }); // end individual click
-         
+    }); // end individual click        
 }); // end document ready function
 
 // Function hint empties the current hint and adds the given hint
@@ -173,4 +193,20 @@ function focus_on_textbox(){
 	
 	// Focuses on textbox
 	$(tabID).focus();
+}
+
+// Change the tab's style to "save" if it has content
+// http://stackoverflow.com/questions/7986086/using-a-jquery-variable-as-an-href-selector
+function save() {
+	// Go through all 6 input boxes and change tab color accordingly
+	for ( index = 1; index < 7; index++ ) {	
+		var tabID="#tabs-"+index+"-box";
+		   
+		if (($(tabID).val())) {
+			var $tabID="#tabs-"+index;
+			$('a[href="' + $tabID + '"]').css('background-color','#9ccf31'); // Changes background color to green
+			$('a[href="' + $tabID + '"]').css('background-image','url(css/assets/checkbox_done.png)'); // Adds checkbox done
+			$('a[href="' + $tabID + '"]').css('background-position','133px 23px'); // Position checkbox image        
+		}
+	}
 }
