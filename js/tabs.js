@@ -108,7 +108,7 @@ function hint(active){
     switch(active){
         case -1:
         	// Replaces with problem hint
-            var problem = '<h3>Need Help Writing your<h3 class="bold"=">&nbsp;Problem?</h3><p>Why are you doing this experiment? What question are you trying to answer? One way to write it is <span class="italics">I am doing this experiment to __________.</span></p>';
+            var problem = '<h3>Need Help Writing your<h3 class="bold"=">&nbsp;Problem?</h3><p>Talk about why you are doing this experiment. What are you trying to figure out? One way to write it is <span class="italics">I am doing this experiment to __________.</span></p>';
 			hint_content(problem);
             break;
         case 0:
@@ -133,7 +133,7 @@ function hint(active){
             break;
         case 4:
         	// Replaces with conclusion hint
-            var conclusion = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Conclusion?</h3><p>What do your results mean? Do your results support your hypothesis? How do your results relate to the problem?</p>';
+            var conclusion = '<h3>Need Help Writing your<h3 class="bold">&nbsp;Conclusion?</h3><p>Talk about your results. Do your results support your hypothesis?</p>';
             hint_content(conclusion);
             break;
     }
