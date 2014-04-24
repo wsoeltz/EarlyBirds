@@ -68,25 +68,6 @@ function auto_save() {
         // div.innerHTML = 'Last saved on ' + m + ' at ' + t;
         div.innerHTML = 'Saved'
     }, 1500);
-    
-    // Upon save, change the current tab's style
-    // http://stackoverflow.com/questions/7986086/using-a-jquery-variable-as-an-href-selector
-    	// Gets active tab
-        var index= ($( "#tabs" ).tabs( "option", "active"))+1;
-        // ID of current tab
-        var $tabID="#tabs-"+index;
-        $('a[href="' + $tabID + '"]').css('background-color','#9ccf31'); // Changes background color to green
-        $('a[href="' + $tabID + '"]').css('background-image','url(css/assets/checkbox_done.png)'); // Adds checkbox done
-        
-      //setTimeout( doSomething, 2500);
-}
-
-function doSomething() {
-        var index= ($( "#tabs" ).tabs( "option", "active"))+1;
-        // ID of current tab
-        var $tabID="#tabs-"+index;
-        s$('a[href="' + $tabID + '"]').css('background-color','#009ece'); // Changes background color to blue
-        $('a[href="' + $tabID + '"]').css('background-image','url(css/assets/checkbox_working.png)'); // Adds checkbox done
 }
 
 // Function sends information to the the database
