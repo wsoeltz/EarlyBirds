@@ -168,7 +168,7 @@
             <div id="aboutContent">
                 <div class="learn right">
                     <h5>Step-by-Step Learning Process.</h5>
-                    <p>The Early Birds web app walks students through the process of writing formal lab reports, teaching them each step as they get there.</p>
+                    <p>Early Birds is a web application that walks students through writing formal lab reports using a computer.</p>
                 </div>
                 <div class="learn left">
                     <h5>No Complex Word Processors.</h5>
@@ -180,7 +180,7 @@
                 </div>
                 <div class="learn left">
                     <h5>Simplify the Grading Process.</h5>
-                    <p>With the online interface, teachers can check up on student progress, and immedietly see when assignments have been submitted.</p>
+                    <p>With the online interface, teachers can check up on student progress, view student work, and immediately see when assignments have been submitted.</p>
                 </div>
                 <div class="learn center">
                     <h5>You know what they say,</h5>

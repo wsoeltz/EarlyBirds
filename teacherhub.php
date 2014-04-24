@@ -119,9 +119,7 @@
                         <div id="infoSheetContainer">
                             <div id="contentContainer">
                                 <h2 class="gray">Information Sheet</h2>
-                                <h3 class="info">Print this informational sheet to hand out to your students.
-                                    Includes a 'How-To' on using Early Birds as well as a location
-                                    to write down their assignment code.</h3>
+                                <h3 class="info">Print this information sheet to hand out to your students. It includes a 'How-To' on using Early Birds as well as a location to write down the assignment code.</h3>
                                 <div class="center">
                                     <a class="teacherLink open" href="scripts/info_sheet.php">Open</a>
                                 </div>

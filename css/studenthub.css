@@ -104,7 +104,7 @@ a.saveQuit:hover{
 a.disabled {
     background-color: #C0C0C0;
     color:  #feffff;
-    cursor: default;
+    cursor:not-allowed;;
     background-image: none;
 
 }
@@ -112,7 +112,7 @@ a.disabled {
 a.disabled:hover {
     background-color: #C0C0C0;
     color:  #feffff;
-    cursor: default;
+    cursor: not-allowed;
     background-image: none;
 
 }

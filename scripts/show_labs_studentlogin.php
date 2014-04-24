@@ -39,7 +39,7 @@
 				echo "<a class='lablink' href='$url'>" . $values['Student_Name'] . "</a><br>";
 			}
 		} while ( $values = mysql_fetch_array($result));
-		echo "</div><h2>If your name isn’t on the list,<br>enter it here:</h2><div id='arrow_bot'></div>";
+		echo "</div><h2>If your name is not on the list,<br>enter it here:</h2><div id='arrow_bot'></div>";
 	} else {
 		# Displays only a prompt to begin a lab IF there are no labs associated with an assignment
 		echo "<h2>To begin a new lab, enter your name here</h2>";
