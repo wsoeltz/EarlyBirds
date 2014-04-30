@@ -11,7 +11,7 @@
 	session_start();
 	$acode = $_SESSION['acode'];
 	# Gets student name from assignment_code input box
-	$sname = $_REQUEST['assignment_code'];
+	$sname = $_GET['sname'];
 	$_SESSION['sname'] = $sname;
 		
 	$result = mysql_query("SELECT * FROM Labs WHERE  Assignment_Code='$acode' AND Student_Name='$sname'")

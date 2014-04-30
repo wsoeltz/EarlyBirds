@@ -36,6 +36,10 @@
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script> 
   <script type="text/javascript">
     $(document).ready(function(){
+ 		$('#assignmentToLab').click(function() {
+  			$('#lab_message').empty();
+  		});
+    
       $('#login').validate({
         rules:  {
           assignment_code:  {
@@ -46,7 +50,12 @@
           assignment_code:  {
             required: "<div class='errors'><i class='fa fa-asterisk'></i>Please enter your name.</div>"
           }//end messages 
-        }
+        }, //end messages
+	  // Submit handler: if valid, then calls ajax function to make sure email isn't already taken
+	  submitHandler: function(form) {
+		var url = "scripts/new_lab.php?sname=" + $('#assignment_code').val();
+ 		location.href = url;
+	  }
       });
     });
   </script>
@@ -72,12 +81,14 @@
             include "scripts/show_labs_studentlogin.php";
           ?>
          
-          <form id="login" name="login" method="post" action="scripts/new_lab.php">
+          <form id="login" name="login">
               <input type="text" id="assignment_code" name="assignment_code" placeholder="What Is Your Name?">
               <br><br>
               <?php
               	if (isset($_SESSION['lab_message'])) {
+              		echo "<div id='lab_message'>";
               		echo $_SESSION['lab_message'];
+              		echo "</div>";
               		echo "<script>";
 					echo "$('#assignment_code').focus();";
 					echo "</script>";
