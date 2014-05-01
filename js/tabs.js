@@ -74,9 +74,7 @@ $( document ).ready(function() {
         var active = ($( "#tabs" ).tabs( "option", "active" ));
         hint(active-1);
         
-        save(); // All tabs with content green
-		empty(); // All tabs with no content grey
-        
+        save(); // All tabs with content green; all tabs with no content grey        
         // Disable/enable next and previous buttons depending on where user is in lab report
         begin_or_end();
         
