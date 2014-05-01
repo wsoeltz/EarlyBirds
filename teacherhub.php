@@ -26,6 +26,7 @@
         <link rel = "stylesheet" href = "css/reset.css" />
         <link rel = "stylesheet" href = "css/colorbox.css" />
         <link rel = "stylesheet" href = "css/teacherhub.css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
         <!-- Open Sans Google Font API -->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
@@ -46,8 +47,8 @@
                   },//end rules
                   messages:  {
                     name:  {
-                      required: "<div class='errors'>You need to enter an assignment name.</div>",
-                      maxlength: "<div class='errors'>Assignment name can't be longer then 28 characters.</div>"
+                      required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter an assignment name.</div>",
+                      maxlength: "<div class='errors'><i class='fa fa-asterisk'></i>Assignment name can't be longer than 28 characters.</div>"
                     }
                   },//end messages 
                 });
