@@ -10,7 +10,7 @@
 // Calls function as soon as the page loads
 //Source: http://stackoverflow.com/questions/3842614/how-do-i-call-a-javascript-function-on-page-load
 window.onload = function() {
-  save();
+  save(); // All tabs with content green; all tabs with no content grey
 };
 	
 // document ready function
@@ -19,12 +19,12 @@ $( document ).ready(function() {
 	// http://stackoverflow.com/questions/4565128/set-default-tab-in-jquery-ui-tabs
     $( "#tabs" ).tabs();
     $( "#tabs" ).tabs( "option", "active", 0 );
-    
+	
 	// Disable/enable next and previous buttons depending on where user is in lab report
 	begin_or_end();
            
     focus_on_textbox();       
-           
+                
 	// Goes to the next tab if user clicks the next button
 	// http://stackoverflow.com/questions/3044654/jquery-tabs-next-button
     $("#next").click(function() {
@@ -34,11 +34,11 @@ $( document ).ready(function() {
         // Changes hint to be hint of next section
         hint(active);
         
-        save();
-
         // Move to next tab
         $( "#tabs" ).tabs( "option", "active", active + 1 );
-           
+                
+        save(); // All tabs with content green; all tabs with no content grey
+        
 		// Disable/enable next and previous buttons depending on where user is in lab report
         begin_or_end();    
         
@@ -59,8 +59,8 @@ $( document ).ready(function() {
         if (active-1>=0){
             $( "#tabs" ).tabs( "option", "active", active - 1 );
         }
-        
-        save();
+
+        save(); // All tabs with content green; all tabs with no content grey
         
         // Disable/enable next and previous buttons depending on where user is in lab report
         begin_or_end();
@@ -69,24 +69,13 @@ $( document ).ready(function() {
         focus_on_textbox();
     }); // end previous
     
-    // Upon save, change the current tab's style
-    // http://stackoverflow.com/questions/7986086/using-a-jquery-variable-as-an-href-selector
-    $("#save").click(function() {
-    	// Gets active tab
-        var index= ($( "#tabs" ).tabs( "option", "active"))+1;
-        // ID of current tab
-        var $tabID="#tabs-"+index;
-        $('a[href="' + $tabID + '"]').css('background-color','#9ccf31'); // Changes background color to green
-        $('a[href="' + $tabID + '"]').css('background-image','url(css/assets/checkbox_done.png)'); // Adds checkbox done
-        $('a[href="' + $tabID + '"]').css('background-position','133px 23px'); // Position checkbox image
-    }); // end save
-    
     // Changes hint if you individual click a tab
     $(".ui-tabs-anchor").click(function() {
         var active = ($( "#tabs" ).tabs( "option", "active" ));
         hint(active-1);
         
-        save();
+        save(); // All tabs with content green
+		empty(); // All tabs with no content grey
         
         // Disable/enable next and previous buttons depending on where user is in lab report
         begin_or_end();
@@ -189,18 +178,24 @@ function focus_on_textbox(){
 	$(tabID).focus();
 }
 
-// Change the tab's style to "save" if it has content
+// Change the tab's style to green if it has content; grey if no content
 // http://stackoverflow.com/questions/7986086/using-a-jquery-variable-as-an-href-selector
 function save() {
 	// Go through all 6 input boxes and change tab color accordingly
 	for ( index = 1; index < 7; index++ ) {	
 		var tabID="#tabs-"+index+"-box";
-		   
-		if (($(tabID).val())) {
-			var $tabID="#tabs-"+index;
+
+		var $tabID="#tabs-"+index;
+		// Content
+		if ($(tabID).val()) {
 			$('a[href="' + $tabID + '"]').css('background-color','#9ccf31'); // Changes background color to green
 			$('a[href="' + $tabID + '"]').css('background-image','url(css/assets/checkbox_done.png)'); // Adds checkbox done
 			$('a[href="' + $tabID + '"]').css('background-position','133px 23px'); // Position checkbox image        
+		// No content
+		} else {
+			$('a[href="' + $tabID + '"]').css('background-color','#C0C0C0'); // Changes background color to grey
+			$('a[href="' + $tabID + '"]').css('background-image','url(css/assets/checkbox_empty.png)'); // Adds checkbox empty
+			$('a[href="' + $tabID + '"]').css('background-position','133px 23px'); // Position checkbox image   
 		}
 	}
 }
