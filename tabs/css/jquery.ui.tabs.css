@@ -72,9 +72,9 @@
 .ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
 .ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
 	cursor: text;
-	background-color: #009ece; /* blue - this */
+	background-color: #009ece !important; /* blue - this */
 	border: 3px solid white; /* this */
-	background-image: url(../../css/assets/checkbox_working.png); /* this */
+	background-image: url(../../css/assets/checkbox_working.png) !important; /* this */
 	background-repeat: no-repeat; /* this */
 	background-position: 133px 23px; /* this */
 	outline: none; /* this */
