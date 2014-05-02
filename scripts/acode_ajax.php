@@ -3,9 +3,9 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: acode_ajax.php
 	# Checks if acode is in databsae
-	# Last updated April 13, 2014 by KC
+	# Last updated May 1, 2014 by KC
 	
-	# Connects to database, selects table
+	# Connects to database
 	require "connect.php";
 
 	# Retrieve data from Query String
@@ -20,6 +20,7 @@
 		die('Invalid query: ' . mysql_error());
 	}
 	
+	# Store array results in values
  	$values = mysql_fetch_array($result);
 
 	// Error message if assignment code doesn't exist

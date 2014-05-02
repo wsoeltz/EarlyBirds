@@ -5,7 +5,7 @@
 	# Displays assignment name on teacherhub
 	# Last updated April 22, 2014 by KC
 
-	# Connects to databse, selects table
+	# Connects to databse
 	include "scripts/connect.php";
 	
 	# Assignment code 

@@ -5,7 +5,7 @@
 	# Loads student previous work
 	# Last updated April 22, 2014 by KC
 
-	# Connects to database, selects table
+	# Connects to database
 	include "connect.php";
 
 	# Gets lab ID

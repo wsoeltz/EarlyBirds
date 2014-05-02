@@ -34,7 +34,6 @@ $(document).ready(function(){
 
 // Function sends information to the the database
 // Source: http://www.tutorialspoint.com/ajax/ajax_database.htm
-
 function ajaxFunction(){
 	
     var ajaxRequest;  // The variable that makes Ajax possible!

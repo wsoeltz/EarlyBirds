@@ -3,9 +3,9 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: find_assignment_code.php
 	# Finds an assignment code in the database
-	# Last updated poril 13, 2014 by KC
+	# Last updated May 1, 2014 by KC
 	
-	# Connects to database, selects table
+	# Connects to database
 	include "connect.php";
 	
 	# Gets the assignment code
@@ -14,7 +14,7 @@
 	# Escape User Input to help prevent SQL Injection
 	$acode = mysql_real_escape_string($acode);
 	
- 	# Verifies this code is unique
+ 	# Find assignment with given assignment code
  	$result = mysql_query("SELECT * FROM Assignments WHERE Assignment_Code='$acode'");
  	if (!$result) {
 		die('Invalid query: ' . mysql_error());
@@ -24,6 +24,7 @@
  	
  	# If assignment code is found
  	if ($values != false ) {
+ 		# Start session
 		session_start();
 
 		# Assignment code
@@ -47,10 +48,10 @@
 
 		$values = mysql_fetch_array($result);
 	
-		# Teacher Name
+		# Set Teacher Name session variable
 		$_SESSION['tname'] = $values['Name'];
 
-		# Teacher Email
+		# Set Teacher Email session variable
 		$_SESSION['temail'] = $values['Email'];
 
 		# Redirect to studentlogin page

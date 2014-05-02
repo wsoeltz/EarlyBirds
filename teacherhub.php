@@ -13,14 +13,15 @@
         University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
         File: teacherhub.php
         Main menu for teachers -contains informational sheet, assignments, and welcome message
-        Last updated March 19, 2014 by KC
+        Last updated May 1, 2014 by KC
 -->
 <html>
     <head>
+        <meta charset = "utf-8" />
+
         <!-- Favicon -->
         <link rel="shortcut icon" href="css/assets/ebfavicon.ico" type="image/x-icon">
         <link rel="icon" href="css/assets/ebfavicon.ico" type="image/x-icon">
-        <meta charset = "utf-8" />
 
         <!-- Styling for this page -->
         <link rel = "stylesheet" href = "css/reset.css" />
@@ -34,26 +35,8 @@
         <!-- JavaScript pages for create assignment -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="js/jquery.colorbox.js"></script>
-        <script>
-            $(document).ready(function(){
-                // code for using inline html
-                $(".createNewAssignment").colorbox({inline:true, width:"488px", height: "334px"});
-                $('#newAssignForm').validate({
-                  rules:  {
-                    name:  {
-                      required: true,
-                      maxlength: 28
-                    }
-                  },//end rules
-                  messages:  {
-                    name:  {
-                      required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter an assignment name.</div>",
-                      maxlength: "<div class='errors'><i class='fa fa-asterisk'></i>Assignment name can't be longer than 28 characters.</div>"
-                    }
-                  },//end messages 
-                });
-            });
-        </script>
+        <script src="js/teacherhub.js"></script>
+
         <!-- Inlclude jQuery Validation Plugin -->
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script> 
         <title>Early Birds</title>
@@ -91,7 +74,7 @@
                         </div>
 
                         <!-- Assignments container -->
-    		           <div id="assignmentsContainer">
+                        <div id="assignmentsContainer">
                             <!-- Seperate div needed to draw vertical line without causing any alignment issues -->
                             <div class="verticalLine">
                                 <!-- Container for content in assignments container -->
@@ -99,9 +82,6 @@
                                     <h2 class="gray">Assignments</h2>
                                     <!-- Generate New assignment button -->
                                     <div class="right">
-                                        <!-- This version opens the php page
-                                        <a class="createNewAssignment" href="create_assignment.php">Create New Assignment</a>
-                                        -->
                                         <a class="createNewAssignment" href="#create_assignment_content">Create New Assignment</a>
                                     </div>	
                                     <!-- White space for visual purposes -->
@@ -110,15 +90,15 @@
                                     	# Shows all the assignments associated with a user
                                     	include "scripts/show_assignments.php";
                                     ?>
-    						</div>
-    					 </div>
-     					</div>
-                                    
+                                </div>
+                            </div>
+                        </div>
+
                         <div id="line"></div>
 
                         <!-- Informational sheet container -->                    
                         <div id="infoSheetContainer">
-                            <div id="contentContainer">
+                            <div class="contentContainer">
                                 <h2 class="gray">Information Sheet</h2>
                                 <h3 class="info">Print this information sheet to hand out to your students. It includes a 'How-To' on using Early Birds as well as a location to write down the assignment code.</h3>
                                 <div class="center">
@@ -129,16 +109,15 @@
                     </div>
                 </div>
 
-    		<!--  Includes page footer -->
+                <!--  Includes page footer -->
     		<?php
     			include "include/footer.html";
     		?>
-        </div>
+            </div>
 
-        <!-- Contains hidden content for creating assignments -->
+            <!-- Contains hidden content for creating assignments -->
             <div style='display:none'>
-                <div id="create_assignment_content">
-                                        
+                <div id="create_assignment_content">                   
                     <div id="new_assignmentTitle">New Assignment</div>
                     <form method="post" action="scripts/assignments.php" id="newAssignForm">
                         <input type="text" name="name" id="name" placeholder="Assignment Name"><br>
@@ -153,11 +132,10 @@
                         </div>
                         <input type="submit" class="button" value="Create" id="createAssignment_button">
                     </form>
-
                 </div>
             </div>
-        <!-- end hidden content -->
 
+        </div>
     </body>
 </html>
 <?php
