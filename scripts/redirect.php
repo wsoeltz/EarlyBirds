@@ -3,14 +3,15 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: redirect.php
 	# Redirects a user loading an existing lab to the studenthub page with correct information
-	# Last updated April 7, 2014 by KC
+	# Last updated May 1, 2014 by KC
 
+	# Start session
 	session_start();
 	
 	# Get lab id number
 	$id = $_GET['id'];
 	
-	# studenthub variable is set to true
+	# Studenthub variable is set to true
 	$_SESSION['here']="true";
 	
 	# Get page

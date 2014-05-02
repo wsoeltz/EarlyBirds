@@ -5,11 +5,11 @@
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 // File: index.js
 // Contains various js functionality for index.php - learn more lightbox, scroll for lightbox, detecting logout
-// Last updated March 26, 2014 by KC
+// Last updated May 1, 2014 by KC
 	
 $(document).ready(function(){
 
-	// Removes "email already taken error message is user begins typing again
+	// Removes "email already taken error message" if user begins typing again
 	$('#registerEmail').on('keyup', function() {
 		$('#ajaxDivReg').empty();
 	});
@@ -50,6 +50,7 @@ $(document).ready(function(){
   return this.optional(element) || /^[a-z\s]*$/i.test(value);
   }, "<div class='errors'><i class='fa fa-asterisk'></i>Letters only please.</div>");
 
+	// Validate login form
 	$('#loginForm').validate({
           rules:  {
             email:  {
@@ -68,9 +69,10 @@ $(document).ready(function(){
             password:  {
               required: "<div class='errors'><i class='fa fa-asterisk'></i>You need to enter a password.</div>"
             }
-          },//end messages 
+          }//end messages 
         });
 
+	// Validate register form
 	$('#registerForm').validate({
           rules:  {
           	name: {

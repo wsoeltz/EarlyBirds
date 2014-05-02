@@ -3,25 +3,36 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: userpass.php
 	# Database constants used for connecting to the database
-	# Last updated March 30, 2014 by KC
+	# Last updated May 1, 2014 by KC
 
 	# connects to database
 	include "connect.php";
 	
+	# Starts session
 	session_start();
+	
+	# Get assignment code
 	$acode = $_SESSION['acode'];
+	
 	# Gets student name from assignment_code input box
 	$sname = $_GET['sname'];
 	$_SESSION['sname'] = $sname;
+	
+	# Escape User Input to help prevent SQL Injection
+	$acode = mysql_real_escape_string($acode);
+	$sname = mysql_real_escape_string($sname);
 		
+	# Selecting all labs with given student name and assignment code	
 	$result = mysql_query("SELECT * FROM Labs WHERE  Assignment_Code='$acode' AND Student_Name='$sname'")
 			or die("<p>Error inserting into the database: " .
 					mysql_error() . "</p>");	
 
 	$values = mysql_fetch_array($result);
 
+	# If no labs are already associated with this name, create a lab
 	if ( count($values) == 1 ) {
 		addLabToDatabase($acode, $sname);
+	# Otherwise, print error message; no duplicate student names
 	} else {
 		$_SESSION['lab_message'] = "<div class='errors'><i class='fa fa-asterisk'></i>Please enter a name that is not already on the list.</div>";
 		# Redirect back to login div with error message

@@ -5,7 +5,7 @@
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 // File: auto_save.js
 // Uses ajax to auto-save information to the database every 15 seconds
-// Last updated April 13, 2014 by KC
+// Last updated May 1, 2014 by KC
 
 
 // Handles auto-saving
@@ -66,7 +66,7 @@ function auto_save() {
 
         var div = document.getElementById('saving');
         // div.innerHTML = 'Last saved on ' + m + ' at ' + t;
-        div.innerHTML = 'Saved'
+        div.innerHTML = 'Saved';
     }, 1500);
 }
 

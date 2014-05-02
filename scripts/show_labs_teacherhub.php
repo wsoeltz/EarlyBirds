@@ -3,7 +3,7 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: show_labs_teacherhub.php
 	# Shows labs on teacherhub
-	# Last updated April 10, 2014 by KC
+	# Last updated May 11, 2014 by KC
 	
 	# Assignment code 
 	$acode = $_GET['acode'];
@@ -27,9 +27,10 @@
 	if (!$values) {
 		echo "<h3 class='info nolabs'>No labs are currently associated with this assignment.</h3>";
 		echo "<div style='height:100px'></div>";
+	# Labs found
 	} else {					
 		echo '<div class="clearfix">';
-			#Headers for list of labs
+			# Headers for list of labs
 			echo '<div id="lab">';
 				echo '<div id="nameHeader" class="nameH">Student Name</div>';
 				echo '<div id="dateHeader" class="dateH">Date Last Worked On</div>';

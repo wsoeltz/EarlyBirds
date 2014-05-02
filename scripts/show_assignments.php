@@ -3,12 +3,12 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: show_assignments.php
 	# Shows assignments on teacherhub
-	# Last updated March 26, 2014 by KC
+	# Last updated May 1, 2014 by KC
 
-	# connects to database
+	# Connects to database
 	include "connect.php";
 
-	# Teacher ID
+	# Set Teacher ID
 	$Teacher_id = $_SESSION['id'];
 
 	# Escape User Input to help prevent SQL Injection

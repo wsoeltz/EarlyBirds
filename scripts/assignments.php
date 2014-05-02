@@ -3,11 +3,12 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: assignments.php
 	# Creates a new assignment
-	# Last updated April 22, 2014 by KC
+	# Last updated May 1, 2014 by KC
 	
 	# Connects to database
 	include "connect.php";
  	
+ 	# Start session
  	session_start();
  	
  	# Initializes name, email, and password

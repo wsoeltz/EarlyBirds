@@ -5,7 +5,7 @@
 // University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 // File: tabs.js
 // Contains all JS for coloring tabs, moving through tabs, hints
-// Last updated April 23, 2014 by KC
+// Last updated April 30, 2014 by KC
 
 // Calls function as soon as the page loads
 //Source: http://stackoverflow.com/questions/3842614/how-do-i-call-a-javascript-function-on-page-load

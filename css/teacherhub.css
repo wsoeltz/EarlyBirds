@@ -270,8 +270,13 @@ div#infoSheetContainer{
     float: left;    
 }
 
-/* Container for content in assignments and informational sheet container */
-div#contentContainer{
+/* Container for content informational sheet container */
+div.contentContainer {
+    margin: 23px 28px 23px 28px;
+}
+
+/* Container for content in assignments */
+div#contentContainer {
     margin: 23px 28px 23px 28px;
 }
 

@@ -5,7 +5,7 @@
 	# "Submits" lab to teacher
 	# Last updated April 22, 2014 by KC
 	
-	# Connects to database, select table
+	# Connects to database
 	include "connect.php";
 	
 	# Starts session to get Lab_ID session variable

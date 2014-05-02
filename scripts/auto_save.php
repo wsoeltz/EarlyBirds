@@ -3,9 +3,9 @@
 	# University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	# File: auto_save.php
 	# Auto saves student work to database
-	# Last updated March 30, 2014 by KC
+	# Last updated May 1, 2014 by KC
 
-	# Connects to database, selects table
+	# Connects to database
 	require "connect.php";
 
 	# Retrieve data from Query String
@@ -28,7 +28,7 @@
 	session_start();
 	$id = $_SESSION['Lab_ID'];
 
-	# Updates information in database
+	# Updates lab information in database
 	$result = mysql_query("UPDATE Labs SET Problem='$problem', Hypothesis='$hypothesis', Materials='$materials', Proced='$procedure', Results='$results', Conclusion='$conclusion' WHERE Lab_ID='$id'")
 				or die("<p>Error inserting into the database: " .
 						mysql_error() . "</p>");	

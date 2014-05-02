@@ -13,7 +13,7 @@
         University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
         File: teacherhub_labs.php
         Shows teachers labs available
-        Last updated March 19, 2014 by KC
+        Last updated May 1, 2014 by KC
 -->
 <html>
     <head>
@@ -34,10 +34,10 @@
     </head>
     <body>
         <!-- Header includes logo, blue line, and logout link -->
-		<?php
-			include "include/teacherhub_header.html";
-		?>
-    
+        <?php
+        include "include/teacherhub_header.html";
+        ?>
+
         <!-- content wrapping div designed to push footer to bottom of page -->
         <div id="footerPusher">
             <!-- Main Container includes containers for content/egg shell background -->
@@ -54,11 +54,11 @@
                                 <h2 class="welcomeBox darkGray">View Labs</h2>
                                 <!-- Displays user's name -->
                                 <?php
-                                	echo "<h3 class='name'>" . $_SESSION['name'] . "</h3>";
+									echo "<h3 class='name'>" . $_SESSION['name'] . "</h3>";
                                 ?>
                                 <!-- Will eventually use PHP for email -->
                                 <?php
-                                	echo "<h4 style='margin-bottom: 30px;'>" . $_SESSION['email'] . "</h4>";
+									echo "<h4 style='margin-bottom: 30px;'>" . $_SESSION['email'] . "</h4>";
                                 ?>
                                 <a class="return" href="teacherhub.php">Return to Assignments</a>
                             </div>
@@ -70,36 +70,35 @@
                             <div id="contentContainer">
                                 <!-- Displayslab name -->
                                 <?php
-                                	include "scripts/display_aname.php";
+									include "scripts/display_aname.php";
                                 ?>
                                 <h3 class="info">Click below to view individual labs for this assignment.</h3>
-                                
+
                                 <!-- White space -->
                                 <div style="height: 20px;"></div>
-    						
-    							<?php
-    								include "scripts/show_labs_teacherhub.php";
-    							?>
+
+                                <?php
+									include "scripts/show_labs_teacherhub.php";
+                                ?>
                             </div>
                             <!-- White space -->
                             <div style="height: 20px"></div>
                         </div>
-                    
-                    
+                        
                     </div>
                 </div>
-                
-                <!--  Includes page footer -->
-    			<?php
-    				include "include/footer.html";
-    			?>
-            </div>
 
+                <!--  Includes page footer -->
+                <?php
+					include "include/footer.html";
+                ?>
+            </div>
+        </div>
     </body>
 </html>
 <?php
 	# Otherwise redirect to splash screen
-	 } else {
-	 	header("Location: index.php");
+	} else {
+		header("Location: index.php");
 	}
 ?>
