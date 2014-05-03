@@ -13,7 +13,7 @@
 	University of Massachusetts Lowell, 91.462 GUI Programming II, Jesse M. Heines
 	File: index.php
 	Contains splash screen, login, registration, assignment code, lab code, about
-	Last updated March 26, 2014 by KC
+	Last updated May 2,2014 by WS
 -->
 
 <html>
